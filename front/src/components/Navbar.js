@@ -19,6 +19,9 @@ const Navbar = () => {
                     <Link to="/bestsellers">
                         <a className="nav-link" href="#">Bestsellers</a>
                     </Link>
+                    <Link to="/favorites">
+                        <a className="nav-link" href="#">Favorites</a>
+                    </Link>
                 </ul>
             </div>
         </nav>
