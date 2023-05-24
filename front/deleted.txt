@@ -1,0 +1,28 @@
+"eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+rastesisht nese vyn najher
+
+
+tash qishtu njejt qysh e kom bo per books duhni edhe per best sellers okej amunesh veq pak a shum projektin npergjithsi me ma shpejgu
+mas pari i kom nda folderat front back
+backendi ka model edhe controller
+modeli i ka t dhanat e tabelave qe jon n databaz
+tash dmth ktu e kom books
+edhe n mssql e kom books
+per me mujt qito atribute qe i shkrun te modeli
+mi bart n databaz duhesh me bo ni appdbcontext
+qikjo dbset i bart qato t dhanat
+menyra qysh bartet osht me migration
+controlleri osht ur lidhse mes backendit edhe frontendit
+jon sikur metoda n java mrena
+metodat jon CRUD metodat
+EDHE tash qishtu njejt duhet perqdo crud
+qitu n src osht reacti
+osht pak ma e komplikume ama shumica veq front palidhje
+stilizime etj etj
+a po don e boj qitu edhe kodin per qat crud nese spriton okej thirre qe don arianen ncall le te sheh qe ti thom nuk po munet amo ashtu ashtu veq un kom me shkrun
+okej ska lidhje veq kqyrum qka po boj u bo
