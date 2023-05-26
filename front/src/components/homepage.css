@@ -1,21 +1,24 @@
+/* --  background and library name -- */
 .light-blue-bg {
-    background-color: lightblue;
-  }
-  
+    background-color: lavender;
+}
 span{
     color:lightskyblue;
 }
+
+/* --  FLEX BOX IMAGES -- */
+
 .flex-container {
   display: flex;
 }
 .box img{
   border: 1px solid #ccc;
   padding: 10px;
-  background-color: #f2f2f2;
+  background-color: whitesmoke;
   position:static;
   top:0;
   left:0;
-  object-fit:cover;
+  object-fit:fill;
 }
 .flex-item {
   flex: 1;
@@ -23,6 +26,6 @@ span{
 }
 
 .flex-item img {
-  width: 100%;
+  width: 13%;
   height: auto;
 }

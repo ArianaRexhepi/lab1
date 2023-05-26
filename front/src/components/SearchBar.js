@@ -20,7 +20,7 @@ const SearchBar = ({ onSearch }) => {
         placeholder="Search..."
         value={searchTerm}
         onChange={handleChange}
-        style={{ width: '650px', height: '40px' }} // Adjust width and height as desired
+        style={{ width: '650px', height: '40px'}} // Adjust width and height as desired
       />
       <button type="submit">Search</button>
     </form>
