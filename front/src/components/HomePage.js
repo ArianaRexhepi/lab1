@@ -64,7 +64,7 @@ function HomePage() {
         </div>
       </div>
     </div>
-    <hr></hr>
+    <br></br>
     <footer>
     <p><i>@Copyright 2023 by <span>MJ Library. </span> All Rights Reserved.</i></p>
     </footer>
