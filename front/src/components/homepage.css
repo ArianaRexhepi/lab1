@@ -5,3 +5,24 @@
 span{
     color:lightskyblue;
 }
+.flex-container {
+  display: flex;
+}
+.box img{
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f2f2f2;
+  position:static;
+  top:0;
+  left:0;
+  object-fit:cover;
+}
+.flex-item {
+  flex: 1;
+  margin: 10px;
+}
+
+.flex-item img {
+  width: 100%;
+  height: auto;
+}
