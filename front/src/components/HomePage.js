@@ -10,30 +10,29 @@ import image5 from './images/image5.jpeg';
 import image6 from './images/image6.jpg';
 
 function HomePage() {
-  const handleSearch = (searchTerm) => {
-    console.log('Search term:', searchTerm);
-    // Perform search logic here (e.g., make an API call)
-  };
-
-  return (
-    <div>
-      <br></br>
-      <h1>
-        <b>
-          <span>MJ </span> Library
-        </b>
-      </h1>
-      <p>The world's largest online library!</p>
-      <br></br>
-      <SearchBar onSearch={handleSearch} />
-
+    const handleSearch = (searchTerm) => {
+      console.log('Search term:', searchTerm);
+      // Perform search logic here (e.g., make an API call)
+    };
+  
+    return (
+      <div>
+        <br></br>
+        <h1>
+          <b>
+            <span>MJ </span> Library
+          </b>
+        </h1>
+        <p>The world's largest online library!</p>
+        <br></br>
+        <SearchBar onSearch={handleSearch} />
       <div className="flex-container">
         <div className="flex-item">
           <div className="box">
             <img
               src={image1}
               alt="Image 1"
-              style={{ height: '250px', width: '200px' }} 
+             style={{ height: '250px', width: '200px' }} 
               />
             <img
               src={image2}
@@ -50,12 +49,12 @@ function HomePage() {
         <img
               src={image4}
               alt="Image 4"
-              style={{ height: '250px', width: '200px' }} 
+             style={{ height: '250px', width: '200px' }} 
               />
               <img
               src={image5}
               alt="Image 5"
-              style={{ height: '250px', width: '200px' }} 
+            style={{ height: '250px', width: '200px' }} 
               />
               <img
               src={image6}
@@ -65,7 +64,10 @@ function HomePage() {
         </div>
       </div>
     </div>
-    
+    <hr></hr>
+    <footer>
+    <p><i>@Copyright 2023 by <span>MJ Library. </span> All Rights Reserved.</i></p>
+    </footer>
     </div>
   );
 }

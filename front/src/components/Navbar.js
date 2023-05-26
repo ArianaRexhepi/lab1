@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
+import './homepage.css';
 
 const Navbar = () => {
   return (
@@ -33,14 +34,12 @@ const Navbar = () => {
               Bestsellers
             </Link>
           </li>
-        </ul>
-        <ul className="navbar-nav ml-auto">
           <li className="nav-item">
             <Link to="/signin" className="nav-link">
               Sign in
             </Link>
           </li>
-        </ul>
+          </ul>
       </div>
     </nav>
   );

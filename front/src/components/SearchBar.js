@@ -17,12 +17,12 @@ const SearchBar = ({ onSearch }) => {
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        placeholder="Search..."
         value={searchTerm}
         onChange={handleChange}
-        style={{ width: '650px', height: '40px'}} // Adjust width and height as desired
+        placeholder="Search..."
+        style={{ width: '750px', height: '40px' }}
       />
-      <button type="submit">Search</button>
+      <button type="submit" style={{ backgroundColor: 'blue', color: 'white', border: '1px solid white'}}>Search</button>
     </form>
   );
 };
