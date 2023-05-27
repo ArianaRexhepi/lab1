@@ -66,7 +66,7 @@ function HomePage() {
     </div>
     <br></br>
     <footer>
-    <p><i>@Copyright 2023 by <span>MJ Library. </span> All Rights Reserved.</i></p>
+    <p><i>@Copyright 2023 by <span>MJ Library.</span> All Rights Reserved.</i></p>
     </footer>
     </div>
   );
