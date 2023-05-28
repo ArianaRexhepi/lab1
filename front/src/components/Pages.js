@@ -15,7 +15,7 @@ const Pages = () => {
             <Navbar />
             <Routes>
                 <Route path="/" element={<HomePage />} />
-                <Route path="/" element={<About />} />
+                <Route path="/about" element={<About />} />
                 <Route path="/books" element={<BookList />} />
                 <Route path="/bestsellers" element={<BestsellerList />} />
                 <Route path="/createbook" element={<CreateBook />} />
