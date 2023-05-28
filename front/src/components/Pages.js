@@ -7,6 +7,7 @@ import CreateBook from "./Books/CreateBook";
 import BestsellerList from "./Bestsellers/BestsellerList";
 import CreateBestseller from "./Bestsellers/CreateBestseller";
 import EditBook from "./Books/EditBook";
+import About from "./About";
 
 const Pages = () => {
     return (
@@ -14,6 +15,7 @@ const Pages = () => {
             <Navbar />
             <Routes>
                 <Route path="/" element={<HomePage />} />
+                <Route path="/" element={<About />} />
                 <Route path="/books" element={<BookList />} />
                 <Route path="/bestsellers" element={<BestsellerList />} />
                 <Route path="/createbook" element={<CreateBook />} />
