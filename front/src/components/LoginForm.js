@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './homepage.css';
 
 const LoginForm = () => {
@@ -61,12 +62,10 @@ const LoginForm = () => {
           </div>
           <br />
           <button type="submit" style={styles.button}>Sign In</button>
+          <div style={styles.linksContainer}>
+          <Link to="/registerhere" style={{ textDecoration: 'none' }}>Not a member? Create an account</Link>
+          </div>
         </form>
-        <div style={styles.linksContainer}>
-          <a href="/register" style={styles.link}>
-           Not a member? Register here
-          </a>
-        </div>
       </div>
     </div>
   );
@@ -124,8 +123,7 @@ const styles = {
   },
   linksContainer: {
     display: 'flex',
-    justifyContent: 'center',
-    marginRight:'235px',
+    marginRight:'210px',
     marginTop: '10px',
   },
   link: {
