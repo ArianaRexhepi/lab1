@@ -27,31 +27,40 @@ function CreateBestseller() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Title:
-        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-      </label>
-      <br />
-      <label>
-        Author:
-        <input type="text" value={author} onChange={(e) => setAuthor(e.target.value)} />
-      </label>
-      <br />
-      <label>
-        Rating:
-        <input type="text" value={rating} onChange={(e) => setRating(e.target.value)} />
-      </label>
-      <br />
-      <label>
-        Year:
-        <input type="datetime" value={year} onChange={(e) => setYear(e.target.value)} />
-      </label>
-      <br />
-      <input type="submit" className="btn btn-danger"  value="Dismiss" />
-      <input type="submit" className="btn btn-warning"  value="Create" />
-    </form>
+    <div className="modal-dialog" style={{ width: 600}}>
+      <div className="modal-content">
+        <form className="form" onSubmit={handleSubmit}>
+          <div className="modal-header">
+            <h4 className="modal-title">Shto Bestseller</h4>
+            <Link to="/bestsellers"><button type="button" className="close" data-dismiss="modal" aria-hidden="true" onclick="window.location='/bestsellers';">&times;</button></Link>
+          </div>
+          <div className="modal-body">
+            <div className="form-group">
+              <label>Titulli:</label>
+              <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+            </div>
+            <div className="form-group">
+              <label>Autori:</label>
+              <input type="text" value={author} onChange={(e) => setAuthor(e.target.value)} />
+            </div>
+            <div className="form-group">
+              <label>Year:</label>
+              <input type="datetime" value={year} onChange={(e) => setYear(e.target.value)} />
+            </div>
+            <div className="form-group">
+              <label>Rating:</label>
+              <input type="datetime" value={rating} onChange={(e) => setRating(e.target.value)} />
+            </div>
+          </div>
+          <div className="modal-footer">
+            <Link to="/books"><input type="button" className="btn btn-danger" value="Dismiss" /></Link>
+            <input type="submit" value="Create" className="btn btn-primary float-right" />
+          </div>
+        </form>
+      </div>
+    </div>
   );
+  
 }
 
 export default CreateBestseller;
