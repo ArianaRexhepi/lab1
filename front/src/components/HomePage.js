@@ -20,7 +20,7 @@ function HomePage() {
         <br></br>
         <h1>
           <b>
-            <span>MJ </span> Library
+            <span>Ari </span> Library
           </b>
         </h1>
         <p>The world's largest online library!</p>
@@ -66,7 +66,7 @@ function HomePage() {
     </div>
     <br></br>
     <footer>
-    <p><i>@Copyright 2023 by <span>MJ Library.</span> All Rights Reserved.</i></p>
+    <p><i>@Copyright 2023 by <span>Ari Library.</span> All Rights Reserved.</i></p>
     </footer>
     </div>
   );

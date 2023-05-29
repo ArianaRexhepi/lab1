@@ -47,7 +47,7 @@ function CreateBook() {
             </div>
           </div>
           <div className="modal-footer">
-            <Link to="/books"><input type="button" className="btn btn-dark" value="Anulo" /></Link>
+            <Link to="/books"><input type="button" className="btn btn-danger" value="Dismiss" /></Link>
             <input type="submit" value="Create" className="btn btn-primary float-right" />
           </div>
         </form>

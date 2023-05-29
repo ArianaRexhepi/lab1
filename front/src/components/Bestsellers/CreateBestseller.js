@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function CreateBestseller() {
   const [title, setTitle] = useState('');
@@ -47,7 +48,8 @@ function CreateBestseller() {
         <input type="datetime" value={year} onChange={(e) => setYear(e.target.value)} />
       </label>
       <br />
-      <button type="submit">Create</button>
+      <input type="submit" className="btn btn-danger"  value="Dismiss" />
+      <input type="submit" className="btn btn-warning"  value="Create" />
     </form>
   );
 }

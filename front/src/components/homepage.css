@@ -33,3 +33,9 @@ span{
   align-items: center;
 }
 
+.p{
+  display: flex;
+  justify-content: center;
+   margin-right: 295px;
+}
+

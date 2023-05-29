@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './homepage.css';
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
@@ -33,10 +34,10 @@ const LoginForm = () => {
   return (
     <div style={styles.container}>
       <div style={styles.box}>
-        <h1>Log <span>in</span></h1>
+        {<h1>Log <span>in</span></h1>}
         <br></br>
+        
         <form onSubmit={handleSubmit} style={styles.form}>
-          <p>Enter your username </p>
           <input
             type="text"
             placeholder="Username"
@@ -45,7 +46,6 @@ const LoginForm = () => {
             style={styles.input}
           />
           <br />
-          <p>Enter your password </p>
           <input
             type="password"
             placeholder="Password"
@@ -77,7 +77,7 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: '100vh',
+    height: '95vh',
   },
   box: {
     width: '500px',
@@ -99,11 +99,15 @@ const styles = {
   },
   passwordOptionsContainer: {
     display: 'flex',
-    justifyContent: 'left',
+    justifyContent: 'center',
+    marginRight:'280px',
+    //marginTop: '5px',
+    //display: 'flex',
+    //justifyContent: 'left',
     //alignItems: 'center'
   },
   forgotPasswordLink: {
-    color: 'grey',
+    color: '#065fd4',
     textDecoration: 'none',
     textAlign: 'left',
     cursor: 'pointer',
@@ -120,19 +124,16 @@ const styles = {
   },
   linksContainer: {
     display: 'flex',
-    justifyContent: 'left',
+    justifyContent: 'center',
+    marginRight:'235px',
     marginTop: '10px',
   },
   link: {
     marginRight: '10px',
     color: '#065fd4',
-    //textDecoration: 'underline',
+    textDecoration: 'none',
     cursor: 'pointer',
   },
-  p: {
-    textAlign: 'left',
-    marginRight:'10px'
-  }
 };
 
 
