@@ -1,22 +1,27 @@
 ﻿<Properties StartupConfiguration="{24C49D84-DA03-407A-9325-7AB2D28BE20B}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="back/Migrations/20230507192411_bestsellerTable.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="back/Controllers/BestsellersController.cs">
     <Files>
       <File FileName="back/Models/UserRegistration.cs" />
       <File FileName="back/Controllers/AccountController.cs" />
-      <File FileName="back/Controllers/BestsellersController.cs" />
+      <File FileName="back/Controllers/BestsellersController.cs" Line="1" Column="1" />
       <File FileName="back/Migrations/20230507192411_bestsellerTable.cs" Line="1" Column="1" />
+      <File FileName="back/Controllers/BookController.cs" Line="23" Column="30" />
+      <File FileName="back/appsettings.json" Line="1" Column="1" />
+      <File FileName="back/Program.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="back" expanded="True">
             <Node name="back" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Data" expanded="True" />
-              <Node name="Migrations" expanded="True">
-                <Node name="20230507192411_bestsellerTable.cs" selected="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="BestsellersController.cs" selected="True" />
               </Node>
+              <Node name="Data" expanded="True" />
+              <Node name="Migrations" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Properties" expanded="True" />
             </Node>
@@ -25,10 +30,8 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.back PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.back PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

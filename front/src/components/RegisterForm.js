@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import RegisterForm from './RegisterForm';
+import LoginForm from './LoginForm';
 
-
-const LoginForm = () => {
+const RegisterForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
