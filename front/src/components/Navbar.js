@@ -40,14 +40,19 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="nav-item">
+            <Link to="/borrow" className="nav-link">
+              Borrow
+            </Link>
+          </li>
+          <li className="nav-item">
             <Link to="/contact" className="nav-link">
               Contact
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/loginform" className="nav-link">
+          <button className="nav-link" onClick={() => { window.location.href = "/loginform"; }}>
               Log in
-            </Link>
+           </button>
             </li>
             <li>
             <Link to="/registerform" className="nav-link">

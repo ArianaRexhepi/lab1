@@ -9,6 +9,8 @@ import CreateBestseller from "./Bestsellers/CreateBestseller";
 import EditBook from "./Books/EditBook";
 import About from "./About";
 import LoginForm from "./LoginForm";
+import Borrow from "./Borrow/Borrow";
+import CreateBorrow from "./Borrow/CreateBorrow";
 
 
 
@@ -22,6 +24,8 @@ const Pages = () => {
                 <Route path="/about" element={<About />} />
                 <Route path="/books" element={<BookList />} />
                 <Route path="/bestsellers" element={<BestsellerList />} />
+                <Route path="/borrow" element={<Borrow />} />
+                <Route path="/createborrow" element={<CreateBorrow />} />
                 <Route path="/loginform" element={<LoginForm />} />
                 <Route path="/createbook" element={<CreateBook />} />
                 <Route path="/createbestseller" element={<CreateBestseller />} />

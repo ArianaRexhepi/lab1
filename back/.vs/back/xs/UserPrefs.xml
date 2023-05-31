@@ -1,25 +1,14 @@
 ﻿<Properties StartupConfiguration="{24C49D84-DA03-407A-9325-7AB2D28BE20B}|Default">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="back/Controllers/BestsellersController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="back/Models/UserRegistration.cs">
     <Files>
-      <File FileName="back/Models/UserRegistration.cs" />
-      <File FileName="back/Controllers/AccountController.cs" />
-      <File FileName="back/Controllers/BestsellersController.cs" Line="1" Column="1" />
-      <File FileName="back/Migrations/20230507192411_bestsellerTable.cs" Line="1" Column="1" />
-      <File FileName="back/Controllers/BookController.cs" Line="23" Column="30" />
-      <File FileName="back/appsettings.json" Line="1" Column="1" />
-      <File FileName="back/Program.cs" Line="1" Column="1" />
+      <File FileName="back/Models/UserRegistration.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="back" expanded="True">
-            <Node name="back" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="BestsellersController.cs" selected="True" />
-              </Node>
+            <Node name="back" expanded="True" selected="True">
+              <Node name="Controllers" expanded="True" />
               <Node name="Data" expanded="True" />
               <Node name="Migrations" expanded="True" />
               <Node name="Models" expanded="True" />
@@ -30,6 +19,9 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

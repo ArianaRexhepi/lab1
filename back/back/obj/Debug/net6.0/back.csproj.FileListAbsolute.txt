@@ -194,3 +194,12 @@ C:/Users/PC/Desktop/lab1/LAB1ARIANA/back/back/obj/Debug/net6.0/ref/back.dll
 /Users/els/Desktop/lab1/LAB1ARIANA/back/back/obj/Debug/net6.0/back.pdb
 /Users/els/Desktop/lab1/LAB1ARIANA/back/back/obj/Debug/net6.0/back.genruntimeconfig.cache
 /Users/els/Desktop/lab1/LAB1ARIANA/back/back/obj/Debug/net6.0/ref/back.dll
+/Users/els/Desktop/lab1/LAB1ARIANA/back/back/bin/Debug/net6.0/Database.dll
+/Users/els/Desktop/lab1/LAB1ARIANA/back/back/bin/Debug/net6.0/System.Net.Http.Formatting.dll
+/Users/els/Desktop/lab1/LAB1ARIANA/back/back/bin/Debug/net6.0/System.Web.Http.dll
+/Users/els/Desktop/lab1/LAB1ARIANA/back/back/bin/Debug/net6.0/Microsoft.Threading.Tasks.Extensions.dll
+/Users/els/Desktop/lab1/LAB1ARIANA/back/back/bin/Debug/net6.0/Microsoft.Threading.Tasks.dll
+/Users/els/Desktop/lab1/LAB1ARIANA/back/back/bin/Debug/net6.0/Newtonsoft.Json.dll
+/Users/els/Desktop/lab1/LAB1ARIANA/back/back/bin/Debug/net6.0/Newtonsoft.Json.Bson.dll
+/Users/els/Desktop/lab1/LAB1ARIANA/back/back/bin/Debug/net6.0/PCLStorage.Abstractions.dll
+/Users/els/Desktop/lab1/LAB1ARIANA/back/back/bin/Debug/net6.0/PCLStorage.dll
