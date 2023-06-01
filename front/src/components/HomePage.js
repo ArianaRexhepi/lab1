@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './homepage.css';
 import SearchBar from './SearchBar';
@@ -10,64 +10,43 @@ import image5 from './images/image5.jpeg';
 import image6 from './images/image6.jpg';
 
 function HomePage() {
-    const handleSearch = (searchTerm) => {
-      console.log('Search term:', searchTerm);
-      // Perform search logic here (e.g., make an API call)
-    };
-  
-    return (
-      <div>
-        <br></br>
-        <h1>
-          <b>
-            <span>MJ </span> Library
-          </b>
-        </h1>
-        <p>The world's largest online library!</p>
-        <br></br>
-        <SearchBar onSearch={handleSearch} />
+  const [searchResults, setSearchResults] = useState([]);
+
+  const handleSearch = (results) => {
+    setSearchResults(results);
+  };
+
+  return (
+    <div>
+      <br />
+      <h1>
+        <b>
+          <span>MJ </span> Library
+        </b>
+      </h1>
+      <p>The world's largest online library!</p>
+      <br />
+      <SearchBar onSearch={handleSearch} searchResults={searchResults} />
       <div className="flex-container">
         <div className="flex-item">
           <div className="box">
-            <img
-              src={image1}
-              alt="Image 1"
-             style={{ height: '250px', width: '200px' }} 
-              />
-            <img
-              src={image2}
-              alt="Image 1"
-              style={{ height: '250px', width: '200px' }} 
-              />
-            <img
-              src={image3}
-              alt="Image 3"
-              style={{ height: '250px', width: '200px' }} 
-              />
-        </div>
-        <div className="box">
-        <img
-              src={image4}
-              alt="Image 4"
-             style={{ height: '250px', width: '200px' }} 
-              />
-              <img
-              src={image5}
-              alt="Image 5"
-            style={{ height: '250px', width: '200px' }} 
-              />
-              <img
-              src={image6}
-              alt="Image 6"
-              style={{ height: '250px', width: '200px' }} 
-              />
+            <img src={image1} alt="Image 1" style={{ height: '250px', width: '200px' }} />
+            <img src={image2} alt="Image 1" style={{ height: '250px', width: '200px' }} />
+            <img src={image3} alt="Image 3" style={{ height: '250px', width: '200px' }} />
+          </div>
+          <div className="box">
+            <img src={image4} alt="Image 4" style={{ height: '250px', width: '200px' }} />
+            <img src={image5} alt="Image 5" style={{ height: '250px', width: '200px' }} />
+            <img src={image6} alt="Image 6" style={{ height: '250px', width: '200px' }} />
+          </div>
         </div>
       </div>
-    </div>
-    <br></br>
-    <footer>
-    <p><i>@Copyright 2023 by <span>MJ Library.</span> All Rights Reserved.</i></p>
-    </footer>
+      <br />
+      <footer>
+        <p>
+          <i>@2023 by <span>MJ Library.</span> All Rights Reserved.</i>
+        </p>
+      </footer>
     </div>
   );
 }
