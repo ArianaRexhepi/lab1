@@ -37,7 +37,7 @@ function CreateBestseller() {
       <div className="modal-content">
         <form className="form" onSubmit={handleSubmit}>
           <div className="modal-header">
-            <h4 className="modal-title">Shto Bestseller</h4>
+            <h4 className="modal-title">Add Bestseller</h4>
             <Link to="/bestsellers">
               <button
                 type="button"
