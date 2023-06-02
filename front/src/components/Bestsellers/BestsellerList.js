@@ -16,8 +16,9 @@ function BestsellerList() {
   const handleDelete = async (id) => {
     const confirmed = window.confirm('Are you sure you want to delete this book?');
     if (confirmed) {
-      await axios.delete(`http://localhost:5267/api/bestsellers/${id}`);
-      setBooks(books.filter(book => book.Id !== id));
+      await axios.delete(`http://localhost:5267/api/bestsellers/${id}`).then(()=> {
+        setBooks(books.filter(book => book.id !== id));
+      });
     }
   };
 
@@ -49,7 +50,7 @@ function BestsellerList() {
                           <td>{book.rating}</td>
                           <td>{book.year}</td>
                           <td>
-                              <button className='btn btn-primary'>Edit</button>
+                          <Link to={`/editbestseller/${book.id}`}><button className='btn btn-primary'>Edit</button></Link>
                               <button className='btn btn-danger' onClick={() => handleDelete(book.id)}>Delete</button>
                           </td>
                       </tr>

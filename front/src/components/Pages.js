@@ -11,6 +11,7 @@ import About from "./About";
 import LoginForm from "./LoginForm";
 import Borrow from "./Borrow/Borrow";
 import CreateBorrow from "./Borrow/CreateBorrow";
+import EditBestseller from "./Bestsellers/EditBestseller";
 
 
 
@@ -29,6 +30,7 @@ const Pages = () => {
                 <Route path="/loginform" element={<LoginForm />} />
                 <Route path="/createbook" element={<CreateBook />} />
                 <Route path="/createbestseller" element={<CreateBestseller />} />
+                <Route path="/editbestseller/:id" element={<EditBestseller />} />
                 <Route path="/editbook" element={<EditBook />} />
             </Routes>
         </>
