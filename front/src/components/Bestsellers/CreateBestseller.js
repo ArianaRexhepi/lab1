@@ -18,14 +18,16 @@ function CreateBestseller() {
       Title: title,
       Author: author,
       Rating: rating,
-      Year: year
+      Year: year,
     };
 
     try {
-     await axios.post('http://localhost:5267/api/bestsellers', newBook).then(()=> {
-      setLoading(false);
-      navigate("/bestsellers");
-     });
+      await axios
+        .post("http://localhost:5267/api/bestsellers", newBook)
+        .then(() => {
+          setLoading(false);
+          navigate("/bestsellers");
+        });
       console.log(newBook);
     } catch (error) {
       console.error(error);
@@ -33,10 +35,10 @@ function CreateBestseller() {
   };
 
   return (
-    <div className="modal-dialog" style={{ width: 600, marginTop:'50px' }}>
-    <div className="modal-content">
-      <form className="form">
-        <div className="modal-header">
+    <div className="modal-dialog" style={{ width: 600, marginTop: "50px" }}>
+      <div className="modal-content">
+        <form onSubmit={handleSubmit} className="form">
+          <div className="modal-header">
             <h4 className="modal-title">Add Bestseller</h4>
             <Link to="/bestsellers">
               <button
@@ -50,7 +52,7 @@ function CreateBestseller() {
               </button>
             </Link>
           </div>
-          <div className="modal-body" >
+          <div className="modal-body">
             <div className="form-group">
               <label>Titulli:</label>
               <input
