@@ -17,24 +17,35 @@ namespace back.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> GetAsync()
         {
-            var books = _context.Borrow.ToList();
+            var books = await _context.Borrow.ToListAsync();
             return Ok(books);
         }
 
-        [HttpPost]
-        public IActionResult Post([FromBody] Borrow book)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetBorrowAsync(int id)
         {
-            _context.Borrow.Add(book);
-            _context.SaveChanges();
+            var existingBook = await _context.Borrow.FindAsync(id);
+            if (existingBook == null)
+            {
+                return NotFound();
+            } 
+            return Ok(existingBook);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> PostAsync(Borrow book)
+        {
+           await  _context.Borrow.AddAsync(book);
+            await _context.SaveChangesAsync();
             return Ok();
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] Borrow book)
+        public async Task<IActionResult> PutAsync(int id, Borrow book)
         {
-            var existingBook = _context.Borrow.FirstOrDefault(b => b.Id == id);
+            var existingBook = await _context.Borrow.FindAsync(id);
             if (existingBook == null)
             {
                 return NotFound();
@@ -46,22 +57,22 @@ namespace back.Controllers
             existingBook.MarrjaeLibrit = book.MarrjaeLibrit;
             existingBook.KthyerjaeLibrit= book.KthyerjaeLibrit;
 
-            _context.SaveChanges();
+             _context.SaveChanges();
 
             return Ok();
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+       public async Task<IActionResult> DeleteAsync(int id)
         {
-            var existingBook = _context.Borrow.FirstOrDefault(b => b.Id == id);
+            var existingBook = await _context.Borrow.FindAsync(id);
             if (existingBook == null)
             {
                 return NotFound();
             }
 
             _context.Borrow.Remove(existingBook);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return Ok();
         }

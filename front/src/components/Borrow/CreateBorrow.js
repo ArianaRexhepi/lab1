@@ -8,9 +8,12 @@ function CreateBorrow() {
   const [username, setUsername] = useState('');
   const [marrjaeLibrit, setMarrjaeLibrit] = useState('');
   const [kthyerjaeLibrit, setKthyerjaeLibrit] = useState('');
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
 
     const newBook = {
       BookTitle: bookTitle,
@@ -21,46 +24,86 @@ function CreateBorrow() {
     };
 
     try {
-      const response = await axios.post('http://localhost:5267/api/borrow', newBook);
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+      await axios.post('http://localhost:5267/api/borrow', newBook).then(()=> {
+       setLoading(false);
+       navigate("/borrow");
+      });
+       console.log(newBook);
+     } catch (error) {
+       console.error(error);
+     }
+   };
 
   return (
-    <div className="modal-dialog" style={{ width: 600}}>
-      <div className="modal-content">
-        <form className="form" onSubmit={handleSubmit}>
-          <div className="modal-header">
-            <h4 className="modal-title">Huazo Liber</h4>
-            <Link to="/borrow"><button type="button" className="close" data-dismiss="modal" aria-hidden="true" onclick="window.location='/borrow';">&times;</button></Link>
+    <div className="modal-dialog" style={{ width: 600, marginTop:'50px' }}>
+    <div className="modal-content">
+      <form className="form">
+        <div className="modal-header">
+            <h4 className="modal-title">Borrowed Book</h4>
+            <Link to="/borrow">
+              <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                aria-hidden="true"
+                onclick="window.location='/borrow';"
+              >
+                &times;
+              </button>
+            </Link>
           </div>
-          <div className="modal-body">
+          <div className="modal-body" >
             <div className="form-group">
               <label>BookTitle:</label>
-              <input type="text" value={bookTitle} onChange={(e) => setBookTitle(e.target.value)} />
+              <input
+                type="text"
+                value={booktitle}
+                onChange={(e) => seBookTitle(e.target.value)}
+              />
             </div>
             <div className="form-group">
-              <label>Author</label>
-              <input type="text" value={author} onChange={(e) => setAuthor(e.target.value)} />
+              <label>Author:</label>
+              <input
+                type="text"
+                value={author}
+                onChange={(e) => setAuthor(e.target.value)}
+              />
             </div>
             <div className="form-group">
-              <label>Username</label>
-              <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+              <label>Username:</label>
+              <input
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
             </div>
             <div className="form-group">
-              <label>MarrjaeLibrit</label>
-              <input type="datetime" value={marrjaeLibrit} onChange={(e) => setMarrjaeLibrit(e.target.value)} />
+              <label>MarrjaeLibrit:</label>
+              <input
+                type="datetime-local"
+                value={marrjaeLibrit}
+                onChange={(e) => setMarrjaeLibrit(e.target.value)}
+              />
             </div>
             <div className="form-group">
-              <label>KthyerjaeLibrit</label>
-              <input type="datetime" value={kthyerjaeLibrit} onChange={(e) => setKthyerjaeLibrit(e.target.value)} />
+              <label>KthyerjaeLibrit:</label>
+              <input
+                type="datetime-local"
+                value={kthyerjaeLibrit}
+                onChange={(e) => setKthyerjaeLibrit(e.target.value)}
+              />
             </div>
           </div>
           <div className="modal-footer">
-            <Link to="/borrow"><input type="button" className="btn btn-danger" value="Dismiss" /></Link>
-            <input type="submit" value="Create" className="btn btn-primary float-right" />
+            <Link to="/borrow">
+              <input type="button" className="btn btn-danger" value="Dismiss" />
+            </Link>
+            <input
+              type="submit"
+              value="Create"
+              disabled={loading}
+              className="btn btn-primary float-right"
+            />
           </div>
         </form>
       </div>

@@ -36,7 +36,7 @@ function EditBestseller() {
   if (bestseller === null) return <div>Loading...</div>;
 
   return (
-    <div className="modal-dialog" style={{ width: 600 }}>
+    <div className="modal-dialog" style={{ width: 600, marginTop:'50px' }}>
       <div className="modal-content">
         <form className="form">
           <div className="modal-header">

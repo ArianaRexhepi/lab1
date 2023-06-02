@@ -33,10 +33,10 @@ function CreateBestseller() {
   };
 
   return (
-    <div className="modal-dialog" style={{ width: 600 }}>
-      <div className="modal-content">
-        <form className="form" onSubmit={handleSubmit}>
-          <div className="modal-header">
+    <div className="modal-dialog" style={{ width: 600, marginTop:'50px' }}>
+    <div className="modal-content">
+      <form className="form">
+        <div className="modal-header">
             <h4 className="modal-title">Add Bestseller</h4>
             <Link to="/bestsellers">
               <button
@@ -50,7 +50,7 @@ function CreateBestseller() {
               </button>
             </Link>
           </div>
-          <div className="modal-body">
+          <div className="modal-body" >
             <div className="form-group">
               <label>Titulli:</label>
               <input
