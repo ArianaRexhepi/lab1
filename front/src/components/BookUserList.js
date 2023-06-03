@@ -101,7 +101,7 @@ const books = [
     rating: 4.8/5,
   },
   {
-    title: "Beach Read",
+    title: "A dance in the dark ",
     image: "image4",
     description:
       "An uplifting summer read that will leave you longing for a beach vacation.",
