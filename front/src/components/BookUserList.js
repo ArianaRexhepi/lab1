@@ -120,7 +120,9 @@ const BookUserList = () => {
       </div>
       {selectedBook ? (
         <div>
+          <div className="back-container">
           <button onClick={handleBackClick} className="back-button">Go Back</button>
+          </div>
           <div className="book-details">
             <div className="book-info">
               <h2 className="book-title">{selectedBook.title}</h2>
