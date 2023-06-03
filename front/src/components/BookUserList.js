@@ -112,6 +112,7 @@ const books = [
   },
   {
     title: "The soulmate equation",
+    author: "Christina Lauren",
     image: "",
     description:
       "A light and breezy book perfect for reading by the beach or pool.",
