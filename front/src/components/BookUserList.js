@@ -94,6 +94,7 @@ const books = [
   },
   {
     title: "The Wicked King",
+    author: "Holly Black",
     image: image14,
     description:
       "A captivating story set against the backdrop of a beautiful beach.",
