@@ -88,7 +88,7 @@ const books = [
     rating: 4.4,
   },
   {
-    title: "Beach Read",
+    title: "The things we leave unfinished",
     author: "",
     image: "book10.jpg",
     description:
