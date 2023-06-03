@@ -84,7 +84,8 @@ const books = [
     title: "Love on the Brain",
     author: "Ali Hazelwood",
     image: image4,
-    description: "A charming and heartwarming love story set in a small town.",
+    description: 
+      " Love on the Brain is a romance novel by Italian author Ali Hazelwood and follows the story of a neuroscientist, Dr. Bee Königswasser, who embarks on a career-high assignment of co-leading a project at NASA but has to contend with working alongside her old grad school nemesis, Levi Ward.",
     rating: 4.4,
   },
   {
