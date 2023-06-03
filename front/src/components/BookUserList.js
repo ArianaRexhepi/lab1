@@ -45,6 +45,7 @@ const books = [
   },
   {
     title: 'Daisy Jones and the Six',
+    author: 'Taylor Jenkins Reid',
     image: 'book7.jpg',
     
   },
@@ -60,6 +61,7 @@ const books = [
   },
   {
     title: 'Beach Read',
+    author: '',
     image: 'book10.jpg',
     
   },
