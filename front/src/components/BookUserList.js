@@ -93,7 +93,7 @@ const books = [
     image: image17,
     description:
       "A delightful beach read filled with romance, humor, and memorable characters.",
-    rating: 4.2,
+    rating: 4.6,
   },
   {
     title: "The Wicked King",
