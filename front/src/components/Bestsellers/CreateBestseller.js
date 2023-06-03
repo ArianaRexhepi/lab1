@@ -28,7 +28,7 @@ function CreateBestseller() {
         .post("http://localhost:5267/api/bestsellers", newBook)
         .then(() => {
           setLoading(false);
-          navigate("/book-list");
+          navigate("/bestseller");
         });
       console.log(newBook);
     } catch (error) {
