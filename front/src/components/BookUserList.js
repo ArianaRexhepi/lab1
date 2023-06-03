@@ -117,7 +117,7 @@ const books = [
     image: image16,
     description:
       "A light and breezy book perfect for reading by the beach or pool.",
-    rating: 4.1,
+    rating: 4.5,
   },
 ];
 
