@@ -125,7 +125,7 @@ const books = [
     author: "Kristen Callihan",
     image: image18,
     description:
-      "A light and breezy book perfect for reading by the beach or pool.",
+      "Make It Sweet by Kristen Callihan is a contemporary romance novel that serves up a delightful blend of sweet and spicy. The story revolves around the lives of Emma Maroni, a talented pastry chef, and Lucian Lucky Osmond, a brooding and famous ex-rock star. Is a heartwarming and steamy love story that explores themes of self-discovery, second chances, and finding happiness in unexpected places. ",
     rating: 4.7,
   },
 ];
