@@ -89,6 +89,7 @@ span{
   margin-top: 8px;
   color: #555555;
 }
+
 .book-details {
   max-width: 1000px;
   margin: 0 auto;
@@ -120,7 +121,7 @@ span{
 }
 
 .book-image {
-  width: 30%;
+  width: 50%;
   height: auto;
   max-height: 600px;
   object-fit: cover;
