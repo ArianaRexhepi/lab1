@@ -9,13 +9,11 @@ import image10 from "./images/image10.jpeg";
 import image11 from "./images/image11.jpeg";
 import image12 from "./images/image12.jpg";
 import image13 from "./images/image13.jpeg";
-import image14  from "./images/image14.jpg";
-import image15  from "./images/image15.jpg";
-import image16  from "./images/image16.jpg";
-import image17  from "./images/image17.jpg";
-import image18  from "./images/image18.jpg";
-
-
+import image14 from "./images/image14.jpg";
+import image15 from "./images/image15.jpg";
+import image16 from "./images/image16.jpg";
+import image17 from "./images/image17.jpg";
+import image18 from "./images/image18.jpg";
 
 const books = [
   {
@@ -107,7 +105,7 @@ const books = [
   },
   {
     title: "A dance in the dark ",
-    author: "Jhuly Oliveira", 
+    author: "Jhuly Oliveira",
     image: image15,
     description:
       "An uplifting summer read that will leave you longing for a beach vacation.",
