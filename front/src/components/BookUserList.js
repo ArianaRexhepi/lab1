@@ -29,7 +29,7 @@ const books = [
     author: "Lucy Sore",
     image: image7,
     description:
-      "A gripping tale of lost love and second chances set in a small coastal town.",
+      "There’s a reason Knox doesn’t do complications or high-maintenance women, especiallynot the romantic ones. But since Naomi’s life imploded right in front of him, the least he can do is help her out of her jam. And just as soon as she stops getting into new trouble he can leave her alone and get back to his peaceful, solitary life. At least, that’s the plan until the trouble turns to real danger.",
     rating: 3.8,
   },
   {
