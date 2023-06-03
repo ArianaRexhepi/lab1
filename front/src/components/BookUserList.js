@@ -77,7 +77,7 @@ const books = [
     author: "Lucy Score",
     image: image13,
     description:
-      "A steamy romance novel about two people brought together by unexpected circumstances.",
+      "By a Thread by Lucy Score is a contemporary romance novel that follows the story of Dominic Andrews, a dedicated single father and successful businessman, and Lily Spencer, a strong-willed and independent woman with a troubled past.The book explores themes of love, family, and second chances. It delves into the complexities of overcoming past traumas and learning to trust and open oneself up to love again. ",
     rating: 4.1,
   },
   {
