@@ -45,7 +45,7 @@ const books = [
     author: "Eve Brown",
     image: image9,
     description:
-      "A hilarious romantic comedy about two people with clashing personalities who find love in unexpected ways.",
+      "Act Your Age is a romantic comedy novel written by Eve Brown. The story follows the life of Jacob Wayne, a grumpy and uptight hotel manager who prides himself on order and control. When a free-spirited and colorful woman named Eve Brown accidentally hits Jacob with her car, it leads to unexpected consequences. To make amends, Eve offers to work at Jacob's hotel temporarily.",
     rating: 4.0,
   },
   {
