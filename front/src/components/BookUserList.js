@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./homepage.css";
-import StarRating from "./StarRating";
 import image1 from "./images/image1.jpg";
 import image4 from "./images/image4.jpeg";
 import image7 from "./images/image7.jpg";
@@ -133,7 +132,7 @@ const BookUserList = () => {
       {selectedBook ? (
         <div>
           <div className="back-container">
-            <button onClick={handleBackClick} className="back-button">Go Back</button>
+            <button onClick={handleBackClick} className="back-button"><b>Go Back</b></button>
           </div>
           <div className="book-details">
             <div className="book-info">
