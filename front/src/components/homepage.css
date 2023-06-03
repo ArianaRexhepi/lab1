@@ -103,6 +103,7 @@ span{
 }
 .book-box{
   display: flex;
+  margin-top: 50px;
 }
 .book-info {
   display: flex;
