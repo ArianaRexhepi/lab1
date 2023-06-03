@@ -122,7 +122,7 @@ const books = [
   },
   {
     title: "Make it sweet",
-    author: "Christina Lauren",
+    author: "Kristen Callihan",
     image: image16,
     description:
       "A light and breezy book perfect for reading by the beach or pool.",
