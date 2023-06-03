@@ -101,7 +101,7 @@ const books = [
     author: "Holly Black",
     image: image14,
     description:
-      "A captivating story set against the backdrop of a beautiful beach.",
+      "The Wicked King by Holly Black is the second book in the fantasy series titled The Folk of the Air. The story continues to follow Jude Duarte, a mortal girl who finds herself immersed in the dangerous and treacherous world of Faerie. The book explores themes of power, ambition, and the lengths one will go to protect what they love. ",
     rating: 4.8,
   },
   {
