@@ -21,7 +21,7 @@ const books = [
     author: "John Green",
     image: image1,
     description:
-      "A heartwarming story about two teenagers who fall in love while dealing with serious health issues.",
+    "The Fault in Our Stars is a novel about two teenagers, Hazel and Augustus, who meet at a cancer support group and fall in love. They navigate the challenges of illness and mortality while exploring the meaning of life and the power of love. It is a poignant and heartfelt story that delves into the complexities of living with cancer and the pursuit of happiness in the face of adversity.",
     rating: 4.5,
   },
   {
