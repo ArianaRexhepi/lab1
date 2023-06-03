@@ -7,6 +7,8 @@ import image8 from './images/image8.jpg';
 import image9 from './images/image9.jpeg';
 import image10 from './images/image10.jpeg';
 import image11 from './images/image11.jpeg';
+import image12 from './images/image12.jpg';
+import image13 from './images/image13.jpeg';
 
 const books = [
   {
@@ -46,12 +48,13 @@ const books = [
   {
     title: 'Daisy Jones and the Six',
     author: 'Taylor Jenkins Reid',
-    image: 'book7.jpg',
+    image: image12,
     
   },
   {
     title: 'By a Thread',
-    image: 'book8.jpg',
+    author: 'Lucy Score',
+    image: image13,
     
   },
   {
@@ -88,7 +91,7 @@ const BookUserList = () => {
   return (
     <div>
         <div className='h1'>
-      <h1>Book List</h1>
+      <h1><i>Book List</i></h1>
       </div>
       <div className="book-container">
         {books.map((book, index) => (

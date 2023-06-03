@@ -58,7 +58,7 @@ span{
 }
 
 .book-card img {
-  width: 150px;
+  width: 170px;
   height: 250px;
   object-fit: fill;
 }
@@ -71,6 +71,7 @@ span{
   font-size: 13px;
 }
 h1{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin-top: 20px;
 }
 
