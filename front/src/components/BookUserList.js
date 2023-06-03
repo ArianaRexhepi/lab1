@@ -89,7 +89,7 @@ const books = [
   },
   {
     title: "The things we leave unfinished",
-    author: "",
+    author: "Rebecca Yarros",
     image: "book10.jpg",
     description:
       "A delightful beach read filled with romance, humor, and memorable characters.",
