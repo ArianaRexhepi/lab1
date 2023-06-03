@@ -9,6 +9,8 @@ import image10 from "./images/image10.jpeg";
 import image11 from "./images/image11.jpeg";
 import image12 from "./images/image12.jpg";
 import image13 from "./images/image13.jpeg";
+import image1 from "./images/image1.jpg";
+
 
 const books = [
   {
@@ -91,11 +93,11 @@ const books = [
     rating: 4.2,
   },
   {
-    title: "Beach Read",
-    image: "image4",
+    title: "The Wicked King",
+    image: image14,
     description:
       "A captivating story set against the backdrop of a beautiful beach.",
-    rating: 4.0,
+    rating: 4.8/5,
   },
   {
     title: "Beach Read",
