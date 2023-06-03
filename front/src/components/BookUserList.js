@@ -120,6 +120,14 @@ const books = [
       "A light and breezy book perfect for reading by the beach or pool.",
     rating: 4.5,
   },
+  {
+    title: "Make it sweet",
+    author: "Christina Lauren",
+    image: image16,
+    description:
+      "A light and breezy book perfect for reading by the beach or pool.",
+    rating: 4.5,
+  },
 ];
 
 const BookUserList = () => {
