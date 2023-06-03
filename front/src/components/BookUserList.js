@@ -112,43 +112,43 @@ const BookUserList = () => {
     setSelectedBook(null);
   };
 
-  if (selectedBook) {
-    return (
-      <div className="book-details">
-        <button onClick={handleBackClick} className="back-button">Go Back</button>
-        <div className="book-info">
-          <h2 className="book-title">{selectedBook.title}</h2>
-          <p className="book-author">By {selectedBook.author}</p>
-          <img src={selectedBook.image} alt={selectedBook.title} className="book-image" />
-          <p className="book-description">{selectedBook.description}</p>
-          <div className="book-rating">
-            <span className="rating-label">Rating:</span>
-            <span className="rating-value">{selectedBook.rating}</span>
-          </div>
-          {/* Me shtu funsione nese na duhen hala */}
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div>
+  return(
+  <div>
       <div className="h1">
         <h1><i>Book List</i></h1>
       </div>
-      <div className="book-container">
-        {books.map((book, index) => (
-          <div key={index} className="book-card" onClick={() => handleBookClick(book)}>
-            <img src={book.image} alt={book.title} className="book-card-image" />
-            <div className="book-card-details">
-              <h3 className="book-card-title">{book.title}</h3>
-              <p className="book-card-author">By {book.author}</p>
+      {selectedBook ? (
+        <div>
+          <button onClick={handleBackClick} className="back-button">Go Back</button>
+          <div className="book-details">
+            <div className="book-info">
+              <h2 className="book-title">{selectedBook.title}</h2>
+              <p className="book-author">By {selectedBook.author}</p>
+              <img src={selectedBook.image} alt={selectedBook.title} className="book-image" />
+              <p className="book-description">{selectedBook.description}</p>
+              <div className="book-rating">
+                <span className="rating-label">Rating:</span>
+                <span className="rating-value">{selectedBook.rating}</span>
+              </div>
+              {/* Add more details or functionality as needed */}
             </div>
           </div>
-        ))}
-      </div>
+        </div>
+      ) : (
+        <div className="book-container">
+          {books.map((book, index) => (
+            <div key={index} className="book-card" onClick={() => handleBookClick(book)}>
+              <img src={book.image} alt={book.title} className="book-card-image" />
+              <div className="book-card-details">
+                <h3 className="book-card-title">{book.title}</h3>
+                <p className="book-card-author">By {book.author}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
-  );
+  )
 };
 
 export default BookUserList;
