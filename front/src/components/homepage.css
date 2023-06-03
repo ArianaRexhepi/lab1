@@ -101,7 +101,9 @@ span{
   justify-content: space-between;
   align-items: flex-start;
 }
-
+.book-box{
+  display: flex;
+}
 .book-info {
   display: flex;
   flex-direction: column;

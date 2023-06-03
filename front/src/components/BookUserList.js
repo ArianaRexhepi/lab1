@@ -163,7 +163,7 @@ const BookUserList = () => {
                 alt={selectedBook.title}
                 className="book-image"
               />
-              <div>
+              <div className="book-box">
                 <h2 className="book-title">{selectedBook.title}</h2>
                 <p className="book-author">By {selectedBook.author}</p>
                 <p className="book-description">{selectedBook.description}</p>
