@@ -69,7 +69,7 @@ const books = [
     author: "Taylor Jenkins Reid",
     image: image12,
     description:
-      "An enthralling tale of a fictional rock band in the 1970s and the dynamics among its members.",
+      "Daisy Jones & The Six by Taylor Jenkins Reid is a captivating novel set in the music industry of the 1970s. The story unfolds through a series of interviews, chronicling the rise and fall of a fictional rock band called The Six and their enigmatic lead singer, Daisy Jones.The book takes readers on a nostalgic journey as it explores the complexities of fame, love, and artistic collaboration.",
     rating: 4.6,
   },
   {
