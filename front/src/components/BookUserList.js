@@ -127,17 +127,25 @@ const BookUserList = () => {
   return (
     <div>
       <div className="h1">
-        <h1><i>Book List</i></h1>
+        <h1>
+          <i>Book List</i>
+        </h1>
       </div>
 
       {selectedBook ? (
         <div>
           <div className="back-container">
-            <button onClick={handleBackClick} className="back-button"><b>Go Back</b></button>
+            <button onClick={handleBackClick} className="back-button">
+              <b>Go Back</b>
+            </button>
           </div>
           <div className="book-details">
             <div className="book-info">
-              <img src={selectedBook.image} alt={selectedBook.title} className="book-image" />
+              <img
+                src={selectedBook.image}
+                alt={selectedBook.title}
+                className="book-image"
+              />
               <div>
                 <h2 className="book-title">{selectedBook.title}</h2>
                 <p className="book-author">By {selectedBook.author}</p>
@@ -153,8 +161,16 @@ const BookUserList = () => {
       ) : (
         <div className="book-container">
           {books.map((book, index) => (
-            <div key={index} className="book-card" onClick={() => handleBookClick(book)}>
-              <img src={book.image} alt={book.title} className="book-card-image" />
+            <div
+              key={index}
+              className="book-card"
+              onClick={() => handleBookClick(book)}
+            >
+              <img
+                src={book.image}
+                alt={book.title}
+                className="book-card-image"
+              />
               <div className="book-card-details">
                 <h3 className="book-card-title">{book.title}</h3>
                 <p className="book-card-author">By {book.author}</p>
