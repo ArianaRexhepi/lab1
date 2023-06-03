@@ -9,7 +9,7 @@ import image10 from "./images/image10.jpeg";
 import image11 from "./images/image11.jpeg";
 import image12 from "./images/image12.jpg";
 import image13 from "./images/image13.jpeg";
-import image1 from "./images/image1.jpg";
+import image14  from "./images/image14.jpg";
 
 
 const books = [
