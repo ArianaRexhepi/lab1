@@ -93,7 +93,7 @@ const books = [
     author: "Rebecca Yarros",
     image: image17,
     description:
-      "A delightful beach read filled with romance, humor, and memorable characters.",
+      "The Things We Leave Unfinished by Rebecca Yarros is a captivating contemporary romance novel. The story follows Emerson Montgomery, a successful and independent woman who unexpectedly inherits an unfinished manuscript from her favorite author, J.L. Sterling.",
     rating: 4.6,
   },
   {
