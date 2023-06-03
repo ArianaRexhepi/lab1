@@ -111,7 +111,7 @@ const books = [
     rating: 4.3,
   },
   {
-    title: "Beach Read",
+    title: "The soulmate equation",
     image: "",
     description:
       "A light and breezy book perfect for reading by the beach or pool.",
