@@ -8,5 +8,7 @@ public class Book
     public string Title { get; set; }
     public string Author { get; set; }
     public DateTime Timestamp { get; set; }
+    public string Image { get; set; }
+    public int Price { get; set; }
 }
 }

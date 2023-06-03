@@ -13,13 +13,13 @@ function Borrow() {
     fetch();
   }, []);
 
-//   const handleDelete = async (id) => {
-//     const confirmed = window.confirm('Are you sure you want to delete this book?');
-//     if (confirmed) {
-//       await axios.delete(`http://localhost:5267/api/book/${id}`);
-//       setBooks(books.filter(book => book.Id !== id));
-//     }
-//   };
+  const handleDelete = async (id) => {
+    const confirmed = window.confirm('Are you sure you want to delete this book?');
+    if (confirmed) {
+      await axios.delete(`http://localhost:5267/api/borrow/${id}`);
+      setBooks(books.filter(book => book.id !== id));
+    }
+  };
 
   return (
     <><h1>Borrow</h1><div className="card shadow mb-4">
@@ -29,7 +29,7 @@ function Borrow() {
         </div>
     </div>
 
-    <table className="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
         <thead>
             <tr>
                 <th>ID</th>
@@ -50,10 +50,10 @@ function Borrow() {
                     <td>{book.username}</td>
                     <td>{book.marrjaeLibrit}</td>
                     <td>{book.kthyerjaeLibrit}</td>
-                    {/* <td>
-                        <Link to="/editbook"><button className='btn btn-primary'>Edit</button></Link>
+                    <td>
+                        <Link to={`/editborrow/${book.id}`}><button className='btn btn-primary'>Edit</button></Link>
                         <button className='btn btn-danger' onClick={() => handleDelete(book.id)}>Delete</button>
-                    </td> */}
+                    </td>
                 </tr>
             ))}
         </tbody>

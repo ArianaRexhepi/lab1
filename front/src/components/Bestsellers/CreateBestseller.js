@@ -7,6 +7,7 @@ function CreateBestseller() {
   const [author, setAuthor] = useState("");
   const [rating, setRating] = useState("");
   const [year, setYear] = useState(new Date());
+  const [image, setImage] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -19,6 +20,7 @@ function CreateBestseller() {
       Author: author,
       Rating: rating,
       Year: year,
+      Image: image
     };
 
     try {
@@ -46,7 +48,6 @@ function CreateBestseller() {
                 className="close"
                 data-dismiss="modal"
                 aria-hidden="true"
-                onclick="window.location='/bestsellers';"
               >
                 &times;
               </button>
@@ -83,6 +84,14 @@ function CreateBestseller() {
                 type="datetime"
                 value={rating}
                 onChange={(e) => setRating(e.target.value)}
+              />
+            </div>
+            <div className="form-group">
+              <label>Image:</label>
+              <input
+                type="text"
+                value={image}
+                onChange={(e) => setImage(e.target.value)}
               />
             </div>
           </div>

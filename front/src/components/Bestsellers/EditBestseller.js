@@ -97,6 +97,17 @@ function EditBestseller() {
                 }
               />
             </div>
+            <div className="form-group">
+              <label>Image:</label>
+              <input
+                type="text"
+                className="form-control"
+                value={bestseller.image}
+                onChange={(e) =>
+                  setBestseller({ ...bestseller, image: e.target.value })
+                }
+              />
+            </div>
           </div>
 
           <div className="modal-footer">

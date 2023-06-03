@@ -10,5 +10,6 @@ public class Borrow
     public string Username{get; set;}
     public DateTime MarrjaeLibrit { get; set; }
     public DateTime KthyerjaeLibrit { get; set; }
+    public string Image { get; set; }
 }
 }

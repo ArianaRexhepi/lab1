@@ -54,6 +54,7 @@ namespace back.Controllers
             existingBook.Author = book.Author;
             existingBook.Rating = book.Rating;
             existingBook.Year = book.Year;
+            existingBook.Image = book.Image;
 
             await _context.SaveChangesAsync();
 

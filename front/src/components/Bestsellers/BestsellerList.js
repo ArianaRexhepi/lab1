@@ -30,7 +30,7 @@ function BestsellerList() {
               </div>
           </div>
 
-          <table className="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
               <thead>
                   <tr>
                       <th>ID</th>
@@ -38,6 +38,7 @@ function BestsellerList() {
                       <th>Author</th>
                       <th>Rating</th>
                       <th>Year</th>
+                      <th>Image</th>
                       <th>Veprime</th>
                   </tr>
               </thead>
@@ -49,6 +50,9 @@ function BestsellerList() {
                           <td>{book.author}</td>
                           <td>{book.rating}</td>
                           <td>{book.year}</td>
+                          <td> 
+                            <img src={book.image} alt='' style={{width:"200px", height:"250px", objectFit:"cover"}}/>
+                          </td>
                           <td>
                           <Link to={`/editbestseller/${book.id}`}><button className='btn btn-primary'>Edit</button></Link>
                               <button className='btn btn-danger' onClick={() => handleDelete(book.id)}>Delete</button>
