@@ -109,7 +109,7 @@ const books = [
     author: "Jhuly Oliveira",
     image: image15,
     description:
-      "An uplifting summer read that will leave you longing for a beach vacation.",
+      "In this journey, Rosélina Johnson will have to learn how to deal with her new life as a hunted woman, her own powerful magic, the truth it was taken, and her own mind trying to trick her. Sometimes you need to learn to befriend the dragon and kill the king. And deal with a hot, tattooed, sarcastic, dark-haired man. Would she find the strength? And where? How? With whom?",
     rating: 4.3,
   },
   {
