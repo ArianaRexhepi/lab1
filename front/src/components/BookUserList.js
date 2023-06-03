@@ -13,6 +13,7 @@ import image14  from "./images/image14.jpg";
 import image15  from "./images/image15.jpg";
 import image16  from "./images/image16.jpg";
 import image17  from "./images/image17.jpg";
+import image18  from "./images/image18.jpg";
 
 
 
