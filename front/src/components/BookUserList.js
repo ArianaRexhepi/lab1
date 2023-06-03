@@ -136,13 +136,15 @@ const BookUserList = () => {
           </div>
           <div className="book-details">
             <div className="book-info">
-              <h2 className="book-title">{selectedBook.title}</h2>
-              <p className="book-author">By {selectedBook.author}</p>
               <img src={selectedBook.image} alt={selectedBook.title} className="book-image" />
-              <p className="book-description">{selectedBook.description}</p>
-              <div className="book-rating">
-                <span className="rating-label">Rating:</span>
-                <span className="rating-value">{selectedBook.rating}</span>
+              <div>
+                <h2 className="book-title">{selectedBook.title}</h2>
+                <p className="book-author">By {selectedBook.author}</p>
+                <p className="book-description">{selectedBook.description}</p>
+                <div className="book-rating">
+                  <span className="rating-label">Rating:</span>
+                  <span className="rating-value">{selectedBook.rating}</span>
+                </div>
               </div>
             </div>
           </div>
