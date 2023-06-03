@@ -98,7 +98,7 @@ const books = [
     image: image14,
     description:
       "A captivating story set against the backdrop of a beautiful beach.",
-    rating: 4.8/5,
+    rating: 4.8,
   },
   {
     title: "A dance in the dark ",
