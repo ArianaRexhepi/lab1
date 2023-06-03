@@ -11,7 +11,6 @@ import image11 from "./images/image11.jpeg";
 import image12 from "./images/image12.jpg";
 import image13 from "./images/image13.jpeg";
 
-
 const books = [
   {
     title: "The Fault in Our Stars",
@@ -134,26 +133,24 @@ const BookUserList = () => {
         </h1>
       </div>
       {selectedBook ? (
-        <div>
+        <div className="book-details">
           <div className="back-container">
             <button onClick={handleBackClick} className="back-button">
-             <b>Go Back</b>
+              Go Back
             </button>
           </div>
-          <div className="book-details">
-            <div className="book-info">
-              <h2 className="book-title">{selectedBook.title}</h2>
-              <p className="book-author">By {selectedBook.author}</p>
-              <img
-                src={selectedBook.image}
-                alt={selectedBook.title}
-                className="book-image"
-              />
-              <p className="book-description">{selectedBook.description}</p>
-              <div className="book-rating">
-                <span className="rating-label">Rating:</span>
-                <StarRating rating={selectedBook.rating} />
-              </div>
+          <div className="book-info">
+            <h2 className="book-title">{selectedBook.title}</h2>
+            <p className="book-author">By {selectedBook.author}</p>
+            <img
+              src={selectedBook.image}
+              alt={selectedBook.title}
+              className="book-image"
+            />
+            <p className="book-description">{selectedBook.description}</p>
+            <div className="book-rating">
+              <span className="rating-label">Rating:</span>
+              <span className="rating-value">{selectedBook.rating}</span>
             </div>
           </div>
         </div>

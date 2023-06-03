@@ -73,7 +73,7 @@ span{
   height: 200px;
   object-fit: cover;
   border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 
 .book-card-details {
@@ -97,43 +97,43 @@ span{
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 0 0 70%;
+  padding: 0 20px;
 }
-
-.back-button {
-  font-size: 16px;
-  background-color: #555555;
-  color: #ffffff;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
 .book-info {
   margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .book-title {
   font-size: 24px;
   margin: 0;
+  
 }
 
 .book-author {
   margin-top: 8px;
   color: #555555;
+  
 }
 
 .book-image {
-  width: 30%;
+  width: 80%;
   height: auto;
   max-height: 600px;
   object-fit: cover;
+  flex: 0 0 30%;
   margin-top: 16px;
+  margin-bottom: 16px;
+  
 }
 
 .book-description {
   margin-top: 16px;
   line-height: 1.5;
+  
 }
 
 .book-rating {
