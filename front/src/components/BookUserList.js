@@ -53,7 +53,7 @@ const books = [
     author: "Mia Sheridan",
     image: image10,
     description:
-      "An emotional love story about a woman who helps a man find his voice and heal from a tragic past.",
+      "Archer's Voice is a contemporary romance novel written by Mia Sheridan. The story revolves around a young woman named Bree Prescott who moves to the small town of Pelion, Maine, seeking solace and a fresh start. There, she encounters Archer Hale, a mysterious and reclusive man with a tragic past.",
     rating: 4.7,
   },
   {
