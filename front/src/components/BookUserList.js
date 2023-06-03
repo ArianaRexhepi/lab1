@@ -103,7 +103,7 @@ const books = [
   {
     title: "A dance in the dark ",
     author: "Jhuly Oliveira", 
-    image: "image4",
+    image: image15,
     description:
       "An uplifting summer read that will leave you longing for a beach vacation.",
     rating: 4.3,
