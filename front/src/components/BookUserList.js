@@ -135,7 +135,7 @@ const BookUserList = () => {
         <div>
           <div className="back-container">
             <button onClick={handleBackClick} className="back-button">
-              Go Back
+             <b>Go Back</b>
             </button>
           </div>
           <div className="book-details">
