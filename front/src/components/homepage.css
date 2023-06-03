@@ -91,7 +91,7 @@ span{
 }
 
 .book-details {
-  max-width: 600px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
   background-color: #ffffff;
@@ -124,9 +124,9 @@ span{
 }
 
 .book-image {
-  width: 100%;
+  width: 30%;
   height: auto;
-  max-height: 400px;
+  max-height: 600px;
   object-fit: cover;
   margin-top: 16px;
 }
