@@ -61,7 +61,7 @@ const books = [
     author: "Lauren Asher",
     image: image11,
     description:
-      "A thought-provoking novel exploring the consequences of modern technology and social media.",
+      "Declan Kane, the eldest of the Kane siblings has always known that he would be the CEO of his family's media empire. But his grandfather's will stipulation requires him to be married with an heir to be eligible to be the CEO leaves Declan reeling.",
     rating: 4.3,
   },
   {
