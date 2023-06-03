@@ -117,7 +117,7 @@ const books = [
     author: "Christina Lauren",
     image: image16,
     description:
-      "A light and breezy book perfect for reading by the beach or pool.",
+      "The Soulmate Equation by Christina Lauren is a contemporary romance novel with a touch of science fiction. The story follows the life of Jess Davis, a single mom and statistics genius. When she hears about a new matchmaking service called GeneticAlly that claims to predict people's soulmate potential based on their DNA, she decides to give it a try.",
     rating: 4.5,
   },
   {
