@@ -154,7 +154,6 @@ const BookUserList = () => {
                 <span className="rating-label">Rating:</span>
                 <StarRating rating={selectedBook.rating} />
               </div>
-              {/* Add more details or functionality as needed */}
             </div>
           </div>
         </div>
