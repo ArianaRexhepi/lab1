@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./homepage.css";
+import StarRating from "./StarRating";
 import image1 from "./images/image1.jpg";
 import image4 from "./images/image4.jpeg";
 import image7 from "./images/image7.jpg";
@@ -9,6 +10,7 @@ import image10 from "./images/image10.jpeg";
 import image11 from "./images/image11.jpeg";
 import image12 from "./images/image12.jpg";
 import image13 from "./images/image13.jpeg";
+
 
 const books = [
   {
@@ -150,7 +152,7 @@ const BookUserList = () => {
               <p className="book-description">{selectedBook.description}</p>
               <div className="book-rating">
                 <span className="rating-label">Rating:</span>
-                <span className="rating-value">{selectedBook.rating}</span>
+                <StarRating rating={selectedBook.rating} />
               </div>
               {/* Add more details or functionality as needed */}
             </div>
