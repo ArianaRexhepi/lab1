@@ -37,7 +37,7 @@ const books = [
     author: "Sarah Adams",
     image: image8,
     description:
-      "A thrilling mystery novel that keeps you guessing until the very end.",
+      "After a car accident ended her chance at becoming a professional ballerina, Bree changed paths and now owns her own dance studio, with big dreams to expand it. But one more rent increase could mean the end of the studio entirely. Then, as usual, Nathan comes to the rescue and buys the entire building",
     rating: 4.2,
   },
   {
