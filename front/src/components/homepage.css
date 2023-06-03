@@ -142,11 +142,19 @@ span{
 
 .rating-label {
   font-weight: bold;
+  margin-right: 5px;
 }
 
-.rating-value {
-  margin-left: 8px;
-  font-size: 18px;
+.star-rating {
+  font-size: 20px;
+}
+
+.filled {
+  color: gold;
+}
+
+.empty {
+  color: #ddd;
 }
 .book-card p{
   font-size: 13px;

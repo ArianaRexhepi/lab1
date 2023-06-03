@@ -1,4 +1,5 @@
 import React from 'react';
+import './homepage.css';
 
 const StarRating = ({ rating }) => {
   const filledStars = Math.floor(rating);
