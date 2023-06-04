@@ -3,9 +3,15 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 function CreateBook() {
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
-  const [timestamp, setTimestamp] = useState('');
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const [description, setDescription] = useState("");
+  const [rating, setRating] = useState("");
+  const [year, setYear] = useState(new Date());
+  const [image, setImage] = useState("");
+  const [price, setPrice] = useState("");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -13,12 +19,21 @@ function CreateBook() {
     const newBook = {
       Title: title,
       Author: author,
-      Timestamp: timestamp
+      description: description,
+      Rating: rating,
+      Year: year,
+      Image: image,
+      Price: price
     };
 
     try {
-      const response = await axios.post('http://localhost:5267/api/book', newBook);
-      console.log(response.data);
+      await axios
+        .post("http://localhost:5267/api/books", newBook)
+        .then(() => {
+          setLoading(false);
+          navigate("/books");
+        });
+      console.log(newBook);
     } catch (error) {
       console.error(error);
     }
@@ -29,21 +44,65 @@ function CreateBook() {
       <div className="modal-content">
         <form className="form" onSubmit={handleSubmit}>
           <div className="modal-header">
-            <h4 className="modal-title">Shto Libër</h4>
+            <h4 className="modal-title">Add Book</h4>
             <Link to="/books"><button type="button" className="close" data-dismiss="modal" aria-hidden="true">&times;</button></Link>
           </div>
           <div className="modal-body">
             <div className="form-group">
-              <label>Titulli:</label>
-              <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+              <label>Title:</label>
+              <input
+                type="text"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+              />
             </div>
             <div className="form-group">
-              <label>Autori</label>
-              <input type="text" value={author} onChange={(e) => setAuthor(e.target.value)} />
+              <label>Autori:</label>
+              <input
+                type="text"
+                value={author}
+                onChange={(e) => setAuthor(e.target.value)}
+              />
             </div>
             <div className="form-group">
-              <label>Timestamp</label>
-              <input type="datetime" value={timestamp} onChange={(e) => setTimestamp(e.target.value)} />
+              <label>Description:</label>
+              <input
+                type="text"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+            </div>
+            <div className="form-group">
+              <label>Year:</label>
+              <input
+                type="date"
+                value={year}
+                onChange={(e) => setYear(e.target.value)}
+              />
+            </div>
+            <div className="form-group">
+              <label>Rating:</label>
+              <input
+                type="datetime"
+                value={rating}
+                onChange={(e) => setRating(e.target.value)}
+              />
+            </div>
+            <div className="form-group">
+              <label>Image:</label>
+              <input
+                type="text"
+                value={image}
+                onChange={(e) => setImage(e.target.value)}
+              />
+            </div>
+            <div className="form-group">
+              <label>Price:</label>
+              <input
+                type="text"
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
+              />
             </div>
           </div>
           <div className="modal-footer">
