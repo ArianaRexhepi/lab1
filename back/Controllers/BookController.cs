@@ -17,24 +17,36 @@ namespace back.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> GetAsync()
         {
-            var books = _context.Books.ToList();
+            var books = await _context.Books.ToListAsync();
             return Ok(books);
         }
 
-        [HttpPost]
-        public IActionResult Post([FromBody] Book book)
+       [HttpGet("{id}")]
+        public async Task<IActionResult> GetBookAsync(int id)
         {
-            _context.Books.Add(book);
-            _context.SaveChanges();
+            var existingBook = await _context.Bestsellers.FindAsync(id);
+            if (existingBook == null)
+            {
+                return NotFound();
+            } 
+            return Ok(existingBook);
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> PostAsync(Book book)
+        {
+           await  _context.Books.AddAsync(book);
+            await _context.SaveChangesAsync();
             return Ok();
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] Book book)
+        public async Task<IActionResult> PutAsync(int id, Book book)
         {
-            var existingBook = _context.Books.FirstOrDefault(b => b.Id == id);
+            var existingBook = await _context.Books.FindAsync(id);
             if (existingBook == null)
             {
                 return NotFound();
@@ -42,24 +54,28 @@ namespace back.Controllers
 
             existingBook.Title = book.Title;
             existingBook.Author = book.Author;
-            existingBook.Timestamp = book.Timestamp;
+            existingBook.Description = book.Description;
+            existingBook.Rating = book.Rating;
+            existingBook.Year = book.Year;
+            existingBook.Image = book.Image;
+            existingBook.Price = book.Price;
 
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return Ok();
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+       public async Task<IActionResult> DeleteAsync(int id)
         {
-            var existingBook = _context.Books.FirstOrDefault(b => b.Id == id);
+            var existingBook = await _context.Books.FindAsync(id);
             if (existingBook == null)
             {
                 return NotFound();
             }
 
             _context.Books.Remove(existingBook);
-            _context.SaveChanges();
+           await _context.SaveChangesAsync();
 
             return Ok();
         }
