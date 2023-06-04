@@ -40,7 +40,7 @@ function EditBook() {
           <form className="form">
             <div className="modal-header">
               <h4 className="modal-title">Edit Book</h4>
-              <Link to="/bestsellers">
+              <Link to="/books">
                 <button
                   type="button"
                   className="close"
