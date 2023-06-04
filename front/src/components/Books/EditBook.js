@@ -64,24 +64,24 @@ function EditBook() {
                 />
               </div>
               <div className="form-group">
-                <label>Autori:</label>
+                <label>Author:</label>
                 <input
                   type="text"
                   className="form-control"
-                  value={bestseller.author}
+                  value={book.author}
                   onChange={(e) =>
-                    setBestseller({ ...bestseller, author: e.target.value })
+                    setBook({ ...book, author: e.target.value })
                   }
                 />
               </div>
               <div className="form-group">
-                <label>Viti:</label>
+                <label>Description:</label>
                 <input
-                  type="datetime-local"
+                  type="text"
                   className="form-control"
-                  value={bestseller.year}
+                  value={book.description}
                   onChange={(e) =>
-                    setBestseller({ ...bestseller, year: e.target.value })
+                    setBook({ ...book, description: e.target.value })
                   }
                 />
               </div>
@@ -90,9 +90,20 @@ function EditBook() {
                 <input
                   type="text"
                   className="form-control"
-                  value={bestseller.rating}
+                  value={book.rating}
                   onChange={(e) =>
-                    setBestseller({ ...bestseller, rating: e.target.value })
+                    setBook({...book, rating: e.target.value })
+                  }
+                />
+              </div>
+              <div className="form-group">
+                <label>Year:</label>
+                <input
+                  type="datetime-local"
+                  className="form-control"
+                  value={bestseller.year}
+                  onChange={(e) =>
+                    setBook({ ...book, year: e.target.value })
                   }
                 />
               </div>
