@@ -54,8 +54,7 @@ function BookList() {
                           <td> 
                             <img src={book.image} alt='' style={{width:"200px", height:"250px", objectFit:"cover"}}/>
                           </td>
-                          
-
+                          <td>{book.price}</td>
                           <td>
                               <Link to="/editbook"><button className='btn btn-primary'>Edit</button></Link>
                               <button className='btn btn-danger' onClick={() => handleDelete(book.id)}>Delete</button>
