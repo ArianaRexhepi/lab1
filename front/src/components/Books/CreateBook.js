@@ -9,12 +9,13 @@ function CreateBook() {
   const [rating, setRating] = useState("");
   const [year, setYear] = useState(new Date());
   const [image, setImage] = useState("");
-  const [price, setPrice] = useState("");
+  const [price, setPrice] = useState(0);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
 
     const newBook = {
       Title: title,

@@ -35,7 +35,10 @@ function BookList() {
                       <th>ID</th>
                       <th>Title</th>
                       <th>Author</th>
-                      <th>Timestamp</th>
+                      <th>Description</th>
+                      <th>Rating</th>
+                      <th>Year</th>
+                      <th>Price</th>
                       <th>Veprime</th>
                   </tr>
               </thead>
@@ -45,7 +48,14 @@ function BookList() {
                           <td>{book.id}</td>
                           <td>{book.title}</td>
                           <td>{book.author}</td>
-                          <td>{book.timestamp}</td>
+                          <td>{book.description}</td>
+                          <td>{book.rating}</td>
+                          <td>{book.year}</td>
+                          <td> 
+                            <img src={book.image} alt='' style={{width:"200px", height:"250px", objectFit:"cover"}}/>
+                          </td>
+                          
+
                           <td>
                               <Link to="/editbook"><button className='btn btn-primary'>Edit</button></Link>
                               <button className='btn btn-danger' onClick={() => handleDelete(book.id)}>Delete</button>
