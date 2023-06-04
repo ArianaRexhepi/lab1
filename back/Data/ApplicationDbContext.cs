@@ -1,11 +1,13 @@
-﻿using back.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using backend.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using back.Models;
 
 namespace back.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<AppUser>
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
         }
 

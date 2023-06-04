@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import './components/homepage.css';
 
 function EditBook() {
     const [loading, setLoading] = useState(false);
