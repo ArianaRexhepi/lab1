@@ -101,7 +101,7 @@ function EditBook() {
                 <input
                   type="datetime-local"
                   className="form-control"
-                  value={bestseller.year}
+                  value={book.year}
                   onChange={(e) =>
                     setBook({ ...book, year: e.target.value })
                   }
@@ -112,16 +112,27 @@ function EditBook() {
                 <input
                   type="text"
                   className="form-control"
-                  value={bestseller.image}
+                  value={book.image}
                   onChange={(e) =>
-                    setBestseller({ ...bestseller, image: e.target.value })
+                    setBook({ ...book, image: e.target.value })
+                  }
+                />
+              </div>
+              <div className="form-group">
+                <label>Price:</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  value={book.price}
+                  onChange={(e) =>
+                    setBook({ ...book, price: e.target.value })
                   }
                 />
               </div>
             </div>
   
             <div className="modal-footer">
-              <Link to="/bestsellers">
+              <Link to="/books">
                 <input type="button" className="btn btn-dark" value="Dismiss" />
               </Link>
               <input
