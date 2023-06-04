@@ -84,9 +84,13 @@
               "target": "Package",
               "version": "[6.0.10, )"
             },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
-              "version": "[6.30.1, )"
+              "version": "[6.17.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -94,7 +98,7 @@
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[6.30.1, )"
+              "version": "[6.17.0, )"
             }
           },
           "imports": [

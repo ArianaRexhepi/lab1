@@ -3,33 +3,37 @@ import { Link } from 'react-router-dom';
 
 
 const LoginForm = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = async (e) => {
+  const login = (e) => {
     e.preventDefault();
+    const requestBody = {
+      email: email,
+      password: password,
+    };
 
-    try {
-      const response = await fetch('/api/account/signin', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ username, password })
+    fetch("http://localhost:5267/api/account/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        accept: "application/json",
+      },
+      body: JSON.stringify(requestBody),
+    })
+      .then((response) => {
+        console.log(response);
+        response.json().then((result) => {
+          localStorage.setItem("token", result.token);
+          // dispatch(setUser(result))
+        });
+
+        if (response.ok) {
+          console.log("Login successful");
+        } else {
+          console.error("Login failed");
+        }
       });
-
-      if (response.ok) {
-        // Sign-in successful
-        const data = await response.json();
-        console.log(data.message); // or perform further actions
-      } else {
-        // Sign-in failed
-        const errorData = await response.json();
-        console.log(errorData.message); // or display an error message
-      }
-    } catch (error) {
-      console.error('Error:', error);
-    }
   };
 
   return (
@@ -38,12 +42,12 @@ const LoginForm = () => {
         {<h1>Log <span>in</span></h1>}
         <br></br>
         
-        <form onSubmit={handleSubmit} style={styles.form}>
+        <form onSubmit={login} style={styles.form}>
           <input
             type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             style={styles.input}
           />
           <br />
