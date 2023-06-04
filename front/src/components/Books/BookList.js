@@ -59,6 +59,10 @@ function BookList() {
                               <Link to="/editbook"><button className='btn btn-primary'>Edit</button></Link>
                               <button className='btn btn-danger' onClick={() => handleDelete(book.id)}>Delete</button>
                           </td>
+                          <td>
+                          <Link to={`/editbook/${book.id}`}><button className='btn btn-primary'>Edit</button></Link>
+                              <button className='btn btn-danger' onClick={() => handleDelete(book.id)}>Delete</button>
+                          </td>
                       </tr>
                   ))}
               </tbody>
