@@ -60,6 +60,7 @@ function CreateBestseller() {
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
+                className="form-control"
               />
             </div>
             <div className="form-group">
@@ -68,6 +69,7 @@ function CreateBestseller() {
                 type="text"
                 value={author}
                 onChange={(e) => setAuthor(e.target.value)}
+                className="form-control"
               />
             </div>
             <div className="form-group">
@@ -76,6 +78,7 @@ function CreateBestseller() {
                 type="date"
                 value={year}
                 onChange={(e) => setYear(e.target.value)}
+                className="form-control"
               />
             </div>
             <div className="form-group">
@@ -84,6 +87,7 @@ function CreateBestseller() {
                 type="datetime"
                 value={rating}
                 onChange={(e) => setRating(e.target.value)}
+                className="form-control"
               />
             </div>
             <div className="form-group">
@@ -92,6 +96,7 @@ function CreateBestseller() {
                 type="text"
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
+                className="form-control"
               />
             </div>
           </div>
