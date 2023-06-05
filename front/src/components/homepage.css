@@ -317,9 +317,9 @@ Desgingn the buy, borrow, my cart buttons */
   background-color: #0056b3;
 }
 
-
 .buy-button {
   color: #fff;
+  width: 200px;
   background-color: #00a86b;
 }
 

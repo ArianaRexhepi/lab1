@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import "./homepage.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBook } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart, faCartPlus,} from "@fortawesome/free-solid-svg-icons";
+import "./homepage.css";
 import image1 from "./images/image1.jpg";
 import image4 from "./images/image4.jpeg";
 import image7 from "./images/image7.jpg";
@@ -21,7 +25,7 @@ const books = [
     author: "John Green",
     image: image1,
     description:
-    "The Fault in Our Stars is a novel about two teenagers, Hazel and Augustus, who meet at a cancer support group and fall in love. They navigate the challenges of illness and mortality while exploring the meaning of life and the power of love. It is a poignant and heartfelt story that delves into the complexities of living with cancer and the pursuit of happiness in the face of adversity.",
+      "The Fault in Our Stars is a novel about two teenagers, Hazel and Augustus, who meet at a cancer support group and fall in love. They navigate the challenges of illness and mortality while exploring the meaning of life and the power of love. It is a poignant and heartfelt story that delves into the complexities of living with cancer and the pursuit of happiness in the face of adversity.",
     rating: 4.5,
   },
   {
@@ -84,7 +88,7 @@ const books = [
     title: "Love on the Brain",
     author: "Ali Hazelwood",
     image: image4,
-    description: 
+    description:
       " Love on the Brain is a romance novel by Italian author Ali Hazelwood and follows the story of a neuroscientist, Dr. Bee Königswasser, who embarks on a career-high assignment of co-leading a project at NASA but has to contend with working alongside her old grad school nemesis, Levi Ward.",
     rating: 4.4,
   },
@@ -190,9 +194,20 @@ const BookUserList = () => {
                   <span className="rating-value">{selectedBook.rating}</span>
                 </div>
                 <div className="book-buttons">
-                  <button className="buy-button" onClick={handleBuyClick}>Buy</button>
-                  <button className="borrow-button" onClick={handleBorrowClick}>Borrow</button>
-                  <button className="cart-button" onClick={handleCartClick}>Add to Cart</button>
+                  <button onClick={handleBuyClick}>
+                    <FontAwesomeIcon icon={faShoppingCart} />
+                    Buy
+                  </button>
+
+                  <button onClick={handleBorrowClick}>
+                    <FontAwesomeIcon icon={faBook} />
+                    Borrow
+                  </button>
+
+                  <button onClick={handleCartClick}>
+                    <FontAwesomeIcon icon={faCartPlus} />
+                    Add to Cart
+                  </button>
                 </div>
               </div>
             </div>
