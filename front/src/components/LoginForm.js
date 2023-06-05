@@ -67,7 +67,7 @@ const LoginForm = () => {
           <br />
           <button type="submit" style={styles.button}>Sign In</button>
           <div style={styles.linksContainer}>
-          <Link to="/registerhere" style={{ textDecoration: 'none' }}>Not a member? Create an account</Link>
+          <Link to="/register" style={{ textDecoration: 'none' }}>Not a member? Create an account</Link>
           </div>
         </form>
       </div>

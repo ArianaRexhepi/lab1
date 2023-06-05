@@ -55,12 +55,12 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="nav-item">
-          <button className="nav-link" onClick={() => { window.location.href = "/loginform"; }}>
+          <button className="nav-link" onClick={() => { window.location.href = "/login"; }}>
               Log in
            </button>
             </li>
             <li>
-            <Link to="/registerform" className="nav-link">
+            <Link to="/register" className="nav-link">
               Sign up
             </Link>
           </li>
