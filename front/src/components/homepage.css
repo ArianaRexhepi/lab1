@@ -174,12 +174,15 @@ span{
 
 .modal-header{
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 .modal-title {
+  justify-content: center;
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .modal-body {
@@ -194,9 +197,9 @@ label {
   display: block;
   margin-bottom: 0.5rem;
 }
-
 .form-control {
   width: 100%;
+  max-width: 600px;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
