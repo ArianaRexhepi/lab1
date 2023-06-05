@@ -91,8 +91,8 @@ span{
 }
 
 .book-details {
-  max-width: 1000px;
-  height: 640px;
+  max-width: 1100px;
+  height: 650px;
   margin: 0 auto;
   padding: 20px;
   background-color: #ffffff;
@@ -137,13 +137,13 @@ span{
 .book-description {
   margin-top: 16px;
   line-height: 1.5;
-  margin-left: 45px;
+  /* margin-left: 35px; */
 }
 
 .book-rating {
   font-size: 18px;
   margin-top: 16px;
-  margin-left: 250px;
+  margin-left: 275px;
 }
 
 .rating-label {
@@ -305,10 +305,10 @@ Desgingn the buy, borrow, my cart buttons */
   cursor: pointer;
 }
 .book-buttons button {
-  padding: 10px 20px;
+  padding: 10px 10px;
   margin-left: 50px;
   margin-right: 10px;
-  width: 100px;
+  width: 150px;
   border: none;
   border-radius: 20px; 
   cursor: pointer;
