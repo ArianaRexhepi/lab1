@@ -40,7 +40,6 @@ const LoginForm = () => {
     <div style={styles.container}>
       <div style={styles.box}>
         {<h1>Log in</h1>}
-        <br></br>
         
         <form onSubmit={login} style={styles.form}>
           <input
@@ -61,7 +60,7 @@ const LoginForm = () => {
           <br />
           <button type="submit" style={styles.button}>Sign In</button>
           <div style={styles.linksContainer}>
-          <Link to="/login" style={{ textDecoration: 'none' }}>Not a member? Create an account</Link>
+          <Link to="/register" style={{ textDecoration: 'none' }}>Not a member? Create an account</Link>
           </div>
         </form>
       </div>
@@ -77,7 +76,7 @@ const styles = {
     height: '95vh',
   },
   box: {
-    width: '500px',
+    width: '600px',
     height: '500px',
     padding: '20px',
     borderRadius: '4px',
@@ -93,6 +92,7 @@ const styles = {
     padding: '10px',
     marginBottom: '10px',
     width: '100%',
+    border: '1px solid #ccc',
   },
   button: {
     padding: '10px',
@@ -104,7 +104,7 @@ const styles = {
   },
   linksContainer: {
     display: 'flex',
-    marginRight:'210px',
+    marginRight:'310px',
     marginTop: '10px',
   },
   link: {
