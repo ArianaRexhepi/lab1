@@ -237,7 +237,9 @@ label {
 }
 
 /* Regsiter Form Desgin */
-
+  /* *{
+    background-image: url("images/backwp.jpeg");
+  } */
 .register-form {
   display: flex;
   flex-direction: column;

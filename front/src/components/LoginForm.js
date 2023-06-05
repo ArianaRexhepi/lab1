@@ -59,12 +59,6 @@ const LoginForm = () => {
             style={styles.input}
           />
           <br />
-          <div style={styles.passwordOptionsContainer}>
-            <a href="/forgot-password" style={styles.forgotPasswordLink}>
-              Forgot your password?
-            </a>
-          </div>
-          <br />
           <button type="submit" style={styles.button}>Sign In</button>
           <div style={styles.linksContainer}>
           <Link to="/register" style={{ textDecoration: 'none' }}>Not a member? Create an account</Link>
@@ -99,23 +93,6 @@ const styles = {
     padding: '10px',
     marginBottom: '10px',
     width: '100%',
-  },
-  passwordOptionsContainer: {
-    display: 'flex',
-    justifyContent: 'center',
-    marginRight:'280px',
-    //marginTop: '5px',
-    //display: 'flex',
-    //justifyContent: 'left',
-    //alignItems: 'center'
-  },
-  forgotPasswordLink: {
-    color: '#065fd4',
-    textDecoration: 'none',
-    textAlign: 'left',
-    cursor: 'pointer',
-    marginRight:'10px'
-    
   },
   button: {
     padding: '10px',
