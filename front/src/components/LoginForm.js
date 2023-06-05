@@ -39,7 +39,7 @@ const LoginForm = () => {
   return (
     <div style={styles.container}>
       <div style={styles.box}>
-        {<h1>Log <span>in</span></h1>}
+        {<h1>Log in</h1>}
         <br></br>
         
         <form onSubmit={login} style={styles.form}>
@@ -61,7 +61,7 @@ const LoginForm = () => {
           <br />
           <button type="submit" style={styles.button}>Sign In</button>
           <div style={styles.linksContainer}>
-          <Link to="/register" style={{ textDecoration: 'none' }}>Not a member? Create an account</Link>
+          <Link to="/login" style={{ textDecoration: 'none' }}>Not a member? Create an account</Link>
           </div>
         </form>
       </div>
@@ -96,8 +96,8 @@ const styles = {
   },
   button: {
     padding: '10px',
-    backgroundColor: '#0056b3',
-    color: 'black',
+    backgroundColor: '#007bff',
+    color: 'white',
     border: 'none',
     cursor: 'pointer',
     width: '100%',
