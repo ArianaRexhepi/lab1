@@ -7,7 +7,6 @@ import CreateBook from "./Books/CreateBook";
 import BestsellerList from "./Bestsellers/BestsellerList";
 import CreateBestseller from "./Bestsellers/CreateBestseller";
 import EditBook from "./Books/EditBook";
-import About from "./About";
 import LoginForm from "./LoginForm";
 import Borrow from "./Borrow/Borrow";
 import CreateBorrow from "./Borrow/CreateBorrow";
@@ -22,7 +21,6 @@ const Pages = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<About />} />
         <Route path="/books" element={<BookList />} />
         <Route path="/bookuserlist" element={<BookUserList />} />
         <Route path="/bestsellers" element={<BestsellerList />} />
