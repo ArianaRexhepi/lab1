@@ -280,3 +280,20 @@ label {
 .register-form button:hover {
   background-color: #0056b3;
 }
+
+/* About US */
+.about-us {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.about-us h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.about-us p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}

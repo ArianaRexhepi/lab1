@@ -21,7 +21,7 @@ function HomePage() {
       <br />
       <h1>
         <b>
-          <span>MJ </span> Library
+          <span>Ari </span> Library
         </b>
       </h1>
       <p>The world's largest online library!</p>
@@ -42,6 +42,13 @@ function HomePage() {
         </div>
       </div>
       <br />
+      <div className='about-us'>
+      <h2>About Us</h2>
+      <p>Welcome to MJ Library, the world's largest online library!</p>
+      <p>Learn more about our mission and values.</p>
+      <br />
+      </div>
+      <hr></hr>
       <footer>
         <p>
           <i>@2023 by <span>MJ Library.</span> All Rights Reserved.</i>
