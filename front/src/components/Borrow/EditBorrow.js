@@ -54,7 +54,7 @@ function EditBorrow() {
           </div>
           <div className="modal-body">
             <div className="form-group">
-              <label>Titulli:</label>
+              <label>Title:</label>
               <input
                 type="text"
                 className="form-control"
