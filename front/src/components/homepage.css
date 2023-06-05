@@ -97,14 +97,22 @@ span{
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
 }
-.book-box{
+
+.book-box {
   display: flex;
-  margin-top: 50px;
+  flex-wrap: wrap;
+  margin-top: 150px;
 }
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 70%;
+  padding: 0 20px;
+}
+/* 
+
 .book-info {
   display: flex;
   flex-direction: column;
@@ -119,12 +127,11 @@ span{
 
 .book-author {
   margin-top: 8px;
-  justify-content: right;
   color: #555555;
 }
 
 .book-image {
-  width: 50%;
+  width: 100%;
   max-width: 600px;
   height: auto;
   max-height: 600px;
@@ -145,7 +152,8 @@ span{
 .rating-label {
   font-weight: bold;
   margin-right: 5px;
-}
+} */
+
 .book-card p{
   font-size: 13px;
 }
