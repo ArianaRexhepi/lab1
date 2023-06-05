@@ -80,9 +80,9 @@ function EditBorrow() {
               <input
                 type="text"
                 className="form-control"
-                value={borrow.username}
+                value={borrow.email}
                 onChange={(e) =>
-                  setBorrow({ ...borrow, username: e.target.value })
+                  setBorrow({ ...borrow, email: e.target.value })
                 }
               />
             </div>
