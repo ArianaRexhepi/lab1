@@ -58,6 +58,7 @@ function CreateBorrow() {
                 type="text"
                 value={bookTitle}
                 onChange={(e) => setBookTitle(e.target.value)}
+                className="form-control"
               />
             </div>
             <div className="form-group">
@@ -66,6 +67,7 @@ function CreateBorrow() {
                 type="text"
                 value={author}
                 onChange={(e) => setAuthor(e.target.value)}
+                className="form-control"
               />
             </div>
             <div className="form-group">
@@ -74,6 +76,7 @@ function CreateBorrow() {
                 type="text"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                className="form-control"
               />
             </div>
             <div className="form-group">
@@ -82,6 +85,7 @@ function CreateBorrow() {
                 type="datetime-local"
                 value={marrjaeLibrit}
                 onChange={(e) => setMarrjaeLibrit(e.target.value)}
+                className="form-control"
               />
             </div>
             <div className="form-group">
@@ -90,6 +94,7 @@ function CreateBorrow() {
                 type="datetime-local"
                 value={kthyerjaeLibrit}
                 onChange={(e) => setKthyerjaeLibrit(e.target.value)}
+                className="form-control"
               />
             </div>
           </div>
