@@ -306,8 +306,9 @@ Desgingn the buy, borrow, my cart buttons */
 }
 .book-buttons button {
   padding: 10px 20px;
+  margin-left: 50px;
   margin-right: 10px;
-  color: #ffffff;
+  width: 100px;
   border: none;
   border-radius: 20px; 
   cursor: pointer;
@@ -319,7 +320,6 @@ Desgingn the buy, borrow, my cart buttons */
 
 .buy-button {
   color: #fff;
-  width: 200px;
   background-color: #00a86b;
 }
 

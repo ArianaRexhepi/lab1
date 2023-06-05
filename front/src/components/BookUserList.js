@@ -194,17 +194,17 @@ const BookUserList = () => {
                   <span className="rating-value">{selectedBook.rating}</span>
                 </div>
                 <div className="book-buttons">
-                  <button onClick={handleBuyClick}>
+                  <button className="buy-button" onClick={handleBuyClick}>
                     <FontAwesomeIcon icon={faShoppingCart} />
                     Buy
                   </button>
 
-                  <button onClick={handleBorrowClick}>
+                  <button className="borrow-button" onClick={handleBorrowClick}>
                     <FontAwesomeIcon icon={faBook} />
                     Borrow
                   </button>
 
-                  <button onClick={handleCartClick}>
+                  <button className="cart-button" onClick={handleCartClick}>
                     <FontAwesomeIcon icon={faCartPlus} />
                     Add to Cart
                   </button>
