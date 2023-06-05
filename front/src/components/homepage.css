@@ -175,12 +175,15 @@ span{
 /* modal.css */
 .modal-dialog {
   width: 600px;
-  margin-top: 50px;
+  margin-top: 20px;
+}
+.modal-content{
+  margin-top: 20px;
 }
 
 .modal-header {
   justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .modal-title {
@@ -203,7 +206,7 @@ span{
 label {
   flex: 0 0 100px; 
   display: block;
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
 
 }
 
