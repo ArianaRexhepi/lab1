@@ -91,7 +91,8 @@ span{
 }
 
 .book-details {
-  max-width: 800px;
+  max-width: 1000px;
+  max-height: 500;
   margin: 0 auto;
   padding: 20px;
   background-color: #ffffff;
@@ -102,7 +103,7 @@ span{
 .book-box {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 150px;
+  margin-top: 100px;
 }
 
 .book-info {
@@ -113,38 +114,42 @@ span{
 
 .book-title {
   font-size: 24px;
-  margin: 0;
+  margin-left: 190px;
 }
 
+.book-author {
+  /* margin-top: 10px; */
+  margin-left: 250px;
+  color: #555555;
+  font-size: 18px;
+}
 
 .book-image {
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
   height: auto;
-  max-height: 600px;
+  max-height: 550px;
   object-fit: cover;
   margin-top: 16px;
   margin-bottom: 16px;
-}
-/* 
-.book-author {
-  margin-top: 8px;
-  color: #555555;
 }
 
 .book-description {
   margin-top: 16px;
   line-height: 1.5;
+  margin-left: 25px;
 }
 
 .book-rating {
+  font-size: 18px;
   margin-top: 16px;
+  margin-left: 250px;
 }
 
 .rating-label {
   font-weight: bold;
   margin-right: 5px;
-} */ 
+} 
 
 .book-card p{
   font-size: 13px;
@@ -155,7 +160,7 @@ span{
 }
 .back-button {
   font-size: 16px;
-  background-color: whitesmoke;
+  background-color: lightskyblue;
   border-radius: 4px;
   color: black;
   border: none;
