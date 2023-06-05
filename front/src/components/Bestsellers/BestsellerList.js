@@ -36,6 +36,7 @@ function BestsellerList() {
                       <th>ID</th>
                       <th>Title</th>
                       <th>Author</th>
+                      <th>Description</th>
                       <th>Rating</th>
                       <th>Year</th>
                       <th>Image</th>
@@ -48,6 +49,7 @@ function BestsellerList() {
                           <td>{book.id}</td>
                           <td>{book.title}</td>
                           <td>{book.author}</td>
+                          <td>{book.description}</td>
                           <td>{book.rating}</td>
                           <td>{book.year}</td>
                           <td> 
