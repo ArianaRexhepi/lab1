@@ -12,7 +12,7 @@ using back.Data;
 namespace back.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230605161159_Borrow")]
+    [Migration("20230605164659_Borrow")]
     partial class Borrow
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -103,6 +103,9 @@ namespace back.Migrations
                     b.Property<string>("BookTitle")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
@@ -111,9 +114,6 @@ namespace back.Migrations
 
                     b.Property<DateTime>("MarrjaeLibrit")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Username")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

@@ -101,6 +101,9 @@ namespace back.Migrations
                     b.Property<string>("BookTitle")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
@@ -109,9 +112,6 @@ namespace back.Migrations
 
                     b.Property<DateTime>("MarrjaeLibrit")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Username")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

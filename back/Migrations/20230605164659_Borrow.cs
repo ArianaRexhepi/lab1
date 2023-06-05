@@ -8,12 +8,18 @@ namespace back.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-
+            migrationBuilder.RenameColumn(
+                name: "Username",
+                table: "Borrow",
+                newName: "Email");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-
+            migrationBuilder.RenameColumn(
+                name: "Email",
+                table: "Borrow",
+                newName: "Username");
         }
     }
 }
