@@ -114,12 +114,12 @@ span{
 
 .book-title {
   font-size: 24px;
-  margin-left: 190px;
+  margin-left: 200px;
 }
 
 .book-author {
   /* margin-top: 10px; */
-  margin-left: 250px;
+  margin-left: 255px;
   color: #555555;
   font-size: 18px;
 }
@@ -137,7 +137,7 @@ span{
 .book-description {
   margin-top: 16px;
   line-height: 1.5;
-  /* margin-left: 35px; */
+  margin-left: 35px;
 }
 
 .book-rating {
