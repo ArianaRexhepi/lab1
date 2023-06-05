@@ -69,11 +69,11 @@ function CreateBorrow() {
               />
             </div>
             <div className="form-group">
-              <label>Username:</label>
+              <label>Email:</label>
               <input
                 type="text"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="form-group">
