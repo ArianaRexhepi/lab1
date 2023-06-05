@@ -196,26 +196,26 @@ h4.modal-title {
 }
 
 .form-group {
-  margin-bottom: 1.5rem; /* Increased margin for more spacing */
+  margin-bottom: 1.5rem;
 }
 
 label {
   flex: 0 0 100px; 
   display: block;
   margin-bottom: 0.5rem;
-   /* Added font-weight to make labels stand out */
+
 }
 
 .form-control {
   width: 100%;
-  max-width: 400px;
-  padding: 0.75rem 1rem; /* Increased padding for larger input fields */
+  max-width: 600px;
+  padding: 0.75rem 1rem; 
   font-size: 1rem;
   line-height: 1.5;
   color: #495057;
-  background-color: #f8f9fa; /* Updated background color */
+  background-color: #f8f9fa; 
   border: 1px solid black;
-  border-radius: 0.5rem; /* Increased border radius for a softer look */
+  border-radius: 0.5rem; 
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
@@ -226,8 +226,8 @@ label {
   text-align: center;
   vertical-align: middle;
   user-select: none;
-  border: none; /* Removed border for cleaner button appearance */
-  padding: 0.75rem 1.5rem; /* Increased padding for larger buttons */
+  border: none; 
+  padding: 0.75rem 1.5rem;
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.5rem;

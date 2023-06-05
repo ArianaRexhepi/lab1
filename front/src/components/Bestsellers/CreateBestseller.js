@@ -55,7 +55,7 @@ function CreateBestseller() {
           </div>
           <div className="modal-body">
             <div className="form-group">
-              <label>Title:</label>
+              <label htmlFor="title">Title:</label>
               <input
                 type="text"
                 value={title}
