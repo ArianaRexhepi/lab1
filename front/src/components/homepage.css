@@ -44,14 +44,14 @@ span{
 .h1 {
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin-top: 20px;
+  margin-top: 70px;
 }
 
 .book-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 30px auto;
+  margin: 50px auto;
 }
 
 .book-card {
