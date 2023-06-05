@@ -51,7 +51,7 @@ namespace back.Controllers
                 return NotFound();
             }
 
-            existingBook.Username = book.Username;
+            existingBook.Email = book.Email;
             existingBook.BookTitle = book.BookTitle;
             existingBook.Author = book.Author;
             existingBook.MarrjaeLibrit = book.MarrjaeLibrit;
