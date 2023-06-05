@@ -54,7 +54,7 @@ function EditBestseller() {
           </div>
           <div className="modal-body">
             <div className="form-group">
-              <label>Titulli:</label>
+              <label>Title:</label>
               <input
                 type="text"
                 className="form-control"
@@ -65,7 +65,7 @@ function EditBestseller() {
               />
             </div>
             <div className="form-group">
-              <label>Autori:</label>
+              <label>Author:</label>
               <input
                 type="text"
                 className="form-control"
@@ -76,7 +76,7 @@ function EditBestseller() {
               />
             </div>
             <div className="form-group">
-              <label>Viti:</label>
+              <label>Year:</label>
               <input
                 type="datetime-local"
                 className="form-control"
