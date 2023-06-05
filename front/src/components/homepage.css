@@ -92,7 +92,7 @@ span{
 
 .book-details {
   max-width: 1000px;
-  max-height: 500;
+  height: 800px;
   margin: 0 auto;
   padding: 20px;
   background-color: #ffffff;
