@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 function CreateBorrow() {
   const [bookTitle, setBookTitle] = useState("");
   const [author, setAuthor] = useState("");
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [marrjaeLibrit, setMarrjaeLibrit] = useState(null);
   const [kthyerjaeLibrit, setKthyerjaeLibrit] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -18,7 +18,7 @@ function CreateBorrow() {
     const newBook = {
       BookTitle: bookTitle,
       Author: author,
-      Username: username,
+      Email: email,
       MarrjaeLibrit: marrjaeLibrit,
       KthyerjaeLibrit: kthyerjaeLibrit,
     };
