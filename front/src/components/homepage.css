@@ -229,8 +229,6 @@ label {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-
-
 .btn {
   display: inline-block;
   font-weight: 400;
@@ -289,3 +287,36 @@ label {
   background-color: #0056b3;
 }
 
+/* 
+Desgingn the buy, borrow, my cart buttons */
+
+.book-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.book-button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #e5e5e5;
+  border: none;
+  cursor: pointer;
+}
+
+.buy-button {
+  color: #fff;
+  background-color: #00a86b;
+}
+
+.borrow-button {
+  color: #fff;
+  background-color: #faa21b;
+}
+
+.cart-button {
+  color: #fff;
+  background-color: #1e90ff;
+}
