@@ -247,6 +247,7 @@ label {
   padding: 20px;
   margin-top: 150px;
   border-radius: 4px;
+  height: '500px';
 }
 
 .register-form h2 {
@@ -261,7 +262,7 @@ label {
 }
 
 .register-form input {
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   padding: 10px;
   border-radius: 4px;
   border: 1px solid #ccc;

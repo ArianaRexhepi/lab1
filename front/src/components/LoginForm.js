@@ -96,7 +96,7 @@ const styles = {
   },
   button: {
     padding: '10px',
-    backgroundColor: 'lightskyblue',
+    backgroundColor: '#0056b3',
     color: 'black',
     border: 'none',
     cursor: 'pointer',
