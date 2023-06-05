@@ -35,7 +35,7 @@ function Borrow() {
                 <th>ID</th>
                 <th>BookTitle</th>
                 <th>Author</th>
-                <th>Username</th>
+                <th>Email</th>
                 <th>MarrjaeLibrit</th>
                 <th>KthyerjaeLibrit</th>
                 <th>Veprime</th>
@@ -47,7 +47,7 @@ function Borrow() {
                     <td>{book.id}</td>
                     <td>{book.bookTitle}</td>
                     <td>{book.author}</td>
-                    <td>{book.username}</td>
+                    <td>{book.email}</td>
                     <td>{book.marrjaeLibrit}</td>
                     <td>{book.kthyerjaeLibrit}</td>
                     <td>
