@@ -141,6 +141,24 @@ const BookUserList = () => {
     setSelectedBook(null);
   };
 
+  const handleBuyClick = (e) => {
+    e.stopPropagation();
+    console.log("Buy button clicked");
+    // Add your buy functionality here
+  };
+
+  const handleBorrowClick = (e) => {
+    e.stopPropagation();
+    console.log("Borrow button clicked");
+    // Add your borrow functionality here
+  };
+
+  const handleCartClick = (e) => {
+    e.stopPropagation();
+    console.log("Cart button clicked");
+    // Add your cart functionality here
+  };
+
   return (
     <div>
       <div className="h1">
@@ -170,6 +188,11 @@ const BookUserList = () => {
                 <div className="book-rating">
                   <span className="rating-label">Rating:</span>
                   <span className="rating-value">{selectedBook.rating}</span>
+                </div>
+                <div className="book-buttons">
+                  <button onClick={handleBuyClick}>Buy</button>
+                  <button onClick={handleBorrowClick}>Borrow</button>
+                  <button onClick={handleCartClick}>Add to Cart</button>
                 </div>
               </div>
             </div>
