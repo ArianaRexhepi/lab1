@@ -172,6 +172,10 @@ span{
 
 /* Edit and Add Design */
 
+.modal-header{
+  justify-content: center;
+}
+
 .modal-title {
   font-size: 1.5rem;
   font-weight: bold;
@@ -232,14 +236,8 @@ label {
   border-color: #007bff;
 }
 
-.float-right {
-  float: right;
-}
-
 /* Regsiter Form Desgin */
-  /* *{
-    background-image: url("images/backwp.jpeg");
-  } */
+
 .register-form {
   display: flex;
   flex-direction: column;
