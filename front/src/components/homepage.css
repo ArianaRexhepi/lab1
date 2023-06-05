@@ -92,7 +92,7 @@ span{
 
 .book-details {
   max-width: 1000px;
-  height: 800px;
+  height: 640px;
   margin: 0 auto;
   padding: 20px;
   background-color: #ffffff;
@@ -320,15 +320,15 @@ Desgingn the buy, borrow, my cart buttons */
 
 .buy-button {
   color: #fff;
-  background-color: #00a86b;
+  background-color: #007bff;
 }
 
 .borrow-button {
   color: #fff;
-  background-color: #faa21b;
+  background-color: pink;
 }
 
 .cart-button {
   color: #fff;
-  background-color: #1e90ff;
+  background-color: darkgreen;
 }
