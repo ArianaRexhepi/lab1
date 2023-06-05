@@ -183,16 +183,17 @@ span{
   margin-bottom: 50px;
 }
 
-h4.modal-title {
-  justify-content: center;
+.modal-title {
+  text-align: center;
+  margin: 0;
+  padding: 1rem 0;
   font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 1rem;
-  text-align: center;
 }
 
+
 .modal-body {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .form-group {
