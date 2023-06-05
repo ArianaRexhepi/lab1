@@ -65,7 +65,7 @@ function EditBorrow() {
               />
             </div>
             <div className="form-group">
-              <label>Autori:</label>
+              <label>Author:</label>
               <input
                 type="text"
                 className="form-control"
