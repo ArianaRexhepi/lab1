@@ -33,7 +33,7 @@ function BookList() {
               <thead>
                   <tr>
                       <th>ID</th>
-                      <th>Title</th>
+                      <th>Book Title</th>
                       <th>Author</th>
                       <th>Description</th>
                       <th>Rating</th>
