@@ -3,7 +3,6 @@ import "./homepage.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBook } from '@fortawesome/free-solid-svg-icons';
 import { faShoppingCart, faCartPlus,} from "@fortawesome/free-solid-svg-icons";
-import "./homepage.css";
 import image1 from "./images/image1.jpg";
 import image4 from "./images/image4.jpeg";
 import image7 from "./images/image7.jpg";
