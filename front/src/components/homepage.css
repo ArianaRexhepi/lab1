@@ -337,3 +337,33 @@ Desgingn the buy, borrow, my cart buttons */
   color: #fff;
   background-color: darkgreen;
 }
+
+shopping-cart {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #ff0000;
+  color: #ffffff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}

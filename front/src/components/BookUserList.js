@@ -3,6 +3,7 @@ import "./homepage.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBook } from '@fortawesome/free-solid-svg-icons';
 import { faShoppingCart, faCartPlus,} from "@fortawesome/free-solid-svg-icons";
+import ShoppingCart from "./ShoppingCart";
 import image1 from "./images/image1.jpg";
 import image4 from "./images/image4.jpeg";
 import image7 from "./images/image7.jpg";
@@ -135,6 +136,7 @@ const books = [
 
 const BookUserList = () => {
   const [selectedBook, setSelectedBook] = useState(null);
+  const [showCart, setShowCart] = useState(false);
 
   const handleBookClick = (book) => {
     setSelectedBook(book);
@@ -159,7 +161,7 @@ const BookUserList = () => {
   const handleCartClick = (e) => {
     e.stopPropagation();
     console.log("Cart button clicked");
-    // Add your cart functionality here
+    setShowCart(true); // Show the shopping cart
   };
 
   return (
