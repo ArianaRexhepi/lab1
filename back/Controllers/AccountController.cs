@@ -52,7 +52,6 @@ namespace backend.Controllers
         {
             var user = new AppUser
             {
-                Name = registerDto.Name,
                 UserName = registerDto.Username,
                 Email = registerDto.Email
             };
@@ -108,7 +107,6 @@ namespace backend.Controllers
             return new AppUserDto
             {
                 Id = user.Id,
-                Name = user.Name,
                 Username = user.UserName,
                 Email = user.Email,
                 Token = GenerateJwtToken(user, roles),

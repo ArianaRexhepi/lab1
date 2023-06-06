@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { setUser } from '../redux/actions/index';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const state = useSelector(state => state);
+
+  useEffect(() => {
+    if(state.user){
+        navigate('/')
+    }
+  },[state.user])
 
   const login = (e) => {
     e.preventDefault();
@@ -25,7 +35,7 @@ const LoginForm = () => {
         console.log(response);
         response.json().then((result) => {
           localStorage.setItem("token", result.token);
-          // dispatch(setUser(result))
+          dispatch(setUser(result))
         });
 
         if (response.ok) {

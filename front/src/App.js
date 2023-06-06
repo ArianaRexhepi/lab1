@@ -1,14 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
-import Pages from './components/Pages'
-import BookList from './components/Books/BookList';
-import React from 'react';
-import BestsellerList from './components/Bestsellers/BestsellerList'
+import "./App.css";
+import Pages from "./components/Pages";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setUser } from "./redux/actions/index";
+import axios from "axios";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state);
+
+  useEffect(() => {
+    getUser();
+  }, []);
+
+  const getUser = async () => {
+    const token = window.localStorage.getItem("token");
+    setLoading(true);
+    if (token) {
+      await axios
+        .get("http://localhost:5267/api/account")
+        .then((res) => dispatch(setUser(res.data)))
+        .catch((err) => {
+          setLoading(false)
+          console.log(err);
+        });
+    }
+    setLoading(false);
+  };
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="App">
-      <Pages/>
+      <Pages />
     </div>
   );
 }

@@ -1,32 +1,35 @@
-import React, { useState } from "react";
-import "./homepage.css"; 
+import React from "react";
+import './homepage.css';
 
-const ShoppingCart = () => {
-  const [cartItems, setCartItems] = useState([]); 
-
-  const handleRemoveItem = (index) => {
-    const updatedCartItems = [...cartItems];
-    updatedCartItems.splice(index, 1);
-    setCartItems(updatedCartItems);
-  };
-
+const ShoppingCart = ({ cartItems, onRemoveItem, onProceedToCheckout }) => {
   return (
     <div className="shopping-cart">
-      <h1>Shopping Cart</h1>
+      <h2>Your Cart</h2>
       {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
-        <ul>
-          {cartItems.map((item, index) => (
-            <li key={index}>
-              {item.name} - {item.price}
-              <button onClick={() => handleRemoveItem(index)}>Remove</button>
-            </li>
+        <div>
+          {cartItems.map((item) => (
+            <div key={item.id} className="cart-item">
+              <span>{item.name}</span>
+              <span>${item.price}</span>
+              <button onClick={() => onRemoveItem(item.id)}>Remove</button>
+            </div>
           ))}
-        </ul>
+          <div className="cart-total">
+            <span>Total:</span>
+            <span>${calculateTotal(cartItems)}</span>
+          </div>
+          <button onClick={onProceedToCheckout}>Proceed to Checkout</button>
+        </div>
       )}
     </div>
   );
 };
 
 export default ShoppingCart;
+
+function calculateTotal(cartItems) {
+  return cartItems.reduce((total, item) => total + item.price, 0);
+}
+

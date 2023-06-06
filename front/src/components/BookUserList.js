@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./homepage.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBook } from '@fortawesome/free-solid-svg-icons';
-import { faShoppingCart, faCartPlus,} from "@fortawesome/free-solid-svg-icons";
+import { faBook } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart, faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import ShoppingCart from "./ShoppingCart";
 import image1 from "./images/image1.jpg";
 import image4 from "./images/image4.jpeg";
@@ -137,6 +137,7 @@ const books = [
 const BookUserList = () => {
   const [selectedBook, setSelectedBook] = useState(null);
   const [showCart, setShowCart] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
 
   const handleBookClick = (book) => {
     setSelectedBook(book);
@@ -162,6 +163,21 @@ const BookUserList = () => {
     e.stopPropagation();
     console.log("Cart button clicked");
     setShowCart(true); // Show the shopping cart
+    if (selectedBook) {
+      setCartItems([...cartItems, selectedBook]);
+    }
+  };
+
+
+  const handleRemoveItem = (index) => {
+    const updatedCartItems = [...cartItems];
+    updatedCartItems.splice(index, 1);
+    setCartItems(updatedCartItems);
+  };
+
+  const handleProceedToCheckout = () => {
+    // Proceed to checkout functionality here
+    console.log("Proceed to checkout clicked");
   };
 
   return (
@@ -209,6 +225,11 @@ const BookUserList = () => {
                     <FontAwesomeIcon icon={faCartPlus} />
                     Add to Cart
                   </button>
+                  {/* <ShoppingCart
+                    cartItems={cartItems}
+                    onRemoveItem={handleRemoveItem}
+                    onProceedToCheckout={handleProceedToCheckout}
+                  /> */}
                 </div>
               </div>
             </div>
