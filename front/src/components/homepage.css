@@ -438,5 +438,10 @@ button {
 } */
 .toggler-cart{
   color: #fff;
-  background-color: darkgreen;
+}
+.toggler-favorites{
+  color: #fff;
+}
+.toggler-rcbooks{
+  color: #fff;
 }
