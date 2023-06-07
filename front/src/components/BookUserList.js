@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./homepage.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBook } from "@fortawesome/free-solid-svg-icons";
-import { faShoppingCart, faCartPlus } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart, faCartPlus, faHeart} from "@fortawesome/free-solid-svg-icons";
 import ShoppingCart from "./ShoppingCart";
 import image1 from "./images/image1.jpg";
 import image4 from "./images/image4.jpeg";
@@ -262,9 +262,6 @@ const BookUserList = () => {
               <div className="book-card-details">
                 <h3 className="book-card-title">{book.title}</h3>
                 <p className="book-card-author">By {book.author}</p>
-                <button className="favorites-button" onClick={handleFavoritesClick}>
-                  <FontAwesomeIcon icon={faHeart} />
-                </button>
               </div>
             </div>
           ))}
