@@ -1,16 +1,16 @@
-import React from 'react';
-import './homepage.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./homepage.css";
 
 const ProfilePage = () => {
   const user = {
-    name: 'Ariana Rexhepi',
-    email: 'arianaarexhepi@gmail.com',
-    cart: ['Book 1', 'Book 2', 'Book 3'],
-    favorites: ['Book 4', 'Book 5'],
+    name: "Ariana Rexhepi",
+    email: "arianaarexhepi@gmail.com",
+    cart: ["Book 1", "Book 2", "Book 3"],
+    favorites: ["Book 4", "Book 5"],
   };
 
-  
-  const recommendedBooks = ['Book 6', 'Book 7', 'Book 8'];
+  const recommendedBooks = ["Book 6", "Book 7", "Book 8"];
 
   return (
     <div className="profile-page">
@@ -24,6 +24,18 @@ const ProfilePage = () => {
 
       <div className="edit-profile">
         <button>Edit Profile</button>
+      </div>
+
+      <div className="toggler">
+        <button>
+          <Link to="/mycart">My Cart</Link>
+        </button>
+        <button>
+          <Link to="/myfavorites">My Favorites</Link>
+        </button>
+        <button>
+          <Link to="/recommendedbooks">Recommended Books</Link>
+        </button>
       </div>
 
       <div className="my-cart">
