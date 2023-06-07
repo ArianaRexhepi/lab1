@@ -27,7 +27,9 @@ const ProfilePage = () => {
             </Link>
           </div>
           <div className="toggler-favorites">
-          <Link to="/myfavorites">My Favorites</Link>
+          <Link to="/myfavorites">
+          <button>My Favorites</button>
+            </Link>
           </div>
           <div className="toggler-rcbooks">
           <Link to="/recommendedbooks">Recommended Books</Link>
