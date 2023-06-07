@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./homepage.css";
 
 const ProfilePage = () => {
@@ -26,10 +26,8 @@ const ProfilePage = () => {
         <button>Edit Profile</button>
       </div>
 
-      <div className="profile-page">
-        {/* Route for My Cart */}
-        <Route path="/mycart">
-          <div className="my-cart">
+        <Routes>
+          <Route path="/mycart" element={<div className="my-cart">
             <h3>My Cart</h3>
             {user.cart.length > 0 ? (
               <ul>
@@ -40,12 +38,9 @@ const ProfilePage = () => {
             ) : (
               <p>Your cart is empty.</p>
             )}
-          </div>
-        </Route>
+          </div>} />
 
-        {/* Route for My Favorites */}
-        <Route path="/myfavorites">
-          <div className="my-favorites">
+          <Route path="/myfavorites" element={<div className="my-favorites">
             <h3>My Favorites</h3>
             {user.favorites.length > 0 ? (
               <ul>
@@ -56,12 +51,9 @@ const ProfilePage = () => {
             ) : (
               <p>You haven't added any favorites yet.</p>
             )}
-          </div>
-        </Route>
+          </div>} />
 
-        {/* Route for Recommended Books */}
-        <Route path="/recommendedbooks">
-          <div className="recommended-books">
+          <Route path="/recommendedbooks" element={<div className="recommended-books">
             <h3>Recommended Books</h3>
             {recommendedBooks.length > 0 ? (
               <ul>
@@ -72,9 +64,8 @@ const ProfilePage = () => {
             ) : (
               <p>No recommended books available.</p>
             )}
-          </div>
-        </Route>
-      </div>
+          </div>} />
+        </Routes>
     </div>
   );
 };
