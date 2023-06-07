@@ -150,19 +150,17 @@ const BookUserList = () => {
   const handleBuyClick = (e) => {
     e.stopPropagation();
     console.log("Buy button clicked");
-    // Add your buy functionality here
   };
 
   const handleBorrowClick = (e) => {
     e.stopPropagation();
     console.log("Borrow button clicked");
-    // Add your borrow functionality here
   };
 
   const handleCartClick = (e) => {
     e.stopPropagation();
     console.log("Cart button clicked");
-    setShowCart(true); // Show the shopping cart
+    setShowCart(true);
     if (selectedBook) {
       setCartItems([...cartItems, selectedBook]);
     }
@@ -176,7 +174,6 @@ const BookUserList = () => {
   };
 
   const handleProceedToCheckout = () => {
-    // Proceed to checkout functionality here
     console.log("Proceed to checkout clicked");
   };
 
