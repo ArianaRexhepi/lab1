@@ -214,6 +214,9 @@ const BookUserList = () => {
                 className="book-image"
               />
               <div className="book-box">
+              <button className="favorites-button" onClick={handleFavoritesClick}>
+                  <FontAwesomeIcon icon={faHeart} />
+                </button>
                 <h2 className="book-title">{selectedBook.title}</h2>
                 <p className="book-author">By {selectedBook.author}</p>
                 <p className="book-description">{selectedBook.description}</p>
