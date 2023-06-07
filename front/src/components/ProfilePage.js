@@ -21,9 +21,15 @@ const ProfilePage = () => {
         <p>Name: {user.name}</p>
         <p>Email: {user.email}</p>
 
-        <div className="toggler">
-          <Link to="/mycart">My Cart</Link>
+        <div className="toggler-cart">
+          <Link to className="/mycart">
+            <button>My Cart</button>
+            </Link>
+          </div>
+          <div className="toggler-favorites">
           <Link to="/myfavorites">My Favorites</Link>
+          </div>
+          <div className="toggler-rcbooks">
           <Link to="/recommendedbooks">Recommended Books</Link>
         </div>
       </div>

@@ -422,7 +422,7 @@ button {
 
 /* In your CSS file */
 
-.toggler-button {
+/* .toggler-button {
   background-color: #ffffff;
   color: #333333;
   border: 1px solid #333333;
@@ -435,8 +435,8 @@ button {
 .toggler-button:hover {
   background-color: #333333;
   color: #ffffff;
-}
-.my-cart{
+} */
+.toggler-cart{
   color: #fff;
   background-color: darkgreen;
 }
