@@ -65,6 +65,11 @@ const Navbar = () => {
               Borrow
             </Link>
           </li>
+          <li className="nav-item">
+                <Link to="/myprofile" className="nav-link">
+                 My Profile
+                </Link>
+              </li>
           {state.user === null && (
             <>
               <li className="nav-item">
