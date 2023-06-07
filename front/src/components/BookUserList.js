@@ -166,6 +166,19 @@ const BookUserList = () => {
       setCartItems([...cartItems, selectedBook]);
     }
   };
+  const handleFavoritesClick = (e) => {
+    e.stopPropagation();
+    console.log("Favorites button clicked");
+    if (selectedBook) {
+      const isFavorite = favorites.some((book) => book.title === selectedBook.title);
+      if (isFavorite) {
+        const updatedFavorites = favorites.filter((book) => book.title !== selectedBook.title);
+        setFavorites(updatedFavorites);
+      } else {
+        setFavorites([...favorites, selectedBook]);
+      }
+    }
+  };
 
 
   // const handleRemoveItem = (index) => {
@@ -249,6 +262,9 @@ const BookUserList = () => {
               <div className="book-card-details">
                 <h3 className="book-card-title">{book.title}</h3>
                 <p className="book-card-author">By {book.author}</p>
+                <button className="favorites-button" onClick={handleFavoritesClick}>
+                  <FontAwesomeIcon icon={faHeart} />
+                </button>
               </div>
             </div>
           ))}
