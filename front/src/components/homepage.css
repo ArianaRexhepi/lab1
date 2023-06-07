@@ -409,14 +409,14 @@ button {
 }
 
 
-button {
+/* button {
   background-color: #007bff;
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 4px;
-  cursor: pointer;
-}
+  cursor: pointer; */
+
 
 /* Toggler Fixer */
 
@@ -443,12 +443,15 @@ button {
 .toggler-button:hover {
   color: #ffffff;
 } 
-.toggler-cart{
+.toggler-cart button{
   color: #fff;
+  background-color:lightskyblue
 }
-.toggler-favorites{
+.toggler-favorites button{
   color: #fff;
+  background-color: palevioletred;
 }
-.toggler-rcbooks{
+.toggler-rcbooks button{
   color: #fff;
+  background-color: green;
 }
