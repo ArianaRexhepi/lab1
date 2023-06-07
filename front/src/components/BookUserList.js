@@ -138,6 +138,7 @@ const BookUserList = () => {
   const [selectedBook, setSelectedBook] = useState(null);
   const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
+  const [favorites, setFavorites] = useState([]);
 
   const handleBookClick = (book) => {
     setSelectedBook(book);
@@ -167,15 +168,15 @@ const BookUserList = () => {
   };
 
 
-  const handleRemoveItem = (index) => {
-    const updatedCartItems = [...cartItems];
-    updatedCartItems.splice(index, 1);
-    setCartItems(updatedCartItems);
-  };
+  // const handleRemoveItem = (index) => {
+  //   const updatedCartItems = [...cartItems];
+  //   updatedCartItems.splice(index, 1);
+  //   setCartItems(updatedCartItems);
+  // };
 
-  const handleProceedToCheckout = () => {
-    console.log("Proceed to checkout clicked");
-  };
+  // const handleProceedToCheckout = () => {
+  //   console.log("Proceed to checkout clicked");
+  // };
 
   return (
     <div>
