@@ -14,6 +14,7 @@ import EditBestseller from "./Bestsellers/EditBestseller";
 import EditBorrow from "./Borrow/EditBorrow";
 import BookUserList from "./BookUserList";
 import RegisterForm from "./RegisterForm";
+import ProfilePage from "./ProfilePage";
 
 const Pages = () => {
   return (
@@ -25,6 +26,7 @@ const Pages = () => {
         <Route path="/bookuserlist" element={<BookUserList />} />
         <Route path="/bestsellers" element={<BestsellerList />} />
         <Route path="/borrow" element={<Borrow />} />
+        <Route path="/myprofile" element={<ProfilePage />} />
         <Route path="/createborrow" element={<CreateBorrow />} />
         <Route path="/editborrow/:id" element={<EditBorrow />} />
         <Route path="/login" element={<LoginForm />} />
