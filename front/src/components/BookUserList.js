@@ -1,8 +1,13 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import "./homepage.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBook } from "@fortawesome/free-solid-svg-icons";
-import { faShoppingCart, faCartPlus, faHeart} from "@fortawesome/free-solid-svg-icons";
+import {
+  faShoppingCart,
+  faCartPlus,
+  faHeart,
+} from "@fortawesome/free-solid-svg-icons";
 import ShoppingCart from "./ShoppingCart";
 import image1 from "./images/image1.jpg";
 import image4 from "./images/image4.jpeg";
@@ -139,6 +144,7 @@ const BookUserList = () => {
   const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [favorites, setFavorites] = useState([]);
+  const navigate = useNavigate();
 
   const handleBookClick = (book) => {
     setSelectedBook(book);
@@ -169,17 +175,26 @@ const BookUserList = () => {
   const handleFavoritesClick = (e) => {
     e.stopPropagation();
     console.log("Favorites button clicked");
+  
     if (selectedBook) {
-      const isFavorite = favorites.some((book) => book.title === selectedBook.title);
+      const isFavorite = favorites.some(
+        (book) => book.title === selectedBook.title
+      );
+  
       if (isFavorite) {
-        const updatedFavorites = favorites.filter((book) => book.title !== selectedBook.title);
+        const updatedFavorites = favorites.filter(
+          (book) => book.title !== selectedBook.title
+        );
         setFavorites(updatedFavorites);
       } else {
         setFavorites([...favorites, selectedBook]);
       }
     }
+  
+    localStorage.setItem("favoriteBook", JSON.stringify(selectedBook));
+    // navigate("/myprofile");
   };
-
+  
 
   // const handleRemoveItem = (index) => {
   //   const updatedCartItems = [...cartItems];
@@ -216,11 +231,16 @@ const BookUserList = () => {
               <div className="book-box">
                 <h2 className="book-title">{selectedBook.title}</h2>
                 <p className="book-author">By {selectedBook.author}</p>
-                <button className="favorites-button" onClick={handleFavoritesClick}>
+                <button
+                  className="favorites-button"
+                  onClick={handleFavoritesClick}
+                >
                   <FontAwesomeIcon icon={faHeart} />
-                  <h6><i>Favorite</i></h6>
+                  <h6>
+                    <i>Favorite</i>
+                  </h6>
                 </button>
-                
+
                 <p className="book-description">{selectedBook.description}</p>
                 <div className="book-rating">
                   <span className="rating-label">Rating:</span>
