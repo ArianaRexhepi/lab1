@@ -22,6 +22,10 @@ const ProfilePage = () => {
         <p>Email: {user.email}</p>
       </div>
 
+      <div className="edit-profile">
+        <button>Edit Profile</button>
+      </div>
+
       <div className="my-cart">
         <h3>My Cart</h3>
         {user.cart.length > 0 ? (
@@ -46,10 +50,6 @@ const ProfilePage = () => {
         ) : (
           <p>You haven't added any favorites yet.</p>
         )}
-      </div>
-
-      <div className="edit-profile">
-        <button>Edit Profile</button>
       </div>
 
       <div className="recommended-books">
