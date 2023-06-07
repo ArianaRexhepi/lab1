@@ -395,6 +395,7 @@ button {
 }
 
 .profile-details {
+  text-align: center;
   margin-top: 20px;
   padding: 20px;
 
@@ -423,17 +424,16 @@ button {
 /* In your CSS file */
 
 .toggler-button {
-  margin: 0 10px;
+  /* margin: 0 10px;  */
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 5px;
   border: none;
   cursor: pointer;
+  float: left;
 }
-.toggler-button button {
- margin-top: 30px;
-  margin-left: 50px;
-  margin-right: 10px;
+.toggler-button button{
+  margin-top: 20px;
   width: 250px;
   border: none;
   border-radius: 20px; 
