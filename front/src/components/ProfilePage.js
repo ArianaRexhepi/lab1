@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./homepage.css";
 
 const ProfilePage = () => {
@@ -20,10 +20,12 @@ const ProfilePage = () => {
         <h3>My Details</h3>
         <p>Name: {user.name}</p>
         <p>Email: {user.email}</p>
-      </div>
 
-      <div className="edit-profile">
-        <button>Edit Profile</button>
+        <div className="toggler">
+          <Link to="/mycart">My Cart</Link>
+          <Link to="/myfavorites">My Favorites</Link>
+          <Link to="/recommendedbooks">Recommended Books</Link>
+        </div>
       </div>
 
         <Routes>
