@@ -459,10 +459,7 @@ button {
 
 .filters {
   margin-bottom: 20px;
-  display:flex;
-  /* flex-direction: column; */
-  justify-content: flex-end;
-  align-items: flex-start;
+  margin-top: 40px;
 }
 
 label {
