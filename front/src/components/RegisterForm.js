@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { setUser } from "../redux/actions/index";
+import axios from "axios";
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({
@@ -27,6 +28,29 @@ const RegisterForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Validate username: No white spaces
+    if (formData.username.trim().includes(" ")) {
+      setError("Username must not contain white spaces");
+      return;
+    }
+
+    // Validate email: Valid format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setError("Invalid email format");
+      return;
+    }
+
+    // Validate password: 6 characters containing upper and lower case letters
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+    if (!passwordRegex.test(formData.password)) {
+      setError(
+        "Password must be at least 6 characters and contain both upper and lower case letters"
+      );
+      return;
+    }
+
     if (formData.password !== formData.confirmpassword) {
       setError("Password and Confirm Password do not match!");
     } else {
@@ -35,29 +59,24 @@ const RegisterForm = () => {
         email: formData.email,
         password: formData.password,
       };
-      fetch("http://localhost:5267/api/account/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          accept: "application/json",
-        },
-        body: JSON.stringify(obj),
-      }).then((response) => {
-        let token = null;
-        let result = null;
-        response.json().then((result) => {
-          token = result.token;
-          result = result;
+
+      axios
+        .post("http://localhost:5267/api/account/register", obj)
+        .then((response) => {
+          const result = response.data;
+
+          if (response.status === 200) {
+            console.log("Register successful");
+            localStorage.setItem("token", result.token);
+            dispatch(setUser(result));
+          } else {
+            console.error("Register failed");
+          }
+        })
+        .catch((error) => {
+          console.log("Error:", error);
         });
 
-        if (response.ok) {
-          console.log("Register successful");
-          localStorage.setItem("token", result.token);
-          dispatch(setUser(result));
-        } else {
-          console.error("Register failed");
-        }
-      });
       setError("");
     }
   };
@@ -69,7 +88,7 @@ const RegisterForm = () => {
         <input
           type="text"
           name="username"
-          placeholder=" Full Name"
+          placeholder="Full Name"
           value={formData.username}
           onChange={handleChange}
         />

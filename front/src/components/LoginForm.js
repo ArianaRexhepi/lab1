@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { setUser } from "../redux/actions/index";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -31,18 +31,16 @@ const LoginForm = () => {
         accept: "application/json",
       },
       body: JSON.stringify(requestBody),
-    }).then((response) => {
-      let token = null;
-      let result = null;
-      response.json().then((result) => {
-        token = result.token;
-        result = result;
+    }).then(async (response) => {
+      await response.json().then((result) => {
+        if (result.token) {
+          localStorage.setItem("token", result.token);
+          dispatch(setUser(result));
+        }
       });
 
       if (response.ok) {
         console.log("Login successful");
-        localStorage.setItem("token", token);
-        dispatch(setUser(result));
       } else {
         console.error("Login failed");
         toast.error("Wrong Username and Password");

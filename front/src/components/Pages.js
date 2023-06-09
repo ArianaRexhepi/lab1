@@ -15,26 +15,34 @@ import EditBorrow from "./Borrow/EditBorrow";
 import BookUserList from "./BookUserList";
 import RegisterForm from "./RegisterForm";
 import ProfilePage from "./ProfilePage";
+import { ProtectedRoute } from "./ProtectedRoute";
+import { AdminProtectedRoute } from "./AdminProtectedRoute";
 
 const Pages = () => {
   return (
     <>
       <Navbar />
       <Routes>
+        <Route element={<AdminProtectedRoute redirectPath="/" />}>
+          <Route path="/bestsellers" element={<BestsellerList />} />
+          <Route path="/books" element={<BookList />} />
+          <Route path="/createbook" element={<CreateBook />} />
+          <Route path="/createbestseller" element={<CreateBestseller />} />
+          <Route path="/editbestseller/:id" element={<EditBestseller />} />
+          <Route path="/editbook" element={<EditBook />} />
+          <Route path="/borrow" element={<Borrow />} />
+          <Route path="/createborrow" element={<CreateBorrow />} />
+          <Route path="/editborrow/:id" element={<EditBorrow />} />
+        </Route>
         <Route path="/" element={<HomePage />} />
-        <Route path="/books" element={<BookList />} />
         <Route path="/bookuserlist" element={<BookUserList />} />
-        <Route path="/bestsellers" element={<BestsellerList />} />
-        <Route path="/borrow" element={<Borrow />} />
-        <Route path="/myprofile" element={<ProfilePage />} />
-        <Route path="/createborrow" element={<CreateBorrow />} />
-        <Route path="/editborrow/:id" element={<EditBorrow />} />
+
+        <Route element={<ProtectedRoute redirectPath="/" />}>
+          <Route path="/myprofile" element={<ProfilePage />} />
+        </Route>
+
         <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<RegisterForm />} />
-        <Route path="/createbook" element={<CreateBook />} />
-        <Route path="/createbestseller" element={<CreateBestseller />} />
-        <Route path="/editbestseller/:id" element={<EditBestseller />} />
-        <Route path="/editbook" element={<EditBook />} />
       </Routes>
     </>
   );

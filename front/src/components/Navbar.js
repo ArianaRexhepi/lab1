@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import "./homepage.css";
 import { useDispatch, useSelector } from "react-redux";
-import { setUser } from '../redux/actions';
+import { setUser } from "../redux/actions";
 
 const Navbar = () => {
   // state eshte per me i marr te dhenat e userit
@@ -17,13 +17,16 @@ const Navbar = () => {
     navigate("/");
   };
 
-  const findAdmin = () => {
-    const isAdmin = state.user.roles.find((role) => role === "admin");
-
+  let isAdmin = false;
+  if (state.user) {
+    const role = state.user.userRoles.find((role) => role === "Admin");
+    if (role) {
+      isAdmin = true;
+    }
   }
 
   //me i pat te dhenat e userit
-  console.log(state.user)
+  console.log(state.user);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light light-blue-bg">
@@ -50,26 +53,27 @@ const Navbar = () => {
               Book List
             </Link>
           </li>
-          <li className="nav-item">
-            <Link to="/books" className="nav-link">
-              Books
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/bestsellers" className="nav-link">
-              Bestsellers
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/borrow" className="nav-link">
-              Borrow
-            </Link>
-          </li>
-          <li className="nav-item">
-                <Link to="/myprofile" className="nav-link">
-                 My Profile
+          {isAdmin && (
+            <>
+              <li className="nav-item">
+                <Link to="/books" className="nav-link">
+                  Books
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link to="/bestsellers" className="nav-link">
+                  Bestsellers
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/borrow" className="nav-link">
+                  Borrow
+                </Link>
+              </li>
+            </>
+          )}
+          
+          
           {state.user === null && (
             <>
               <li className="nav-item">
@@ -85,9 +89,19 @@ const Navbar = () => {
             </>
           )}
           {state.user !== null && (
-            <li onClick={handleLogOut} className="nav-item" style={{cursor: 'pointer'}}>
-                Log Out
+            <><li className="nav-item">
+            <Link to="/myprofile" className="nav-link">
+              My Profile
+            </Link>
+          </li>
+            <li
+              onClick={handleLogOut}
+              className="nav-item"
+              style={{ cursor: "pointer" }}
+            >
+              Log Out
             </li>
+            </>
           )}
         </ul>
       </div>
