@@ -16,6 +16,46 @@ function HomePage() {
     setSearchResults(results);
   };
 
+  const handleFilterChange = (event) => {
+    const { name, value } = event.target;
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      [name]: value,
+    }));
+  };
+
+  const filteredImages = [image1, image2, image3, image4, image5, image6].filter((image) => {
+    // Apply filter logic based on the filter values
+    return (
+      (filters.category === '' || getCategory(image) === filters.category) &&
+      (filters.author === '' || getAuthor(image) === filters.author) &&
+      (filters.rating === '' || getRating(image) === filters.rating)
+    );
+  });
+
+  const applyFilters = () => {
+    // Logic to apply the filters and update the search results
+    // You can modify this based on your actual data and filtering requirements
+    const filteredResults = []; // Filtered search results
+
+    setSearchResults(filteredResults);
+  };
+
+  const getCategory = (image) => {
+    // Return the category of the image based on your data or logic
+    return 'fiction';
+  };
+
+  const getAuthor = (image) => {
+    // Return the author of the image based on your data or logic
+    return 'John Doe';
+  };
+
+  const getRating = (image) => {
+    // Return the rating of the image based on your data or logic
+    return '5';
+  };
+
   return (
     <div>
       <br />
@@ -66,6 +106,45 @@ function HomePage() {
         </div>
       </div>
       <br />
+      <div className="filters">
+        <label>
+          Category:
+          <select
+            name="category"
+            value={filters.category}
+            onChange={handleFilterChange}
+          >
+            <option value="">All</option>
+            <option value="fiction">Fiction</option>
+            <option value="non-fiction">Non-Fiction</option>
+          </select>
+        </label>
+        <label>
+          Author:
+          <input
+            type="text"
+            name="author"
+            value={filters.author}
+            onChange={handleFilterChange}
+          />
+        </label>
+        <label>
+          Rating:
+          <select
+            name="rating"
+            value={filters.rating}
+            onChange={handleFilterChange}
+          >
+            <option value="">All</option>
+            <option value="5">5 stars</option>
+            <option value="4">4 stars</option>
+            <option value="3">3 stars</option>
+          </select>
+        </label>
+        <button className="filter-button" onClick={applyFilters}>
+          Apply Filters
+        </button>
+        </div>
       <footer>
         <p>
           <i>
