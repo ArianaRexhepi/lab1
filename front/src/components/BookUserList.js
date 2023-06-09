@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import "./homepage.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBook } from "@fortawesome/free-solid-svg-icons";
@@ -146,9 +146,9 @@ const BookUserList = () => {
   const [favorites, setFavorites] = useState([]);
   const navigate = useNavigate();
   const [filters, setFilters] = useState({
-    category: '',
-    author: '',
-    rating: '',
+    category: "",
+    author: "",
+    rating: "",
   });
 
   const handleBookClick = (book) => {
@@ -180,12 +180,12 @@ const BookUserList = () => {
   const handleFavoritesClick = (e) => {
     e.stopPropagation();
     console.log("Favorites button clicked");
-  
+
     if (selectedBook) {
       const isFavorite = favorites.some(
         (book) => book.title === selectedBook.title
       );
-  
+
       if (isFavorite) {
         const updatedFavorites = favorites.filter(
           (book) => book.title !== selectedBook.title
@@ -195,11 +195,10 @@ const BookUserList = () => {
         setFavorites([...favorites, selectedBook]);
       }
     }
-  
+
     localStorage.setItem("favoriteBook", JSON.stringify(selectedBook));
     // navigate("/myprofile");
   };
-  
 
   // const handleRemoveItem = (index) => {
   //   const updatedCartItems = [...cartItems];
@@ -219,12 +218,19 @@ const BookUserList = () => {
     }));
   };
 
-  const filteredImages = [image1, image12, image13, image4, image15, image16].filter((image) => {
+  const filteredImages = [
+    image1,
+    image12,
+    image13,
+    image4,
+    image15,
+    image16,
+  ].filter((image) => {
     // Apply filter logic based on the filter values
     return (
-      (filters.category === '' || getCategory(image) === filters.category) &&
-      (filters.author === '' || getAuthor(image) === filters.author) &&
-      (filters.rating === '' || getRating(image) === filters.rating)
+      (filters.category === "" || getCategory(image) === filters.category) &&
+      (filters.author === "" || getAuthor(image) === filters.author) &&
+      (filters.rating === "" || getRating(image) === filters.rating)
     );
   });
 
@@ -233,75 +239,78 @@ const BookUserList = () => {
     // You can modify this based on your actual data and filtering requirements
     const filteredResults = []; // Filtered search results
 
-    setSearchResults(filteredResults);
-  };
+    // Apply the category filter
+    const filteredByCategory = searchResults.filter((result) =>
+      result.category.includes(filters.category)
+    );
 
-  const getCategory = (image) => {
-    // Return the category of the image based on your data or logic
-    return 'fiction';
-  };
+    // Apply the author filter
+    const filteredByAuthor = filteredByCategory.filter((result) =>
+      result.author.includes(filters.author)
+    );
 
-  const getAuthor = (image) => {
-    // Return the author of the image based on your data or logic
-    return 'John Doe';
-  };
+    // Apply the rating filter
+    const filteredByRating = filteredByAuthor.filter(
+      (result) => result.rating === filters.rating
+    );
 
-  const getRating = (image) => {
-    // Return the rating of the image based on your data or logic
-    return '5';
+    setSearchResults(filteredByRating);
   };
 
   return (
     <div>
-      <div className="h1">
-        <h1>
-          <i>Book List</i>
-        </h1>
-        </div>
-        <div className="filters">
-        <label>
-          Category:
-          <select
-            name="category"
-            value={filters.category}
-            onChange={handleFilterChange}
-          >
-            <option value="">All</option>
-            <option value="fiction">Fiction</option>
-            <option value="non-fiction">Non-Fiction</option>
-          </select>
-        </label>
-        <label>
-          Author:
-          <input
-            type="text"
-            name="author"
-            value={filters.author}
-            onChange={handleFilterChange}
-          />
-        </label>
-        <label>
-          Rating:
-          <select
-            name="rating"
-            value={filters.rating}
-            onChange={handleFilterChange}
-          >
-            <option value="">All</option>
-            <option value="5">5 stars</option>
-            <option value="4">4 stars</option>
-            <option value="3">3 stars</option>
-          </select>
-        </label>
-        <button className="filter-button" onClick={applyFilters}>
-          Apply Filters
-        </button>
-        </div>
-
+      {!selectedBook && (
+        <>
+          <div className="h1">
+            <h1>
+              <i>Book List</i>
+            </h1>
+          </div>
+          <div className="filters">
+            <label>
+              Category:
+              <select
+                name="category"
+                value={filters.category}
+                onChange={handleFilterChange}
+              >
+                <option value="">All</option>
+                <option value="fiction">Fiction</option>
+                <option value="non-fiction">Non-Fiction</option>
+              </select>
+            </label>
+            <label>
+              Author:
+              <input
+                type="text"
+                name="author"
+                value={filters.author}
+                onChange={handleFilterChange}
+              />
+            </label>
+            <label>
+              Rating:
+              <select
+                name="rating"
+                value={filters.rating}
+                onChange={handleFilterChange}
+              >
+                <option value="">All</option>
+                <option value="5">5 stars</option>
+                <option value="4">4 stars</option>
+                <option value="3">3 stars</option>
+              </select>
+            </label>
+            <button className="apply-button" onClick={applyFilters}>
+              Apply Filters
+            </button>
+          </div>
+        </>
+      )}
 
       {selectedBook ? (
-        <div>
-          <div className="back-container">
+        <div className="mt-3">
+          <div className="back-container" >
             <button onClick={handleBackClick} className="back-button">
               <b>Go Back</b>
             </button>

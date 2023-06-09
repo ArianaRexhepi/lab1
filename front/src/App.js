@@ -3,6 +3,7 @@ import Pages from "./components/Pages";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "./redux/actions/index";
+import { ToastContainer } from 'react-toastify';
 import axios from "axios";
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
   return (
     <div className="App">
       <Pages />
+      <ToastContainer />
     </div>
   );
 }
