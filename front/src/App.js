@@ -3,7 +3,7 @@ import Pages from "./components/Pages";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "./redux/actions/index";
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 import axios from "axios";
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
         .get("http://localhost:5267/api/account")
         .then((res) => dispatch(setUser(res.data)))
         .catch((err) => {
-          setLoading(false)
+          setLoading(false);
           console.log(err);
         });
     }
@@ -37,7 +37,18 @@ function App() {
   return (
     <div className="App">
       <Pages />
-      <ToastContainer />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </div>
   );
 }

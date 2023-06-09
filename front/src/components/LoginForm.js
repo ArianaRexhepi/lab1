@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { setUser } from "../redux/actions/index";
+import { toast } from 'react-toastify';
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -44,6 +45,7 @@ const LoginForm = () => {
         dispatch(setUser(result));
       } else {
         console.error("Login failed");
+        toast.error("Wrong Username and Password");
       }
     });
   };

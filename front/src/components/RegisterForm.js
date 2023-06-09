@@ -43,14 +43,17 @@ const RegisterForm = () => {
         },
         body: JSON.stringify(obj),
       }).then((response) => {
-        console.log(response);
+        let token = null;
+        let result = null;
         response.json().then((result) => {
-          localStorage.setItem("token", result.token);
-          dispatch(setUser(result));
+          token = result.token;
+          result = result;
         });
 
         if (response.ok) {
           console.log("Register successful");
+          localStorage.setItem("token", result.token);
+          dispatch(setUser(result));
         } else {
           console.error("Register failed");
         }
