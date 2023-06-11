@@ -3,14 +3,13 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./homepage.css";
 
 const ProfilePage = () => {
+  // Define the user profile data
   const user = {
     name: "Ariana Rexhepi",
     email: "arianaarexhepi@gmail.com",
     cart: ["Book 1", "Book 2", "Book 3"],
     favorites: ["Book 4", "Book 5"],
   };
-
-  const recommendedBooks = ["Book 6", "Book 7", "Book 8"];
 
   return (
     <div className="profile-page">
@@ -20,31 +19,9 @@ const ProfilePage = () => {
         <h3>My Details</h3>
         <p>Name: {user.name}</p>
         <p>Email: {user.email}</p>
-
-        <div className="toggler-button">
-          <div className="toggler-favorites">
-          <Link to="/myfavorites">
-          <button>My Favorites</button>
-            </Link>
-          </div>
-      </div>
       </div>
 
-        <Routes>
-          <Route path="/myfavorites" element={<div className="my-favorites">
-            <h3>My Favorites</h3>
-            {user.favorites.length > 0 ? (
-              <ul>
-                {user.favorites.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
-            ) : (
-              <p>You haven't added any favorites yet.</p>
-            )}
-          </div>} />
-        </Routes>
-    </div>
+      </div>
   );
 };
 
