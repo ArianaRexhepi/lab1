@@ -33,19 +33,10 @@ span{
   height: auto;
 }
 /* --  navbar align -- */
-/* .navbar-nav {
-  align-items:right;
-} */
-/* .loginform {
-  display: flex;
-  margin-left: 1120px;
+.navbar-nav {
   text-align: center;
-} */
-.nav-item ul{
-  display: flex;
-  position: relative;
-
 }
+
 .nav-item p{
   display: flex;
   justify-content: center; 

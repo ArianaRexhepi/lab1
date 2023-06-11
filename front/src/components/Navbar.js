@@ -44,7 +44,7 @@ const Navbar = () => {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
-        <ul className="navbar-nav ml-auto">
+        <ul className="navbar-nav">
           <li className="nav-item">
             <Link to="/" className="nav-link">
               Home
@@ -78,18 +78,16 @@ const Navbar = () => {
           
           {state.user === null && (
             <>
-            <ul className="loginform">
               <li className="nav-item">
                 <Link to="/login" className="nav-link">
-                 <p>Log in</p> 
+                 Log in
                 </Link>
               </li>
-              </ul>
-              <li>
+              {/* <li>
                 <Link to="/register" className="nav-link">
                   Sign up
                 </Link>
-              </li>
+              </li> */}
               
             </>
           )}
