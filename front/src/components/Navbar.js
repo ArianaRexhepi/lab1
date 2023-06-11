@@ -4,6 +4,8 @@ import React from "react";
 import "./homepage.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../redux/actions";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   // state eshte per me i marr te dhenat e userit
@@ -42,7 +44,7 @@ const Navbar = () => {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
-        <ul className="navbar-nav">
+        <ul className="navbar-nav mr-auto">
           <li className="nav-item">
             <Link to="/" className="nav-link">
               Home
@@ -89,11 +91,18 @@ const Navbar = () => {
             </>
           )}
           {state.user !== null && (
-            <><li className="nav-item">
-            <Link to="/myprofile" className="nav-link">
-              My Profile
-            </Link>
-          </li>
+            <>
+            <ul className="navbar-nav mr-auto">
+            <li className="nav-item">
+              <Link to="/myprofile" className="nav-link">
+                My Profile
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/mycart" className="nav-link">
+                <FontAwesomeIcon icon={faShoppingCart} />
+              </Link>
+            </li>
             <li
               onClick={handleLogOut}
               className="nav-item"
@@ -101,7 +110,8 @@ const Navbar = () => {
             >
               Log Out
             </li>
-            </>
+          </ul>
+          </>
           )}
         </ul>
       </div>
