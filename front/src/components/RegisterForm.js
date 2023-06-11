@@ -88,7 +88,7 @@ const RegisterForm = () => {
         <input
           type="text"
           name="username"
-          placeholder="Full Name"
+          placeholder="Username"
           value={formData.username}
           onChange={handleChange}
         />

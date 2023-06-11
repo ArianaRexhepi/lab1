@@ -468,11 +468,11 @@ label {
   font-weight: bold;
 }
 
-select,
+/* select,
 input[type="text"] {
   padding: 5px;
   font-size: 14px;
-}
+} */
 
 .filter-button {
   padding: 10px 20px;
