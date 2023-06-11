@@ -41,9 +41,7 @@ span{
   display: flex;
   justify-content: center; 
 }
-.nav-link{
-  margin-right: auto;
-}
+
 
 /* --  book list cards-- */
 
@@ -368,19 +366,23 @@ h1 {
 }
 
 ul {
+  /* margin-left:1100px; */
   list-style: none;
   padding: 0;
 }
+ul .nav{
+    margin-left:780px;
+}
 
 li {
+  /* margin-left:100px; */
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
+  justify-content: center;
 }
 
 button {
-  background-color: #ff0000;
+  background-color: darkblue;
   color: #ffffff;
   border: none;
   padding: 5px 10px;

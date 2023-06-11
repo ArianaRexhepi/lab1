@@ -80,7 +80,7 @@ const Navbar = () => {
             <>
               <li className="nav-item">
                 <Link to="/login" className="nav-link">
-                 Log in
+                <button>Log in</button> 
                 </Link>
               </li>
               {/* <li>
@@ -94,6 +94,7 @@ const Navbar = () => {
           {state.user !== null && (
             <>
             <ul className="navbar-nav">
+              <ul className="nav">
             <li className="nav-item">
               <Link to="/myprofile" className="nav-link">
                 My Profile
@@ -110,8 +111,9 @@ const Navbar = () => {
               className="nav-item"
               style={{ cursor: "pointer" }}
             >
-              Log Out
+              <button>Log Out</button>
             </li>
+          </ul>
           </ul>
           </>
           )}
