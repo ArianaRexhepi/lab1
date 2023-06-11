@@ -21,7 +21,7 @@ function HomePage() {
       <br />
       <h1>
         <b>
-          <span>Ari </span> Library
+          <span>MJ </span> Library
         </b>
       </h1>
       <p>The world's largest online library!</p>

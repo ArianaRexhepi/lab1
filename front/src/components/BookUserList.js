@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./homepage.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBook } from "@fortawesome/free-solid-svg-icons";
 import {
   faShoppingCart,
   faCartPlus,
@@ -159,16 +158,6 @@ const BookUserList = () => {
     setSelectedBook(null);
   };
 
-  const handleBuyClick = (e) => {
-    e.stopPropagation();
-    console.log("Buy button clicked");
-  };
-
-  const handleBorrowClick = (e) => {
-    e.stopPropagation();
-    console.log("Borrow button clicked");
-  };
-
   const handleCartClick = (e) => {
     e.stopPropagation();
     console.log("Cart button clicked");
@@ -322,15 +311,6 @@ const BookUserList = () => {
               <div className="book-box">
                 <h2 className="book-title">{selectedBook.title}</h2>
                 <p className="book-author">By {selectedBook.author}</p>
-                <button
-                  className="favorites-button"
-                  onClick={handleFavoritesClick}
-                >
-                  <FontAwesomeIcon icon={faHeart} />
-                  <h6>
-                    <i>Favorite</i>
-                  </h6>
-                </button>
 
                 <p className="book-description">{selectedBook.description}</p>
                 <div className="book-rating">
@@ -338,14 +318,10 @@ const BookUserList = () => {
                   <span className="rating-value">{selectedBook.rating}</span>
                 </div>
                 <div className="book-buttons">
-                  <button className="buy-button" onClick={handleBuyClick}>
-                    <FontAwesomeIcon icon={faShoppingCart} />
-                    Buy
-                  </button>
 
-                  <button className="borrow-button" onClick={handleBorrowClick}>
-                    <FontAwesomeIcon icon={faBook} />
-                    Borrow
+                  <button className="favorites-button" onClick={handleFavoritesClick}>
+                    <FontAwesomeIcon icon={faHeart} />
+                    Favorite
                   </button>
 
                   <button className="cart-button" onClick={handleCartClick}>

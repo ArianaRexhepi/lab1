@@ -130,7 +130,7 @@ span {
   font-size: 18px;
 }
 
-.favorites-button {
+/* .favorites-button {
   position: absolute;
   top: 180px;
   right: 170px;
@@ -139,11 +139,11 @@ span {
   cursor: pointer;
   color: red;
   font-size: 20px;
-}
+} */
 
-.favorites-button h6 {
+/* .favorites-button h6 {
   color: black;
-}
+} */
 
 .book-image {
   width: 100%;
@@ -337,12 +337,8 @@ Desgingn the buy, borrow, my cart buttons */
   background-color: #0056b3;
 }
 
-.buy-button {
-  color: #fff;
-  background-color: #007bff;
-}
 
-.borrow-button {
+.favorites-button {
   color: #fff;
   background-color: pink;
 }
@@ -511,6 +507,9 @@ input[type="text"] {
   background-color: #0056b3;
 }
 
+
+ /* Navbar addition */
+
 .navbar-cart {
   display: flex;
   align-items: center;
@@ -530,3 +529,5 @@ input[type="text"] {
   font-size: 14px;
   color: #333;
 }
+
+  /* Recommended books */
