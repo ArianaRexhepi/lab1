@@ -368,8 +368,13 @@ ul {
   padding: 0;
 }
 ul .nav {
-  margin-left: 700px;
+  margin-left: 500px;
 }
+
+ul .login{
+  margin-left: 910px;
+}
+
 li {
   /* margin-left:100px; */
   display: flex;

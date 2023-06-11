@@ -5,7 +5,7 @@ import "./homepage.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../redux/actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingCart, faHeart } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   // state eshte per me i marr te dhenat e userit
@@ -52,12 +52,7 @@ const Navbar = () => {
           </li>
           <li className="nav-item">
             <Link to="/bookuserlist" className="nav-link">
-              Book List
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/recbooks" className="nav-link">
-              Recommended 
+              Books
             </Link>
           </li>
           <li className="nav-item">
@@ -65,16 +60,21 @@ const Navbar = () => {
               Bestsellers 
             </Link>
           </li>
+           <li className="nav-item">
+            <Link to="/recbooks" className="nav-link">
+              Recommended 
+            </Link>
+          </li>
           {isAdmin && (
             <>
               <li className="nav-item">
                 <Link to="/books" className="nav-link">
-                  Books
+                  BooksList
                 </Link>
               </li>
               <li className="nav-item">
                 <Link to="/bestsellers" className="nav-link">
-                  Bestsellers
+                  BestsellersList
                 </Link>
               </li>
               <li className="nav-item">
@@ -88,6 +88,7 @@ const Navbar = () => {
           
           {state.user === null && (
             <>
+            <ul className="login">
               <li className="nav-item">
                 <Link to="/login" className="nav-link">
                 <button>Log in</button> 
@@ -98,7 +99,7 @@ const Navbar = () => {
                   Sign up
                 </Link>
               </li> */}
-              
+              </ul>
             </>
           )}
           {state.user !== null && (
@@ -114,6 +115,12 @@ const Navbar = () => {
               <Link to="/mycart" className="nav-link">
                 <FontAwesomeIcon icon={faShoppingCart} />
                 My Cart
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/myfavorites" className="nav-link">
+                <FontAwesomeIcon icon={faHeart} />
+                My Favorites
               </Link>
             </li>
             <li
