@@ -41,6 +41,9 @@ span{
   display: flex;
   justify-content: center; 
 }
+.nav-link{
+  margin-right: auto;
+}
 
 /* --  book list cards-- */
 
