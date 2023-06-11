@@ -22,38 +22,15 @@ const ProfilePage = () => {
         <p>Email: {user.email}</p>
 
         <div className="toggler-button">
-        <div className="toggler-cart">
-          <Link to className="/mycart">
-            <button>My Cart</button>
-            </Link>
-          </div>
           <div className="toggler-favorites">
           <Link to="/myfavorites">
           <button>My Favorites</button>
             </Link>
           </div>
-          <div className="toggler-rcbooks">
-          <Link to="/recommendedbooks">
-           <button>Recommended Books</button> 
-            </Link>
-        </div>
       </div>
       </div>
 
         <Routes>
-          <Route path="/mycart" element={<div className="my-cart">
-            <h3>My Cart</h3>
-            {user.cart.length > 0 ? (
-              <ul>
-                {user.cart.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
-            ) : (
-              <p>Your cart is empty.</p>
-            )}
-          </div>} />
-
           <Route path="/myfavorites" element={<div className="my-favorites">
             <h3>My Favorites</h3>
             {user.favorites.length > 0 ? (
@@ -64,19 +41,6 @@ const ProfilePage = () => {
               </ul>
             ) : (
               <p>You haven't added any favorites yet.</p>
-            )}
-          </div>} />
-
-          <Route path="/recommendedbooks" element={<div className="recommended-books">
-            <h3>Recommended Books</h3>
-            {recommendedBooks.length > 0 ? (
-              <ul>
-                {recommendedBooks.map((book, index) => (
-                  <li key={index}>{book}</li>
-                ))}
-              </ul>
-            ) : (
-              <p>No recommended books available.</p>
             )}
           </div>} />
         </Routes>
