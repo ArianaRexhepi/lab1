@@ -1,13 +1,13 @@
-*{
+* {
   scroll-behavior: smooth;
 }
 
 /* --  background and library name -- */
 .light-blue-bg {
-    background-color: lightskyblue;
+  background-color: lightskyblue;
 }
-span{
-    color:lightskyblue;
+span {
+  color: lightskyblue;
 }
 
 /* --  FLEX BOX IMAGES -- */
@@ -15,14 +15,14 @@ span{
 .flex-container {
   display: flex;
 }
-.box img{
+.box img {
   border: 1px solid white;
   padding: 10px;
   background-color: white;
-  position:static;
-  top:0;
-  left:0;
-  object-fit:cover;
+  position: static;
+  top: 0;
+  left: 0;
+  object-fit: cover;
 }
 .flex-item {
   flex: 1;
@@ -37,17 +37,16 @@ span{
   text-align: center;
 }
 
-.nav-item p{
+.nav-item p {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
 }
-
 
 /* --  book list cards-- */
 
 .h1 {
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin-top: 70px;
 }
 
@@ -113,7 +112,7 @@ span{
 .book-info {
   display: flex;
   flex-direction: row;
-  padding: 0 20px; 
+  padding: 0 20px;
 }
 
 .book-title {
@@ -142,7 +141,7 @@ span{
   font-size: 20px;
 }
 
-.favorites-button h6{
+.favorites-button h6 {
   color: black;
 }
 
@@ -171,9 +170,9 @@ span{
 .rating-label {
   font-weight: bold;
   margin-right: 5px;
-} 
+}
 
-.book-card p{
+.book-card p {
   font-size: 13px;
 }
 
@@ -205,7 +204,7 @@ span{
   width: 600px;
   margin-top: 20px;
 }
-.modal-content{
+.modal-content {
   margin-top: 20px;
 }
 
@@ -222,7 +221,6 @@ span{
   font-weight: bold;
 }
 
-
 .modal-body {
   margin-bottom: 0.5rem;
 }
@@ -232,22 +230,21 @@ span{
 }
 
 label {
-  flex: 0 0 100px; 
+  flex: 0 0 100px;
   display: block;
   /* margin-bottom: 0.5rem; */
-
 }
 
 .form-control {
   width: 100%;
   max-width: 600px;
-  padding: 0.75rem 1rem; 
+  padding: 0.75rem 1rem;
   font-size: 1rem;
   line-height: 1.5;
   color: #495057;
-  background-color: #f8f9fa; 
+  background-color: #f8f9fa;
   border: 1px solid black;
-  border-radius: 0.5rem; 
+  border-radius: 0.5rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
@@ -258,7 +255,7 @@ label {
   text-align: center;
   vertical-align: middle;
   user-select: none;
-  border: none; 
+  border: none;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   line-height: 1.5;
@@ -275,7 +272,7 @@ label {
   padding: 20px;
   margin-top: 150px;
   border-radius: 4px;
-  height: '500px';
+  height: "500px";
 }
 
 .register-form h2 {
@@ -332,7 +329,7 @@ Desgingn the buy, borrow, my cart buttons */
   margin-right: 10px;
   width: 130px;
   border: none;
-  border-radius: 20px; 
+  border-radius: 20px;
   cursor: pointer;
 }
 
@@ -370,10 +367,9 @@ ul {
   list-style: none;
   padding: 0;
 }
-ul .nav{
-    margin-left:780px;
+ul .nav {
+  margin-left: 1000px;
 }
-
 li {
   /* margin-left:100px; */
   display: flex;
@@ -392,10 +388,10 @@ button {
 /* Designin my profile page */
 
 .profile-page {
-  max-width: 2000px; 
+  max-width: 2000px;
   margin: 0 auto;
   padding: 20px;
-} 
+}
 
 .profile-page h2 {
   font-size: 24px;
@@ -406,7 +402,6 @@ button {
   text-align: center;
   margin-top: 20px;
   padding: 20px;
-
 }
 
 .profile-details h3 {
@@ -417,7 +412,6 @@ button {
   margin: 10px 0;
 }
 
-
 /* button {
   background-color: #007bff;
   color: white;
@@ -425,7 +419,6 @@ button {
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer; */
-
 
 /* Toggler Fixer */
 
@@ -440,30 +433,29 @@ button {
   cursor: pointer;
   float: left;
 }
-.toggler-button button{
+.toggler-button button {
   margin-top: 20px;
   width: 250px;
   border: none;
-  border-radius: 20px; 
+  border-radius: 20px;
   cursor: pointer;
 }
 
 .toggler-button:hover {
   color: #ffffff;
-} 
-.toggler-cart button{
-  color: #fff;
-  background-color:lightskyblue
 }
-.toggler-favorites button{
+.toggler-cart button {
+  color: #fff;
+  background-color: lightskyblue;
+}
+.toggler-favorites button {
   color: #fff;
   background-color: palevioletred;
 }
-.toggler-rcbooks button{
+.toggler-rcbooks button {
   color: #fff;
   background-color: green;
 }
-
 
 .filters {
   margin-bottom: 20px;
@@ -509,7 +501,6 @@ input[type="text"] {
 .apply-button:hover {
   background-color: #0056b3;
 }
-
 
 .navbar-cart {
   display: flex;
