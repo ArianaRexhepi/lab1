@@ -55,6 +55,16 @@ const Navbar = () => {
               Book List
             </Link>
           </li>
+          <li className="nav-item">
+            <Link to="/recbooks" className="nav-link">
+              Recommended 
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/bsbooks" className="nav-link">
+              Bestsellers 
+            </Link>
+          </li>
           {isAdmin && (
             <>
               <li className="nav-item">

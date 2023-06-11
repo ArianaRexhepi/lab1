@@ -172,10 +172,7 @@ const BookUserList = () => {
   const handleCartClick = (e) => {
     e.stopPropagation();
     console.log("Cart button clicked");
-    setShowCart(true);
-    if (selectedBook) {
-      setCartItems([...cartItems, selectedBook]);
-    }
+    navigate('/mycart');
   };
   const handleFavoritesClick = (e) => {
     e.stopPropagation();
@@ -266,7 +263,7 @@ const BookUserList = () => {
               <i>Book List</i>
             </h1>
           </div>
-          <div className="filters">
+          {/* <div className="filters">
             <label>
               Category:
               <select
@@ -304,13 +301,13 @@ const BookUserList = () => {
             <button className="apply-button" onClick={applyFilters}>
               Apply Filters
             </button>
-          </div>
+          </div> */}
         </>
       )}
 
       {selectedBook ? (
         <div className="mt-3">
-          <div className="back-container" >
+          <div className="back-container">
             <button onClick={handleBackClick} className="back-button">
               <b>Go Back</b>
             </button>
