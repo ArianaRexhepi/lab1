@@ -1,3 +1,7 @@
+*{
+  scroll-behavior: smooth;
+}
+
 /* --  background and library name -- */
 .light-blue-bg {
     background-color: lightskyblue;
@@ -30,16 +34,21 @@ span{
 }
 /* --  navbar align -- */
 /* .navbar-nav {
-  align-items:center;
+  align-items:right;
 } */
-.nav-item-r {
- text-align: right;
-}
+/* .loginform {
+  display: flex;
+  margin-left: 1120px;
+  text-align: center;
+} */
+.nav-item ul{
+  display: flex;
+  position: relative;
 
-.p{
-  /* display: flex;
-  justify-content: center; */
-   margin-right: 295px;
+}
+.nav-item p{
+  display: flex;
+  justify-content: center; 
 }
 
 /* --  book list cards-- */

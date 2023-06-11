@@ -12,7 +12,7 @@ const SearchBar = ({ onSearch }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      // Make an API call or access book data from a database to fetch the book details based on the search term
+      // ("http://localhost:5267/api/bookuserlist")
       const results = await fetchBookDetails(searchTerm);
       setSearchResults(results);
       setSearchTerm('');

@@ -44,7 +44,7 @@ const Navbar = () => {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
-        <ul className="navbar-nav mr-auto">
+        <ul className="navbar-nav ml-auto">
           <li className="nav-item">
             <Link to="/" className="nav-link">
               Home
@@ -78,21 +78,24 @@ const Navbar = () => {
           
           {state.user === null && (
             <>
+            <ul className="loginform">
               <li className="nav-item">
                 <Link to="/login" className="nav-link">
-                  Log in
+                 <p>Log in</p> 
                 </Link>
               </li>
+              </ul>
               <li>
                 <Link to="/register" className="nav-link">
                   Sign up
                 </Link>
               </li>
+              
             </>
           )}
           {state.user !== null && (
             <>
-            <ul className="navbar-nav mr-auto">
+            <ul className="navbar-nav">
             <li className="nav-item">
               <Link to="/myprofile" className="nav-link">
                 My Profile
@@ -101,6 +104,7 @@ const Navbar = () => {
             <li className="nav-item">
               <Link to="/mycart" className="nav-link">
                 <FontAwesomeIcon icon={faShoppingCart} />
+                My Cart
               </Link>
             </li>
             <li
