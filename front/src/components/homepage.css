@@ -307,7 +307,7 @@ label {
 }
 
 /* 
-Desgingn the buy, borrow, my cart buttons */
+Desgingn the favorite and my cart buttons */
 
 .book-buttons {
   display: flex;
@@ -316,7 +316,7 @@ Desgingn the buy, borrow, my cart buttons */
 }
 
 .book-buttons {
-  margin: 0 10px;
+  /* margin: 0 10px; */
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 5px;
@@ -325,7 +325,7 @@ Desgingn the buy, borrow, my cart buttons */
 }
 .book-buttons button {
   /* padding: 0px 10px; */
-  margin-left: 50px;
+  margin-left: 115px;
   margin-right: 10px;
   width: 130px;
   border: none;

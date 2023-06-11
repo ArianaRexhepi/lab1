@@ -161,7 +161,6 @@ const BookUserList = () => {
   const handleCartClick = (e) => {
     e.stopPropagation();
     console.log("Cart button clicked");
-    navigate('/mycart');
   };
   const handleFavoritesClick = (e) => {
     e.stopPropagation();
@@ -318,8 +317,10 @@ const BookUserList = () => {
                   <span className="rating-value">{selectedBook.rating}</span>
                 </div>
                 <div className="book-buttons">
-
-                  <button className="favorites-button" onClick={handleFavoritesClick}>
+                  <button
+                    className="favorites-button"
+                    onClick={handleFavoritesClick}
+                  >
                     <FontAwesomeIcon icon={faHeart} />
                     Favorite
                   </button>
