@@ -9,7 +9,6 @@ import {
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 import ShoppingCart from "./ShoppingCart";
-import SearchBar from "./SearchBar";
 import image1 from "./images/image1.jpg";
 import image4 from "./images/image4.jpeg";
 import image7 from "./images/image7.jpg";
@@ -260,7 +259,6 @@ const BookUserList = () => {
             </h1>
           </div>
           <p>Welcome to the world's largest online library!</p>
-          <SearchBar onChange={handleSearchBook} searchResults={searchResults} />
           {/* <div className="filters">
             <label>
               Category:

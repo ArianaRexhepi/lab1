@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./homepage.css";
-import SearchBar from "./SearchBar";
+import axios from "axios";
 import image1 from "./images/image1.jpg";
 import image2 from "./images/image2.jpeg";
 import image3 from "./images/image3.jpg";
@@ -10,6 +10,16 @@ import image5 from "./images/image5.jpeg";
 import image6 from "./images/image6.jpg";
 
 function HomePage() {
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    const fetch = async () => {
+      const res = await axios.get("http://localhost:5267/api/bestsellers");
+      setBooks(res.data);
+    };
+    fetch();
+  }, []);
+
   return (
     <div>
       <br />
@@ -26,38 +36,16 @@ function HomePage() {
       <div className="flex-container">
         <div className="flex-item">
           <div className="box">
+          {books.map((book) => (
+            <>
             <img
-              src={image1}
+              src={book.image}
               alt="Image 1"
               style={{ height: "250px", width: "200px" }}
             />
-            <img
-              src={image2}
-              alt="Image 2"
-              style={{ height: "250px", width: "200px" }}
-            />
-            <img
-              src={image3}
-              alt="Image 3"
-              style={{ height: "250px", width: "200px" }}
-            />
-          </div>
-          <div className="box">
-            <img
-              src={image4}
-              alt="Image 4"
-              style={{ height: "250px", width: "200px" }}
-            />
-            <img
-              src={image5}
-              alt="Image 5"
-              style={{ height: "250px", width: "200px" }}
-            />
-            <img
-              src={image6}
-              alt="Image 6"
-              style={{ height: "250px", width: "200px" }}
-            />
+            <h3>{book.title}</h3>
+            </>
+          ))}
           </div>
         </div>
       </div>
