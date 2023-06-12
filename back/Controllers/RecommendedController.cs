@@ -36,17 +36,17 @@ namespace back.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> PostAsync(Book book)
+        public async Task<IActionResult> PostAsync(Recommended book)
         {
-           await  _context.Books.AddAsync(book);
+           await  _context.Recommended.AddAsync(book);
             await _context.SaveChangesAsync();
             return Ok();
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAsync(int id, Book book)
+        public async Task<IActionResult> PutAsync(int id, Recommended book)
         {
-            var existingBook = await _context.Books.FindAsync(id);
+            var existingBook = await _context.Recommended.FindAsync(id);
             if (existingBook == null)
             {
                 return NotFound();
@@ -59,7 +59,6 @@ namespace back.Controllers
             existingBook.Category = book.Category;
             existingBook.Year = book.Year;
             existingBook.Image = book.Image;
-            existingBook.Price = book.Price;
 
             await _context.SaveChangesAsync();
 
@@ -69,13 +68,13 @@ namespace back.Controllers
         [HttpDelete("{id}")]
        public async Task<IActionResult> DeleteAsync(int id)
         {
-            var existingBook = await _context.Books.FindAsync(id);
+            var existingBook = await _context.Recommended.FindAsync(id);
             if (existingBook == null)
             {
                 return NotFound();
             }
 
-            _context.Books.Remove(existingBook);
+            _context.Recommended.Remove(existingBook);
            await _context.SaveChangesAsync();
 
             return Ok();
