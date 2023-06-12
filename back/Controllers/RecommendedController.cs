@@ -7,11 +7,11 @@ namespace back.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class BookController : ControllerBase
+    public class RecommendedController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
 
-        public BookController(ApplicationDbContext context)
+        public RecommendedController(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -19,14 +19,14 @@ namespace back.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAsync()
         {
-            var books = await _context.Books.ToListAsync();
-            return Ok(books);
+            var recommended = await _context.Recommended.ToListAsync();
+            return Ok(recommended);
         }
 
        [HttpGet("{id}")]
         public async Task<IActionResult> GetBookAsync(int id)
         {
-            var existingBook = await _context.Books.FindAsync(id);
+            var existingBook = await _context.Recommended.FindAsync(id);
             if (existingBook == null)
             {
                 return NotFound();
