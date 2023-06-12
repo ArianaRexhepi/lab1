@@ -531,3 +531,25 @@ input[type="text"] {
 }
 
   /* Recommended books */
+  .rec-books-container {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .rec-books-header {
+    margin-bottom: 20px;
+  }
+  
+  .rec-books-header h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .rec-books-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+  }
+  
