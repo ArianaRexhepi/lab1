@@ -17,7 +17,7 @@ function BookList() {
     const confirmed = window.confirm('Are you sure you want to delete this book?');
     if (confirmed) {
       await axios.delete(`http://localhost:5267/api/book/${id}`);
-      setBooks(books.filter(book => book.Id !== id));
+      setBooks(books.filter(book => book.id !== id));
     }
   };
 
