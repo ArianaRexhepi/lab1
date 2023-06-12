@@ -24,7 +24,7 @@ function HomePage() {
           <span>MJ </span> Library
         </b>
       </h1>
-      <p>The world's largest online library!</p>
+      <p>  We believe that books have the power to inspire, educate, and entertain. </p>
       <br />
       <SearchBar onSearch={handleSearch} searchResults={searchResults} />
       <div className="flex-container">

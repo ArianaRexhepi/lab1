@@ -252,6 +252,7 @@ const BookUserList = () => {
               <i>Book List</i>
             </h1>
           </div>
+          <p>Welcome to the world's largest online library!</p>
           {/* <div className="filters">
             <label>
               Category:

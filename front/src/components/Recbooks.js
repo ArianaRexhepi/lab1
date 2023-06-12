@@ -8,7 +8,7 @@ const Recbooks = () => {
       </div>
       <div className="rec-books-content">
         <p>
-          We believe that books have the power to inspire, educate, and entertain. Whether you're a seasoned reader or just starting your literary journey, this carefully curated selection of books is designed to provide you with a diverse range of captivating reads.
+          Whether you're a seasoned reader or just starting your literary journey, this carefully curated selection of books is designed to provide you with a diverse range of captivating reads.
         </p>
       </div>
     </div>
