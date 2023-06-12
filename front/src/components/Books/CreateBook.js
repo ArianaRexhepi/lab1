@@ -22,7 +22,7 @@ function CreateBook() {
       Title: title,
       Author: author,
       description: description,
-      category:category,
+      Category:category,
       Rating: rating,
       Year: year,
       Image: image,

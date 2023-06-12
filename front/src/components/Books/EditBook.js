@@ -72,6 +72,17 @@ function EditBook() {
                 />
               </div>
               <div className="form-group">
+                <label>Category:</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  value={book.category}
+                  onChange={(e) =>
+                    setBook({ ...book, category: e.target.value })
+                  }
+                />
+              </div>
+              <div className="form-group">
                 <label>Description:</label>
                 <input
                   type="text"
