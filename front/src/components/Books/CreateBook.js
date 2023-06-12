@@ -6,6 +6,7 @@ function CreateBook() {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("");
   const [rating, setRating] = useState("");
   const [year, setYear] = useState(new Date());
   const [image, setImage] = useState("");
@@ -21,6 +22,7 @@ function CreateBook() {
       Title: title,
       Author: author,
       description: description,
+      category:category,
       Rating: rating,
       Year: year,
       Image: image,
@@ -65,6 +67,15 @@ function CreateBook() {
                 type="text"
                 value={author}
                 onChange={(e) => setAuthor(e.target.value)}
+                className="form-control"
+              />
+            </div>
+            <div className="form-group">
+              <label>Category:</label>
+              <input
+                type="text"
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
                 className="form-control"
               />
             </div>
