@@ -35,6 +35,7 @@ function BookList() {
                       <th>ID</th>
                       <th>Book Title</th>
                       <th>Author</th>
+                      <th>Category</th>
                       <th>Description</th>
                       <th>Rating</th>
                       <th>Year</th>
@@ -49,6 +50,7 @@ function BookList() {
                           <td>{book.id}</td>
                           <td>{book.title}</td>
                           <td>{book.author}</td>
+                          <td>{book.category}</td>
                           <td>{book.description}</td>
                           <td>{book.rating}</td>
                           <td>{book.year}</td>
