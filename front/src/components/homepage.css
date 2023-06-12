@@ -552,4 +552,39 @@ input[type="text"] {
     line-height: 1.5;
     color: #666;
   }
+  .recommended-books-page {
+    padding: 20px;
+  }
+  .recommended-books-grid {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
   
+  .recommended-book-card {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .recommended-book-cover {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .recommended-book-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .recommended-book-author {
+    font-size: 14px;
+    color: #666;
+  }  
