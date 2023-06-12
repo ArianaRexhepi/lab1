@@ -50,89 +50,117 @@ const Navbar = () => {
               Home
             </Link>
           </li>
-          <li className="nav-item">
-            <Link to="/bookuserlist" className="nav-link">
-              Books
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/bsbooks" className="nav-link">
-              Bestsellers 
-            </Link>
-          </li>
-           <li className="nav-item">
-            <Link to="/recbooks" className="nav-link">
-              Recommended 
-            </Link>
-          </li>
-          {isAdmin && (
+          {state.user && (
             <>
               <li className="nav-item">
-                <Link to="/books" className="nav-link">
-                  BooksList
+                <Link to="/bookuserlist" className="nav-link">
+                  Books
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/bestsellers" className="nav-link">
-                  BestsellersList
+                <Link to="/bsbooks" className="nav-link">
+                  Bestsellers
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/borrow" className="nav-link">
-                  Borrow
+                <Link to="/recbooks" className="nav-link">
+                  Recommended
                 </Link>
               </li>
             </>
           )}
-          
-          
+          {isAdmin && (
+            <>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Dashboard
+                </a>
+                <ul className="dropdown-menu">
+                  <li>
+                    <a className="dropdown-item">
+                      <Link to="/books" className="nav-link">
+                        BooksList
+                      </Link>
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item">
+                      <Link to="/bestsellers" className="nav-link">
+                        BestsellersList
+                      </Link>
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item">
+                      <Link to="/borrow" className="nav-link">
+                        Borrow
+                      </Link>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </>
+          )}
+
           {state.user === null && (
             <>
-            <ul className="login">
-              <li className="nav-item">
-                <Link to="/login" className="nav-link">
-                <button>Log in</button> 
-                </Link>
-              </li>
-              {/* <li>
-                <Link to="/register" className="nav-link">
-                  Sign up
-                </Link>
-              </li> */}
+              <ul className="login">
+                <li className="nav-item">
+                  <Link to="/login" className="nav-link">
+                    <button>Log in</button>
+                  </Link>
+                </li>
               </ul>
             </>
           )}
-          {state.user !== null && (
+          {!isAdmin && state.user && (
             <>
+              <ul className="navbar-nav">
+                <ul className="nav">
+                  <li className="nav-item">
+                    <Link to="/myprofile" className="nav-link">
+                      My Profile
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/mycart" className="nav-link">
+                      <FontAwesomeIcon icon={faShoppingCart} />
+                      My Cart
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/myfavorites" className="nav-link">
+                      <FontAwesomeIcon icon={faHeart} />
+                      My Favorites
+                    </Link>
+                  </li>
+                  <li
+                    onClick={handleLogOut}
+                    className="nav-item"
+                    style={{ cursor: "pointer" }}
+                  >
+                    <button>Log Out</button>
+                  </li>
+                </ul>
+              </ul>
+            </>
+          )}
+          {isAdmin && state.user && (
             <ul className="navbar-nav">
-              <ul className="nav">
-            <li className="nav-item">
-              <Link to="/myprofile" className="nav-link">
-                My Profile
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/mycart" className="nav-link">
-                <FontAwesomeIcon icon={faShoppingCart} />
-                My Cart
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/myfavorites" className="nav-link">
-                <FontAwesomeIcon icon={faHeart} />
-                My Favorites
-              </Link>
-            </li>
-            <li
-              onClick={handleLogOut}
-              className="nav-item"
-              style={{ cursor: "pointer" }}
-            >
-              <button>Log Out</button>
-            </li>
-          </ul>
-          </ul>
-          </>
+              <li
+                onClick={handleLogOut}
+                className="nav-item"
+                style={{ cursor: "pointer" }}
+              >
+                <button>Log Out</button>
+              </li>
+            </ul>
           )}
         </ul>
       </div>

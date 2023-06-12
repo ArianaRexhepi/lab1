@@ -31,6 +31,7 @@ function CreateBook() {
       await axios
         .post("http://localhost:5267/api/books", newBook)
         .then(() => {
+          console.log(newBook);
           setLoading(false);
           navigate("/books");
         });

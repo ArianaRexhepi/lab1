@@ -10,12 +10,6 @@ import image5 from "./images/image5.jpeg";
 import image6 from "./images/image6.jpg";
 
 function HomePage() {
-  const [searchResults, setSearchResults] = useState([]);
-
-  const handleSearch = (results) => {
-    setSearchResults(results);
-  };
-
   return (
     <div>
       <br />
@@ -24,9 +18,11 @@ function HomePage() {
           <span>MJ </span> Library
         </b>
       </h1>
-      <p>  We believe that books have the power to inspire, educate, and entertain. </p>
+      <p>
+        {" "}
+        We believe that books have the power to inspire, educate, and entertain.{" "}
+      </p>
       <br />
-      <SearchBar onSearch={handleSearch} searchResults={searchResults} />
       <div className="flex-container">
         <div className="flex-item">
           <div className="box">

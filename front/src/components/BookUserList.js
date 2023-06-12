@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import "./homepage.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,6 +9,7 @@ import {
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 import ShoppingCart from "./ShoppingCart";
+import SearchBar from "./SearchBar";
 import image1 from "./images/image1.jpg";
 import image4 from "./images/image4.jpeg";
 import image7 from "./images/image7.jpg";
@@ -139,16 +141,32 @@ const books = [
 ];
 
 const BookUserList = () => {
+  const [book,setBook] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
   const [selectedBook, setSelectedBook] = useState(null);
   const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const navigate = useNavigate();
+  const [searchResults, setSearchResults] = useState([]);
   const [filters, setFilters] = useState({
     category: "",
     author: "",
     rating: "",
   });
+
+  useEffect(() => {
+    const fetchBook = async () => {
+      const res = await axios.get('http://localhost:5267/api/book');
+      setBook(res.data);
+    };
+    fetchBook();
+  }, []);
+
+
+  const handleSearchBook = event => {
+    setSearchTerm(event.target.value);
+  };
 
   const handleBookClick = (book) => {
     setSelectedBook(book);
@@ -195,29 +213,19 @@ const BookUserList = () => {
   //   console.log("Proceed to checkout clicked");
   // };
 
-  const handleFilterChange = (event) => {
-    const { name, value } = event.target;
-    setFilters((prevFilters) => ({
-      ...prevFilters,
-      [name]: value,
-    }));
+  // const handleFilterChange = (event) => {
+  //   const { name, value } = event.target;
+  //   setFilters((prevFilters) => ({
+  //     ...prevFilters,
+  //     [name]: value,
+  //   }));
+  // };
+
+  const handleSearch = (results) => {
+    setSearchResults(results);
   };
 
-  const filteredImages = [
-    image1,
-    image12,
-    image13,
-    image4,
-    image15,
-    image16,
-  ].filter((image) => {
-    // Apply filter logic based on the filter values
-    return (
-      (filters.category === "" || getCategory(image) === filters.category) &&
-      (filters.author === "" || getAuthor(image) === filters.author) &&
-      (filters.rating === "" || getRating(image) === filters.rating)
-    );
-  });
+  
 
   const applyFilters = () => {
     // Logic to apply the filters and update the search results
@@ -252,6 +260,7 @@ const BookUserList = () => {
             </h1>
           </div>
           <p>Welcome to the world's largest online library!</p>
+          <SearchBar onChange={handleSearchBook} searchResults={searchResults} />
           {/* <div className="filters">
             <label>
               Category:
