@@ -15,6 +15,8 @@ import EditBorrow from "./Borrow/EditBorrow";
 import BookUserList from "./BookUserList";
 import RegisterForm from "./RegisterForm";
 import ProfilePage from "./ProfilePage";
+import ShoppingCart from './ShoppingCart';
+import Recbooks from './Recbooks';
 import { ProtectedRoute } from "./ProtectedRoute";
 import { AdminProtectedRoute } from "./AdminProtectedRoute";
 
@@ -36,6 +38,8 @@ const Pages = () => {
         </Route>
         <Route path="/" element={<HomePage />} />
         <Route path="/bookuserlist" element={<BookUserList />} />
+        <Route path="/mycart" element={<ShoppingCart />} />
+        <Route path="/recbooks" element={<Recbooks />} />
 
         <Route element={<ProtectedRoute redirectPath="/" />}>
           <Route path="/myprofile" element={<ProfilePage />} />
