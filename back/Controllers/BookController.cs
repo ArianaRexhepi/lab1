@@ -26,7 +26,7 @@ namespace back.Controllers
        [HttpGet("{id}")]
         public async Task<IActionResult> GetBookAsync(int id)
         {
-            var existingBook = await _context.Bestsellers.FindAsync(id);
+            var existingBook = await _context.Books.FindAsync(id);
             if (existingBook == null)
             {
                 return NotFound();

@@ -1,42 +1,39 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 function EditBook() {
-    const [loading, setLoading] = useState(false);
-    const [book, setBook] = useState(null);
-    const navigate = useNavigate();
-    const { id } = useParams();
+  const [loading, setLoading] = useState(false);
+  const [book, setBook] = useState(null);
+  const navigate = useNavigate();
+  const { id } = useParams();
 
-    useEffect(() => {
-        axios
-          .get(`http://localhost:5267/api/books/${id}`)
-          .then((response) => {
-            setBook(response.data);
-            console.log(response.data);
-          });
-      }, []);
+  useEffect(() => {
+    axios.get(`http://localhost:5267/api/book/${id}`).then((response) => {
+      setBook(response.data);
+      console.log(response.data);
+    });
+  }, []);
 
-      const handleSubmit = async (event) => {
-        event.preventDefault();
-        setLoading(true);
-    
-        try {
-          await axios
-            .put(`http://localhost:5267/api/books/${id}`, book)
-            .then(() => {
-              setLoading(false);
-              navigate("/books");
-            });
-        } catch (error) {
-          console.error(error);
-        }
-      };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setLoading(true);
 
-function EditBook() {
-    return (
-        <div className="modal-dialog" style={{ width: 600, marginTop:'50px' }}>
-        <div className="modal-content">
+    try {
+      await axios.put(`http://localhost:5267/api/book/${id}`, book).then(() => {
+        setLoading(false);
+        navigate("/books");
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  if(!book) return <div>Loading...</div>
+
+  return (
+    <div className="modal-dialog" style={{ width: 600, marginTop: "50px" }}>
+      <div className="modal-content">
           <form className="form">
             <div className="modal-header">
               <h4 className="modal-title">Edit Book</h4>
@@ -145,9 +142,8 @@ function EditBook() {
             </div>
           </form>
         </div>
-      </div>
-        );
-    }
+    </div>
+  );
 }
 
 export default EditBook;

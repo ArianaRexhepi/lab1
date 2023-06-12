@@ -29,7 +29,7 @@ function CreateBook() {
 
     try {
       await axios
-        .post("http://localhost:5267/api/books", newBook)
+        .post("http://localhost:5267/api/book", newBook)
         .then(() => {
           console.log(newBook);
           setLoading(false);
