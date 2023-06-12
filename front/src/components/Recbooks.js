@@ -1,21 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
+
+import image4 from "./images/image4.jpeg";
+import image7 from "./images/image7.jpg";
+import image8 from "./images/image8.jpg";
 
 const Recbooks = () => {
+
+
   const recommendedBooks = [
     {
       title: "Book Title 1",
       author: "Author 1",
-      coverImage: "url-to-cover-image-1",
+      coverImage: image4,
     },
     {
       title: "Book Title 2",
       author: "Author 2",
-      coverImage: "url-to-cover-image-2",
+      coverImage: image8,
     },
     {
       title: "Book Title 3",
       author: "Author 3",
-      coverImage: "url-to-cover-image-3",
+      coverImage: image7,
     },
     // Add more books as needed
   ];
