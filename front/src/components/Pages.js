@@ -22,6 +22,7 @@ import { AdminProtectedRoute } from "./AdminProtectedRoute";
 import RecommendedList from "./Recommended/RecommendedList";
 import EditRecommended from "./Recommended/EditRecommended";
 import CreateRecommended from "./Recommended/CreateRecommended";
+import FavoriteBooks from "./FavoritesBooks";
 
 const Pages = () => {
   return (
@@ -49,6 +50,7 @@ const Pages = () => {
           <Route path="/bookuserlist" element={<BookUserList />} />
           <Route path="/mycart" element={<ShoppingCart />} />
           <Route path="/recbooks" element={<Recbooks />} />
+          <Route path="/myfavorites" element={<FavoriteBooks />} />
         </Route>
 
         <Route path="/login" element={<LoginForm />} />

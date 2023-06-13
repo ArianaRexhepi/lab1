@@ -14,7 +14,7 @@ import {
 const Navbar = () => {
   // state eshte per me i marr te dhenat e userit
   const state = useSelector((state) => state);
-  const [books, setBooks] = useState([]);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -145,25 +145,7 @@ const Navbar = () => {
                       My Favorites
                     </Link>
                   </li>
-                  <div className="book-container">
-                    {books.map((book, index) => (
-                      <div
-                        key={index}
-                        className="fav-card"
-                        onClick={() => handleBookClick(book)}
-                      >
-                        <img
-                          src={book.image}
-                          alt={book.title}
-                          className="fav-card-image"
-                        />
-                        <div className="fav-card-details">
-                          <h3 className="fav-card-title">{book.title}</h3>
-                          <p className="fav-card-author">By {book.author}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+
                   <li
                     onClick={handleLogOut}
                     className="nav-item"
