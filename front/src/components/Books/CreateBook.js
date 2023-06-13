@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 
 function CreateBook() {
   const [title, setTitle] = useState("");
@@ -19,37 +19,40 @@ function CreateBook() {
     setLoading(true);
 
     const newBook = {
-      Title: title,
-      Author: author,
+      title: title,
+      author: author,
       description: description,
-      Category:category,
-      Rating: rating,
-      Year: year,
-      Image: image,
-      Price: price
+      category: category,
+      rating: rating,
+      year: year,
+      image: image,
+      price: price,
     };
 
     try {
-      await axios
-        .post("http://localhost:5267/api/book", newBook)
-        .then(() => {
-          console.log(newBook);
-          setLoading(false);
-          navigate("/books");
-        });
       console.log(newBook);
+      await axios.post("http://localhost:5267/api/book", newBook).then(() => {
+        setLoading(false);
+        navigate("/books");
+      });
     } catch (error) {
       console.error(error);
     }
   };
 
   return (
-    <div className="modal-dialog" style={{ width: 600}}>
+    <div className="modal-dialog" style={{ width: 600 }}>
       <div className="modal-content">
         <form className="form" onSubmit={handleSubmit}>
           <div className="modal-header">
             <h4 className="modal-title">Add Book</h4>
-            <Link to="/books"><button type="button" class="btn-close" aria-label="Close"></button></Link>
+            <Link to="/books">
+              <button
+                type="button"
+                class="btn-close"
+                aria-label="Close"
+              ></button>
+            </Link>
           </div>
           <div className="modal-body">
             <div className="form-group">
@@ -100,9 +103,9 @@ function CreateBook() {
             <div className="form-group">
               <label>Rating:</label>
               <input
-                type="datetime"
+                type="number"
                 value={rating}
-                onChange={(e) => setRating(e.target.value)}
+                onChange={(e) => setRating(parseInt(e.target.value))}
                 className="form-control"
               />
             </div>
@@ -118,9 +121,9 @@ function CreateBook() {
             <div className="form-group">
               <label>Price:</label>
               <input
-                type="text"
+                type="number"
                 value={price}
-                onChange={(e) => setPrice(e.target.value)}
+                onChange={(e) => setPrice(parseInt(e.target.value))}
                 className="form-control"
               />
             </div>

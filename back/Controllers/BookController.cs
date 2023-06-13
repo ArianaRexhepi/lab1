@@ -14,13 +14,11 @@ namespace back.Controllers
     {
         private readonly ApplicationDbContext _context;
         public readonly IHttpContextAccessor _accessor;
-        private readonly UserManager<AppUser> _userManager;
 
-        public BookController(ApplicationDbContext context, IHttpContextAccessor accessor, UserManager<AppUser> userManager)
+        public BookController(ApplicationDbContext context, IHttpContextAccessor accessor)
         {
             _context = context;
             _accessor = accessor;
-            _userManager = userManager;
         }
 
         [HttpGet]
@@ -46,7 +44,8 @@ namespace back.Controllers
         public async Task<IActionResult> PostAsync(Book book)
         {
             await _context.Books.AddAsync(book);
-            await _context.SaveChangesAsync();
+            var result = await _context.SaveChangesAsync() > 0;
+            if (!result) return BadRequest();
             return Ok();
         }
 
@@ -88,6 +87,15 @@ namespace back.Controllers
             return Ok();
         }
 
+        [HttpGet("userFavourite")]
+        public async Task<IActionResult> GetFavorites()
+        {
+            var userEmail = _accessor.HttpContext.User.FindFirst(ClaimTypes.Email).Value;
+            var user = await _context.Users.Include(a => a.Books).FirstOrDefaultAsync(a => a.Email == userEmail);
+
+            return Ok(user.Books);
+        }
+
         [HttpPost("addFavorite")]
         public async Task<IActionResult> FavoriteAsync(Book book)
         {
@@ -101,7 +109,19 @@ namespace back.Controllers
             return Ok();
 
         }
+        [HttpDelete("removeFavorite/{id}")]
+        public async Task<IActionResult> RemoveFavorite(int id)
+        {
+            var userEmail = _accessor.HttpContext.User.FindFirst(ClaimTypes.Email).Value;
+            var user = await _context.Users.Include(a => a.Books).FirstOrDefaultAsync(a => a.Email == userEmail);
 
+            var userBook = user.Books.Where(a => a.Id == id).FirstOrDefault();
+
+            user.Books.Remove(userBook);
+
+            await _context.SaveChangesAsync();
+
+            return Ok();
+        }
     }
-
 }

@@ -5,7 +5,11 @@ import "./homepage.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "../redux/actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart, faHeart } from "@fortawesome/free-solid-svg-icons";
+import {
+  faShoppingCart,
+  faHeart,
+  faDuotoneFaRightToBracket,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   // state eshte per me i marr te dhenat e userit
@@ -108,7 +112,10 @@ const Navbar = () => {
               <ul className="login">
                 <li className="nav-item">
                   <Link to="/login" className="nav-link">
-                    <button>Log in</button>
+                  <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                    <button className="buttonn">Sign in</button>
+                    </div>
                   </Link>
                 </li>
               </ul>
@@ -116,7 +123,6 @@ const Navbar = () => {
           )}
           {!isAdmin && state.user && (
             <>
-            
               <ul className="navbar-nav">
                 <ul className="nav">
                   <li className="nav-item">
@@ -141,7 +147,12 @@ const Navbar = () => {
                     className="nav-item"
                     style={{ cursor: "pointer" }}
                   >
-                    <button>Log Out</button>
+                    <button className="buttonn">
+                      Log out
+                      <div class="arrow-wrapper">
+                        <div class="arrow"></div>
+                      </div>
+                    </button>
                   </li>
                 </ul>
               </ul>
@@ -154,7 +165,12 @@ const Navbar = () => {
                 className="nav-item"
                 style={{ cursor: "pointer" }}
               >
-                <button>Log Out</button>
+                <button className="buttonn">
+                  Log out
+                  <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                  </div>
+                </button>
               </li>
             </ul>
           )}

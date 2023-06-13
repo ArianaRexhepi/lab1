@@ -38,12 +38,15 @@ function HomePage() {
           <div className="box">
           {books.map((book) => (
             <>
-            <img
+            <div></div>
+            <div>
+              <img
               src={book.image}
               alt="Image 1"
               style={{ height: "250px", width: "200px" }}
             />
-            <h6>{book.title}</h6>
+            <h6>{book.title}</h6></div>
+            
             </>
           ))}
           </div>

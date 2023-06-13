@@ -13,24 +13,29 @@ span {
 /* --  FLEX BOX IMAGES -- */
 
 .flex-container {
-  display: flex;
   flex-direction: row;
+  display: flex;
+  justify-content: center;
   /* grid-template-rows: repeat(auto-fit, minmax(500px, 5fr));
-  grid-gap: 10px; */
-  justify-items: center;
+  grid-gap: 10px;  */
+  width: 700px;
+  margin: auto;
 }
 
 .box {
   text-align: center;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 .box img {
   height: 250px;
   width: 200px;
   margin-bottom: 10px;
+  object-fit: fill;
+  padding: 10px;
 }
 
 .box h6 {
@@ -361,7 +366,7 @@ ul .nav {
 }
 
 ul .login{
-  margin-left: 1210px;
+  margin-left: 1100px;
 }
 
 li {
@@ -381,6 +386,69 @@ button {
   border: none;
   padding: 5px 10px;
   cursor: pointer;
+  outline: none;
+  
+}
+
+
+.buttonn {
+  --primary-color: inherit;
+  --secondary-color: #fff;
+  --hover-color: blue;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 20px;
+  color: var(--secondary-color);
+  padding: 0.5em 1.0em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+}
+
+.buttonn .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonn .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+.buttonn .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+.buttonn:hover {
+  background-color: var(--hover-color);
+}
+
+.buttonn:hover .arrow {
+  background: var(--secondary-color);
+}
+
+.buttonn:hover .arrow:before {
+  right: 0;
 }
 
 /* Designin my profile page */
@@ -418,87 +486,7 @@ button {
   border-radius: 4px;
   cursor: pointer; */
 
-/* Toggler Fixer */
 
-/* In your CSS file */
-
-.toggler-button {
-  /* margin: 0 10px;  */
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  float: left;
-}
-.toggler-button button {
-  margin-top: 20px;
-  width: 250px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.toggler-button:hover {
-  color: #ffffff;
-}
-.toggler-cart button {
-  color: #fff;
-  background-color: lightskyblue;
-}
-.toggler-favorites button {
-  color: #fff;
-  background-color: palevioletred;
-}
-.toggler-rcbooks button {
-  color: #fff;
-  background-color: green;
-}
-
-.filters {
-  margin-bottom: 20px;
-  margin-top: 40px;
-}
-
-label {
-  display: inline-block;
-  margin-right: 10px;
-  font-weight: bold;
-}
-
-/* select,
-input[type="text"] {
-  padding: 5px;
-  font-size: 14px;
-} */
-
-.filter-button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.filter-button:hover {
-  background-color: #0056b3;
-}
-
-.apply-button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.apply-button:hover {
-  background-color: #0056b3;
-}
 
 
  /* Navbar addition */
@@ -538,6 +526,7 @@ input[type="text"] {
     font-size: 24px;
     font-weight: bold;
     color: #333;
+    text-align: left;
   }
   
   .rec-books-content p {
@@ -549,26 +538,31 @@ input[type="text"] {
     padding: 20px;
   }
   .recommended-books-grid {
+    margin: auto;
     margin-top: 50px;
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: space-around;
     gap: 15px;
+
   }
   
   .recommended-book-card {
-    background-color: #f5f5f5;
+    background-color: whitesmoke;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
+    width: 370px;
   }
   
   .recommended-book-cover {
     width: 50%;
     height: auto;
+    margin: auto;
     border-radius: 4px;
     margin-bottom: 10px;
+
   }
   
   .recommended-book-title {
@@ -590,13 +584,117 @@ input[type="text"] {
 
   /* MY PROFILE */
 
-  .gradient-custom {
-    /* fallback for old browsers */
-    background: lightblue;
-  
-    /* Chrome 10-25, Safari 5.1-6 */
-    /* background: -webkit-linear-gradient(to right bottom, lightblue(246, 211, 101, 1), darkblue(253, 160, 133, 1)); */
-  
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+
-    background: linear-gradient(to right bottom, lightblue(246, 211, 101, 1), darkblue(253, 160, 133, 1)) */
+  /* .card {
+    color: #1b1b1b;
+    width: 300px;
+    height: 500px;
+    position: relative;
+    outline: 6px solid #f5f5f5;
+    border-radius: 8px;
+    line-height: 150%;
+    padding: 16px;
+    background: #ff930f;
+    background-blend-mode: multiply;
+    background: linear-gradient(to top, #ff930f, #ffcc33);
+    transition: background-color 1s ease-in-out;
+    overflow: hidden;
   }
+  
+  .card-front {
+    bottom: 16px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    transition: transform 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+  }
+  
+  .card-back {
+    transform: translateX(120%);
+    transition: transform 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+  }
+  
+  
+  /*Text*/
+  /* .title {
+    font-size: 1.3rem;
+    font-weight: bold;
+  } */
+  /*Text divider*/
+  /* .title::after {
+    content: "";
+    display: block;
+    width: 50%;
+    border-radius: 50%;
+    height: 2px;
+    margin: 2px auto;
+    background-color: #1b1b1b;
+  }
+  
+  
+  /*Hover*/
+  /* .card:hover {
+    background-color: #1b1b1b25;
+  }
+  
+  .card:hover .card-front {
+    transform: translateX(-100%);
+  }
+  
+  .card:hover .card-back {
+    transform: translateX(0);
+  } */
+
+
+  
+  /* SEARCH BOX */
+
+
+  .group {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    max-width: 590px;
+   
+   }
+   
+   .input {
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    line-height: 28px;
+    padding: 0 1rem;
+    padding-left: 2.5rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    background-color: #f3f3f4;
+    color: #0d0c22;
+    transition: .3s ease;
+   }
+   
+   .input::placeholder {
+    color: #9e9ea7;
+   }
+   
+   .input:focus, input:hover {
+    outline: none;
+    border-color: rgba(234,76,137,0.4);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+   }
+   
+   .icon {
+    position: absolute;
+    left: 1rem;
+    fill: #9e9ea7;
+    width: 1rem;
+    height: 1rem;
+   }
+   
+   
+   
+   
+   
+   
