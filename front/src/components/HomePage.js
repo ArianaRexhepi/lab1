@@ -32,7 +32,8 @@ function HomePage() {
         {" "}
         We believe that books have the power to inspire, educate, and entertain.{" "}
       </p>
-      <br />
+      <hr></hr>
+      <p>Here are some of the bestsellers for this month</p>
       <div className="flex-container">
         <div className="flex-item">
           <div className="box">

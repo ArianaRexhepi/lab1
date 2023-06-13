@@ -18,7 +18,7 @@ span {
   justify-content: center;
   /* grid-template-rows: repeat(auto-fit, minmax(500px, 5fr));
   grid-gap: 10px;  */
-  width: 700px;
+  width: 900px;
   margin: auto;
 }
 
@@ -648,8 +648,6 @@ button {
 
   
   /* SEARCH BOX */
-
-
   .group {
     display: flex;
     line-height: 28px;
@@ -693,6 +691,33 @@ button {
     height: 1rem;
    }
    
+   /* LOG OUT BUTTON */
+
+   .buttoon {
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 100px;
+    background-color: inherit;
+    color: wheat;
+    font-weight: Bold;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+  }
+  
+  .buttoon:hover {
+    background-color: whitesmoke;
+    box-shadow: 0 0 20px #6fc5ff50;
+    transform: scale(1.1);
+  }
+  
+  .buttoon:active {
+    background-color: #3d94cf;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.98);
+  }
+  
    
    
    

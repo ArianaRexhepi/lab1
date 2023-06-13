@@ -147,11 +147,8 @@ const Navbar = () => {
                     className="nav-item"
                     style={{ cursor: "pointer" }}
                   >
-                    <button className="buttonn">
+                    <button className="buttoon">
                       Log out
-                      <div class="arrow-wrapper">
-                        <div class="arrow"></div>
-                      </div>
                     </button>
                   </li>
                 </ul>
