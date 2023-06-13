@@ -74,6 +74,17 @@ function EditRecommended() {
                     setRecommended({ ...recommended, author: e.target.value })
                 }
               />
+              </div>
+              <div className="form-group">
+              <label>Category:</label>
+              <input
+                type="text"
+                className="form-control"
+                value={recommended.category}
+                onChange={(e) =>
+                    setRecommended({ ...recommended, category: e.target.value })
+                }
+              />
             </div>
             <div className="form-group">
               <label> Description:</label>
