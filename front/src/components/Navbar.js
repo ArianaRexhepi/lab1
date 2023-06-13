@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faShoppingCart,
   faHeart,
-  faDuotoneFaRightToBracket,
+  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
@@ -130,6 +130,7 @@ const Navbar = () => {
                 <ul className="nav">
                   <li className="nav-item">
                     <Link to="/myprofile" className="nav-link">
+                    <FontAwesomeIcon icon={faUser} />
                       My Profile
                     </Link>
                   </li>
