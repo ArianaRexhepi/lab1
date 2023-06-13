@@ -13,9 +13,10 @@ span {
 /* --  FLEX BOX IMAGES -- */
 
 .flex-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 10px;
+  display: flex;
+  flex-direction: row;
+  /* grid-template-rows: repeat(auto-fit, minmax(500px, 5fr));
+  grid-gap: 10px; */
   justify-items: center;
 }
 
