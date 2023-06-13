@@ -49,7 +49,7 @@ function CreateBook() {
         <form className="form" onSubmit={handleSubmit}>
           <div className="modal-header">
             <h4 className="modal-title">Add Book</h4>
-            <Link to="/books"><button type="button" className="close" data-dismiss="modal" aria-hidden="true">&times;</button></Link>
+            <Link to="/books"><button type="button" class="btn-close" aria-label="Close"></button></Link>
           </div>
           <div className="modal-body">
             <div className="form-group">
