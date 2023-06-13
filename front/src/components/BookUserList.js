@@ -34,11 +34,6 @@ const BookUserList = () => {
     fetch();
   }, []);
 
-
-  const handleSearchBook = event => {
-    setSearchTerm(event.target.value);
-  };
-
   const handleBookClick = (book) => {
     setSelectedBook(book);
   };
@@ -71,7 +66,6 @@ const BookUserList = () => {
     }
 
     localStorage.setItem("favoriteBook", JSON.stringify(selectedBook));
-    // navigate("/myprofile");
   };
 
   // const handleRemoveItem = (index) => {
@@ -84,41 +78,8 @@ const BookUserList = () => {
   //   console.log("Proceed to checkout clicked");
   // };
 
-  // const handleFilterChange = (event) => {
-  //   const { name, value } = event.target;
-  //   setFilters((prevFilters) => ({
-  //     ...prevFilters,
-  //     [name]: value,
-  //   }));
-  // };
-
   const handleSearch = (results) => {
     setSearchResults(results);
-  };
-
-  
-
-  const applyFilters = () => {
-    // Logic to apply the filters and update the search results
-    // You can modify this based on your actual data and filtering requirements
-    const filteredResults = []; // Filtered search results
-
-    // Apply the category filter
-    const filteredByCategory = searchResults.filter((result) =>
-      result.category.includes(filters.category)
-    );
-
-    // Apply the author filter
-    const filteredByAuthor = filteredByCategory.filter((result) =>
-      result.author.includes(filters.author)
-    );
-
-    // Apply the rating filter
-    const filteredByRating = filteredByAuthor.filter(
-      (result) => result.rating === filters.rating
-    );
-
-    setSearchResults(filteredByRating);
   };
 
   return (

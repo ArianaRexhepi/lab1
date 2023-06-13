@@ -23,7 +23,7 @@ function BestsellerList() {
   };
 
   return (
-    <><h1>Best sellers</h1><div className="card shadow mb-4">
+    <><h1>Bestsellers</h1><div className="card shadow mb-4">
           <div className="card-header py-3">
               <div className="float-right">
               <Link to="/createbestseller"><button className='btn btn-primary' >Create new</button></Link>

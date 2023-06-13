@@ -43,7 +43,7 @@ function HomePage() {
               alt="Image 1"
               style={{ height: "250px", width: "200px" }}
             />
-            <h3>{book.title}</h3>
+            <h6>{book.title}</h6>
             </>
           ))}
           </div>
