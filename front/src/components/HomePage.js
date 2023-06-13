@@ -33,7 +33,7 @@ function HomePage() {
       </p>
       <p>
         We hope you enjoy using this website to fulfill your requirements.{"\n"}
-        Here are some of the bestselling books for this month.
+        Here are some of our <b>Bestselling Books </b>for this month.
       </p>
 
       <div className="flex-container">
