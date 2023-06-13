@@ -20,7 +20,7 @@ function CreateBestseller() {
       Author: author,
       Rating: rating,
       Year: year,
-      Image: image
+      Image: image,
     };
 
     try {
@@ -45,12 +45,9 @@ function CreateBestseller() {
             <Link to="/bestsellers">
               <button
                 type="button"
-                className="close"
-                data-dismiss="modal"
-                aria-hidden="true"
-              >
-                &times;
-              </button>
+                class="btn-close"
+                aria-label="Close"
+              ></button>
             </Link>
           </div>
           <div className="modal-body">

@@ -581,6 +581,10 @@ input[type="text"] {
     color: #666;
   }  
 
+  .custom-height {
+    height: 500px; /* Replace with your desired height value */
+  }
+  
 
   .gradient-custom {
     /* fallback for old browsers */
