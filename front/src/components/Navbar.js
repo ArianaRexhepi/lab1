@@ -94,7 +94,7 @@ const Navbar = () => {
                   <li>
                     <a className="dropdown-item">
                       <Link to="/recommended" className="nav-link">
-                        Recommended
+                        RecommendedList
                       </Link>
                     </a>
                   </li>
