@@ -116,6 +116,7 @@ const Navbar = () => {
           )}
           {!isAdmin && state.user && (
             <>
+            
               <ul className="navbar-nav">
                 <ul className="nav">
                   <li className="nav-item">
