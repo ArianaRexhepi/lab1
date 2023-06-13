@@ -16,7 +16,7 @@ import BookUserList from "./BookUserList";
 import RegisterForm from "./RegisterForm";
 import ProfilePage from "./ProfilePage";
 import ShoppingCart from "./ShoppingCart";
-import Recbooks from "./Recbooks";
+import Recbooks from "./Recommended/Recbooks";
 import { ProtectedRoute } from "./ProtectedRoute";
 import { AdminProtectedRoute } from "./AdminProtectedRoute";
 
