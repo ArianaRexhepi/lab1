@@ -651,9 +651,11 @@ button {
   .group {
     display: flex;
     line-height: 28px;
+    justify-content: center;
     align-items: center;
     position: relative;
-    max-width: 590px;
+    max-width: 900px;
+    margin: auto;
    
    }
    
