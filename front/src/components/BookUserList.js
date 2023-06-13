@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from 'axios';
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./homepage.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,8 +11,8 @@ import {
 
 const BookUserList = () => {
   const [books, setBooks] = useState([]);
-  const [book,setBook] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [book, setBook] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
   const [selectedBook, setSelectedBook] = useState(null);
   const [showCart, setShowCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
@@ -27,7 +27,7 @@ const BookUserList = () => {
 
   useEffect(() => {
     const fetch = async () => {
-      const res = await axios.get('http://localhost:5267/api/book');
+      const res = await axios.get("http://localhost:5267/api/book");
       setBooks(res.data);
       console.log(res.data);
     };
@@ -163,6 +163,35 @@ const BookUserList = () => {
           ))}
         </div>
       )}
+      <nav aria-label="Page navigation example">
+        <ul class="pagination  justify-content-center">
+          <li class="page-item">
+            <a class="page-link" href="#">
+              Previous
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">
+              1
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">
+              2
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">
+              3
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">
+              Next
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 };
