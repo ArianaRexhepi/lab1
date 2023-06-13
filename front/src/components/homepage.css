@@ -13,26 +13,31 @@ span {
 /* --  FLEX BOX IMAGES -- */
 
 .flex-container {
-  display: flex;
-  
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+  justify-items: center;
 }
-.box img {
-  border: 1px solid white;
+
+.box {
+  text-align: center;
   padding: 10px;
-  background-color: white;
-  position: static;
-  top: 0;
-  left: 0;
-  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
-.flex-item {
-  flex: 1;
-  margin: 10px;
+
+.box img {
+  height: 250px;
+  width: 200px;
+  margin-bottom: 10px;
 }
-.flex-item img {
-  width: 13%;
-  height: auto;
-} 
+
+.box h6 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+
 
 /* --  navbar align -- */
 .navbar-nav {
@@ -575,3 +580,15 @@ input[type="text"] {
     font-size: 14px;
     color: #666;
   }  
+
+
+  .gradient-custom {
+    /* fallback for old browsers */
+    background: lightblue;
+  
+    /* Chrome 10-25, Safari 5.1-6 */
+    /* background: -webkit-linear-gradient(to right bottom, lightblue(246, 211, 101, 1), darkblue(253, 160, 133, 1)); */
+  
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+
+    background: linear-gradient(to right bottom, lightblue(246, 211, 101, 1), darkblue(253, 160, 133, 1)) */
+  }
