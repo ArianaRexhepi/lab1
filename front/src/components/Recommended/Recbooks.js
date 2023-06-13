@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import image4 from "./images/image4.jpeg";
-import image7 from "./images/image7.jpg";
-import image8 from "./images/image8.jpg";
+import image4 from "../images/image4.jpeg";
+import image7 from "../images/image7.jpg";
+import image8 from "../images/image8.jpg";
 
 const Recbooks = () => {
 
