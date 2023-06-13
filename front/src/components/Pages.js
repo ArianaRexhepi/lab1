@@ -19,6 +19,8 @@ import ShoppingCart from "./ShoppingCart";
 import Recbooks from "./Recbooks";
 import { ProtectedRoute } from "./ProtectedRoute";
 import { AdminProtectedRoute } from "./AdminProtectedRoute";
+import RecommendedList from "./Recommended/RecommendedList";
+import EditRecommended from "./Recommended/EditRecommended";
 
 const Pages = () => {
   return (
@@ -32,6 +34,8 @@ const Pages = () => {
           <Route path="/createbestseller" element={<CreateBestseller />} />
           <Route path="/editbestseller/:id" element={<EditBestseller />} />
           <Route path="/editbook/:id" element={<EditBook />} />
+          <Route path="/recommended" element={<RecommendedList />} />
+          <Route path="/editrecommended/:id" element={<EditRecommended/>} />
           <Route path="/borrow" element={<Borrow />} />
           <Route path="/createborrow" element={<CreateBorrow />} />
           <Route path="/editborrow/:id" element={<EditBorrow />} />

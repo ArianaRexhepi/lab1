@@ -132,21 +132,6 @@ span {
   font-size: 18px;
 }
 
-/* .favorites-button {
-  position: absolute;
-  top: 180px;
-  right: 170px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  color: red;
-  font-size: 20px;
-} */
-
-/* .favorites-button h6 {
-  color: black;
-} */
-
 .book-image {
   width: 100%;
   max-width: 500px;
