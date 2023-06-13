@@ -234,7 +234,7 @@ label {
 
 .form-control {
   width: 100%;
-  max-width: 400px;
+  max-width: 700px;
   padding: 0.75rem 1rem;
   font-size: 1rem;
   line-height: 1.5;
@@ -364,7 +364,7 @@ ul .nav {
 }
 
 ul .login {
-  margin-left: 1100px;
+  margin-left: 1000px;
 }
 
 li {
@@ -676,7 +676,7 @@ input:hover {
 }
 
 .fav-card-image {
-  width: 100%;
+  width: 70%;
   height: 200px;
   object-fit: cover;
   border-top-left-radius: 8px;

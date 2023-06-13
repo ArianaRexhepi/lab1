@@ -52,25 +52,25 @@ const Recbooks = () => {
       
       {selectedBook ? (
         <div className="mt-3">
-          <div className="fav-container">
+          <div className="book-container">
             <button onClick={handleBackClick} className="back-button">
               <b>Go Back</b>
             </button>
           </div>
-          <div className="fav-details">
-            <div className="fav-info">
+          <div className="book-details">
+            <div className="book-info">
               <img
                 src={selectedBook.image}
                 alt={selectedBook.title}
                 className="book-image"
               />
-              <div className="fav-box">
-                <h2 className="fav-title">{selectedBook.title}</h2>
-                <p className="fav-author">By {selectedBook.author}</p>
+              <div className="book-box">
+                <h2 className="book-title">{selectedBook.title}</h2>
+                <p className="book-author">By {selectedBook.author}</p>
 
-                <p className="fav-description">{selectedBook.description}</p>
-                <h2 className="fav-category">{selectedBook.category}</h2>
-                <div className="fav-rating">
+                <p className="book-description">{selectedBook.description}</p>
+                <h2 className="book-category">{selectedBook.category}</h2>
+                <div className="book-rating">
                   <span className="rating-label">Rating:</span>
                   <span className="rating-value">{selectedBook.rating}</span>
                 </div>
@@ -79,21 +79,21 @@ const Recbooks = () => {
           </div>
         </div>
       ) : (
-        <div className="book-container">
+        <div className="fav-container">
           {recommendedBooks.map((book, index) => (
             <div
               key={index}
-              className="book-card"
+              className="fav-card"
               onClick={() => handleBookClick(book)}
             >
               <img
                 src={book.image}
                 alt={book.title}
-                className="book-card-image"
+                className="fav-card-image"
               />
-              <div className="book-card-details">
-                <h3 className="book-card-title">{book.title}</h3>
-                <p className="book-card-author">By {book.author}</p>
+              <div className="fav-card-details">
+                <h3 className="fav-card-title">{book.title}</h3>
+                <p className="fav-card-author">By {book.author}</p>
               </div>
             </div>
           ))}
