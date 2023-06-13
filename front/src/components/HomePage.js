@@ -29,32 +29,35 @@ function HomePage() {
         </b>
       </h1>
       <p>
-        {" "}
-        We believe that books have the power to inspire, educate, and entertain.{" "}
+        Welcome to the world's largest online library!
       </p>
-      <hr></hr>
-      <p>Here are some of the bestsellers for this month</p>
+      <p>
+        We hope you enjoy using this website to fulfill your requirements.{"\n"}
+        Here are some of the bestselling books for this month.
+      </p>
+
       <div className="flex-container">
         <div className="flex-item">
           <div className="box">
-          {books.map((book) => (
-            <>
-            <div></div>
-            <div>
-              <img
-              src={book.image}
-              alt="Image 1"
-              style={{ height: "250px", width: "200px" }}
-            />
-            <h6>{book.title}</h6></div>
-            
-            </>
-          ))}
+            {books.map((book) => (
+              <>
+                <div></div>
+                <div>
+                  <img
+                    src={book.image}
+                    alt="Image 1"
+                    style={{ height: "250px", width: "200px" }}
+                  />
+                  <h6>{book.title}</h6>
+                </div>
+              </>
+            ))}
           </div>
         </div>
       </div>
       <br />
       <footer>
+        <hr></hr>
         <p>
           <i>
             @2023 by <span>MJ Library.</span> All Rights Reserved.

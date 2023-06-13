@@ -115,7 +115,7 @@ const BookUserList = () => {
               <i>Book List</i>
             </h1>
           </div>
-          <p>Welcome to the world's largest online library!</p>
+          <p> We believe that books have the power to inspire, educate, and entertain.</p>
 
           <div className="group">
             <svg className="icon" aria-hidden="true" viewBox="0 0 24 24">
