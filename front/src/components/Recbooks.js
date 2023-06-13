@@ -5,7 +5,8 @@ import image7 from "./images/image7.jpg";
 import image8 from "./images/image8.jpg";
 
 const Recbooks = () => {
-
+  const [selectedBook, setSelectedBook] = useState(null);
+  const [books, setBooks] = useState([]);
 
   const recommendedBooks = [
     {
@@ -26,6 +27,14 @@ const Recbooks = () => {
     // Add more books as needed
   ];
 
+  const handleBookClick = (book) => {
+    setSelectedBook(book);
+  };
+
+  const handleBackClick = () => {
+    setSelectedBook(null);
+  };
+
   return (
     <div className="rec-books">
       <div className="rec-books-container">
@@ -41,21 +50,55 @@ const Recbooks = () => {
         </div>
       </div>
       
-      <div className="recommended-books-grid">
-        {recommendedBooks.map((book, index) => (
-          <div className="recommended-book-card" key={index}>
-            <img
-              className="recommended-book-cover"
-              src={book.coverImage}
-              alt={book.title}
-            />
-            <div className="recommended-book-details">
-              <h3 className="recommended-book-title">{book.title}</h3>
-              <p className="recommended-book-author">by {book.author}</p>
+      {selectedBook ? (
+        <div className="mt-3">
+          <div className="fav-container">
+            <button onClick={handleBackClick} className="back-button">
+              <b>Go Back</b>
+            </button>
+          </div>
+          <div className="fav-details">
+            <div className="fav-info">
+              <img
+                src={selectedBook.image}
+                alt={selectedBook.title}
+                className="book-image"
+              />
+              <div className="fav-box">
+                <h2 className="fav-title">{selectedBook.title}</h2>
+                <p className="fav-author">By {selectedBook.author}</p>
+
+                <p className="fav-description">{selectedBook.description}</p>
+                <h2 className="fav-category">{selectedBook.category}</h2>
+                <div className="fav-rating">
+                  <span className="rating-label">Rating:</span>
+                  <span className="rating-value">{selectedBook.rating}</span>
+                </div>
+              </div>
             </div>
           </div>
-        ))}
-      </div>
+        </div>
+      ) : (
+        <div className="book-container">
+          {recommendedBooks.map((book, index) => (
+            <div
+              key={index}
+              className="book-card"
+              onClick={() => handleBookClick(book)}
+            >
+              <img
+                src={book.image}
+                alt={book.title}
+                className="book-card-image"
+              />
+              <div className="book-card-details">
+                <h3 className="book-card-title">{book.title}</h3>
+                <p className="book-card-author">By {book.author}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

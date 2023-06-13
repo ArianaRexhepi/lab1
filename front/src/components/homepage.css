@@ -4,10 +4,10 @@
 
 /* --  background and library name -- */
 .light-blue-bg {
-  background-color: rgba(234,76,137,0.4);
+  background-color: rgba(234, 76, 137, 0.4);
 }
 span {
-  color: rgba(234,76,137,0.4);
+  color: rgba(234, 76, 137, 0.4);
 }
 
 /* --  FLEX BOX IMAGES -- */
@@ -42,8 +42,6 @@ span {
   font-size: 16px;
   margin-bottom: 5px;
 }
-
-
 
 /* --  navbar align -- */
 .navbar-nav {
@@ -107,7 +105,6 @@ span {
   color: #555555;
 }
 
-
 .book-details {
   max-width: 1100px;
   height: 650px;
@@ -122,7 +119,6 @@ span {
   display: flex;
   flex-wrap: wrap;
   margin-top: 100px;
-  
 }
 
 .book-info {
@@ -182,7 +178,7 @@ span {
 }
 .back-button {
   font-size: 16px;
-  background-color: lightskyblue;
+  background-color: rgba(234, 76, 137, 0.4);
   border-radius: 4px;
   color: black;
   border: none;
@@ -248,7 +244,6 @@ label {
   border-radius: 0.5rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-
 
 .btn {
   display: inline-block;
@@ -339,7 +334,6 @@ Desgingn the favorite and my cart buttons */
   background-color: #0056b3;
 }
 
-
 .favorites-button {
   color: #fff;
   background-color: pink;
@@ -369,7 +363,7 @@ ul .nav {
   margin-left: 500px;
 }
 
-ul .login{
+ul .login {
   margin-left: 1100px;
 }
 
@@ -380,8 +374,8 @@ li {
   justify-content: center;
 }
 .navbar-nav .nav-link {
-  margin-left: 5px;
-  margin-right: 10px; 
+  margin-left: 13px;
+  margin-right: 10px;
 }
 
 button {
@@ -391,9 +385,7 @@ button {
   padding: 5px 10px;
   cursor: pointer;
   outline: none;
-  
 }
-
 
 .buttonn {
   --primary-color: inherit;
@@ -405,7 +397,7 @@ button {
   border: 0;
   border-radius: 20px;
   color: var(--secondary-color);
-  padding: 0.5em 1.0em;
+  padding: 0.5em 1em;
   background: var(--primary-color);
   display: flex;
   transition: 0.2s background;
@@ -413,7 +405,6 @@ button {
   gap: 0.6em;
   font-weight: bold;
   margin-left: 90px;
-  
 }
 
 .buttonn .arrow-wrapper {
@@ -492,10 +483,7 @@ button {
   border-radius: 4px;
   cursor: pointer; */
 
-
-
-
- /* Navbar addition */
+/* Navbar addition */
 
 .navbar-cart {
   display: flex;
@@ -517,163 +505,156 @@ button {
   color: #333;
 }
 
-  /* Recommended books */
-  .rec-books-container {
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .rec-books-header {
-    margin-bottom: 20px;
-  }
-  
-  .rec-books-header h3 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    text-align: left;
-  }
-  
-  .rec-books-content p {
-    font-size: 16px;
-    line-height: 1.5;
-    color: #666;
-  }
-  .recommended-books-page {
-    padding: 20px;
-  }
-  .recommended-books-grid {
-    margin: auto;
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-around;
-    gap: 15px;
+/* Recommended books */
+.rec-books-container {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-  }
-  
-  .recommended-book-card {
-    background-color: rgba(235, 213, 221, 0.4);;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    width: 370px;
-  }
-  
-  .recommended-book-cover {
-    width: 50%;
-    height: auto;
-    margin: auto;
-    border-radius: 4px;
-    margin-bottom: 10px;
+.rec-books-header {
+  margin-bottom: 20px;
+}
 
-  }
-  
-  .recommended-book-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 5px;
-  
-  }
-  
-  .recommended-book-author {
-    font-size: 14px;
-    color: #666;
-  }  
+.rec-books-header h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  text-align: left;
+}
 
-  .custom-height {
-    height: 500px; /* Replace with your desired height value */
-  }
+.rec-books-content p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+.recommended-books-page {
+  padding: 20px;
+}
+.recommended-books-grid {
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+}
 
-  /* MY PROFILE */
+.recommended-book-card {
+  background-color: #fffaf2;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+}
 
-  .gradient-custom {
-    /* fallback for old browsers */
-    background: rgba(246, 195, 215, 0.4);;
-  }
+.recommended-book-cover {
+  width: 55%;
+  height: auto;
+  margin: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
 
-  
-  /* SEARCH BOX */
-  .group {
-    display: flex;
-    line-height: 28px;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    max-width: 900px;
-    margin: auto;
-   
-   }
-   
-   .input {
-    justify-content: center;
-    width: 100%;
-    height: 40px;
-    line-height: 28px;
-    padding: 0 1rem;
-    padding-left: 2.5rem;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    outline: none;
-    background-color: #f3f3f4;
-    color: #0d0c22;
-    transition: .3s ease;
-   }
-   
-   .input::placeholder {
-    color: #9e9ea7;
-   }
-   
-   .input:focus, input:hover {
-    outline: none;
-    border-color: rgba(234,76,137,0.4);
-    background-color: #fff;
-    box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
-   }
-   
-   .icon {
-    position: absolute;
-    left: 1rem;
-    fill: #9e9ea7;
-    width: 1rem;
-    height: 1rem;
-   }
-   
-   /* LOG OUT BUTTON */
+.recommended-book-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
 
-   .buttoon {
-    padding: 10px 20px;
-    border: 0;
-    border-radius: 100px;
-    background-color: inherit;
-    color: white;
-    font-weight: Bold;
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-  }
-  
-  .buttoon:hover {
-    background-color: wheat;
-    box-shadow: 0 0 20px #6fc5ff50;
-    transform: scale(1.1);
-  }
-  
-  .buttoon:active {
-    background-color: #3d94cf;
-    transition: all 0.25s;
-    -webkit-transition: all 0.25s;
-    box-shadow: none;
-    transform: scale(0.98);
-  }
-  
-   
+.recommended-book-author {
+  font-size: 14px;
+  color: #666;
+}
+
+.custom-height {
+  height: 500px; 
+}
+
+/* MY PROFILE */
+
+.gradient-custom {
+  background: rgba(246, 195, 215, 0.4);
+}
+
+/* SEARCH BOX */
+.group {
+  display: flex;
+  line-height: 28px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+}
+
+.input {
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  line-height: 28px;
+  padding: 0 1rem;
+  padding-left: 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f3f3f4;
+  color: #0d0c22;
+  transition: 0.3s ease;
+}
+
+.input::placeholder {
+  color: #9e9ea7;
+}
+
+.input:focus,
+input:hover {
+  outline: none;
+  border-color: rgba(234, 76, 137, 0.4);
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+}
+
+.icon {
+  position: absolute;
+  left: 1rem;
+  fill: #9e9ea7;
+  width: 1rem;
+  height: 1rem;
+}
+
+/* LOG OUT BUTTON */
+
+.buttoon {
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 100px;
+  background-color: inherit;
+  color: white;
+  font-weight: Bold;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.buttoon:hover {
+  background-color: wheat;
+  box-shadow: 0 0 20px #6fc5ff50;
+  transform: scale(1.1);
+}
+
+.buttoon:active {
+  background-color: #3d94cf;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
+}
+
 /* FAVORITES BOXES */
 
-
-  .fav-container {
+.fav-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -714,49 +695,113 @@ button {
 .fav-card-author {
   margin-top: 8px;
   color: #555555;
-}ok-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 50px auto;
-  }
-  
-  .fav-card {
-    width: 300px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
-  
-  .fav-card:hover {
-    transform: scale(1.02);
-  }
-  
-  .fav-card-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-  }
-  
-  .fav-card-details {
-    padding: 16px;
-  }
-  
-  .fav-card-title {
-    font-size: 20px;
-    margin: 0;
-  }
-  
-  .fav-card-author {
-    margin-top: 8px;
-    color: #555555;
-  }
+}
 
-   
-   
-   
+.fav-card {
+  width: 300px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.fav-card:hover {
+  transform: scale(1.02);
+}
+
+.fav-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.fav-card-details {
+  padding: 16px;
+}
+
+.fav-card-title {
+  font-size: 20px;
+  margin: 0;
+}
+
+.fav-card-author {
+  margin-top: 8px;
+  color: #555555;
+}
+
+
+.fav-details {
+  max-width: 1100px;
+  height: 650px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fav-box {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 100px;
+}
+
+.fav-info {
+  display: flex;
+  flex-direction: row;
+  padding: 0 20px;
+}
+
+.fav-title {
+  font-size: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.fav-author {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: #555555;
+  font-size: 18px;
+}
+
+.fav-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  max-height: 550px;
+  object-fit: cover;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.fav-description {
+  margin-top: 16px;
+  line-height: 1.5;
+  margin-left: 35px;
+}
+
+.fav-rating {
+  font-size: 18px;
+  margin-top: 16px;
+  margin-left: 265px;
+}
+
+.rating-label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.fav-card p {
+  font-size: 13px;
+}
+
+.fav-container {
+  text-align: left;
+}
