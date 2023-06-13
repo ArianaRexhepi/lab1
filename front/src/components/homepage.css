@@ -551,7 +551,7 @@ input[type="text"] {
     margin-top: 50px;
     display:grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 15px;
   }
   
   .recommended-book-card {
@@ -564,7 +564,7 @@ input[type="text"] {
   }
   
   .recommended-book-cover {
-    width: 60%;
+    width: 50%;
     height: auto;
     border-radius: 4px;
     margin-bottom: 10px;
@@ -573,7 +573,9 @@ input[type="text"] {
   .recommended-book-title {
     font-size: 18px;
     font-weight: bold;
+    margin-top: 20px;
     margin-bottom: 5px;
+  
   }
   
   .recommended-book-author {
@@ -584,7 +586,8 @@ input[type="text"] {
   .custom-height {
     height: 500px; /* Replace with your desired height value */
   }
-  
+
+  /* MY PROFILE */
 
   .gradient-custom {
     /* fallback for old browsers */

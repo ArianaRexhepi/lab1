@@ -9,8 +9,8 @@ const Recbooks = () => {
 
   const recommendedBooks = [
     {
-      title: "Book Title 1",
-      author: "Author 1",
+      title: "Love in the Brain",
+      author: "Ali Hazelwood",
       coverImage: image4,
     },
     {
