@@ -2,12 +2,6 @@ import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./homepage.css";
 import axios from "axios";
-import image1 from "./images/image1.jpg";
-import image2 from "./images/image2.jpeg";
-import image3 from "./images/image3.jpg";
-import image4 from "./images/image4.jpeg";
-import image5 from "./images/image5.jpeg";
-import image6 from "./images/image6.jpg";
 
 function HomePage() {
   const [books, setBooks] = useState([]);

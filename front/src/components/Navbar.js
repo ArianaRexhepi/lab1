@@ -112,10 +112,11 @@ const Navbar = () => {
               <ul className="login">
                 <li className="nav-item">
                   <Link to="/login" className="nav-link">
-                  <div class="arrow-wrapper">
+                    <button className="buttonn">Sign in
+                    <div class="arrow-wrapper">
                     <div class="arrow"></div>
-                    <button className="buttonn">Sign in</button>
-                    </div>
+                  </div></button>
+
                   </Link>
                 </li>
               </ul>
@@ -147,8 +148,11 @@ const Navbar = () => {
                     className="nav-item"
                     style={{ cursor: "pointer" }}
                   >
-                    <button className="buttoon">
+                    <button className="buttonn">
                       Log out
+                      <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                  </div>
                     </button>
                   </li>
                 </ul>

@@ -4,10 +4,10 @@
 
 /* --  background and library name -- */
 .light-blue-bg {
-  background-color: lightskyblue;
+  background-color: rgba(234,76,137,0.4);
 }
 span {
-  color: lightskyblue;
+  color: rgba(234,76,137,0.4);
 }
 
 /* --  FLEX BOX IMAGES -- */
@@ -60,7 +60,7 @@ span {
 .h1 {
   text-align: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin-top: 70px;
+  margin: auto;
 }
 
 .book-container {
@@ -394,7 +394,7 @@ button {
 .buttonn {
   --primary-color: inherit;
   --secondary-color: #fff;
-  --hover-color: blue;
+  --hover-color: wheat;
   --arrow-width: 10px;
   --arrow-stroke: 2px;
   box-sizing: border-box;
@@ -547,7 +547,7 @@ button {
   }
   
   .recommended-book-card {
-    background-color: whitesmoke;
+    background-color: rgba(235, 213, 221, 0.4);;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -700,14 +700,14 @@ button {
     border: 0;
     border-radius: 100px;
     background-color: inherit;
-    color: wheat;
+    color: white;
     font-weight: Bold;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
   }
   
   .buttoon:hover {
-    background-color: whitesmoke;
+    background-color: wheat;
     box-shadow: 0 0 20px #6fc5ff50;
     transform: scale(1.1);
   }
