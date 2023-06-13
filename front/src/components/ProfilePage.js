@@ -4,7 +4,7 @@ import './homepage.css';
 
 export default function PersonalProfile() {
   return (
-    <section className="custom-height" style={{ backgroundColor: '#f4f5f7' }}>
+    <section className="custom-height" >
       <MDBContainer className="py-5 h-100">
         <MDBRow className="justify-content-center align-items-center h-100">
           <MDBCol lg="6" className="mb-4 mb-lg-0">
@@ -18,7 +18,7 @@ export default function PersonalProfile() {
                 </MDBCol>
                 <MDBCol md="8">
                   <MDBCardBody className="p-4">
-                    <MDBTypography tag="h6">Information</MDBTypography>
+                    <MDBTypography tag="h6">Profile Details</MDBTypography>
                     <hr className="mt-0 mb-4" />
                     <MDBRow className="pt-1">
                     <MDBCol size="6" className="mb-3">
