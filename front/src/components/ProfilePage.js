@@ -1,8 +1,17 @@
 import React from 'react';
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardText, MDBCardBody, MDBCardImage, MDBTypography, MDBIcon } from 'mdb-react-ui-kit';
 import './homepage.css';
+import { useSelector } from 'react-redux';
 
-export default function PersonalProfile() {
+function PersonalProfile() {
+  const state = useSelector((state) => state);
+  let isAdmin = false;
+  if (!state.user) {
+    const role = state.user.userRoles.find((role) => role !== "Admin");
+    if (role) {
+      isAdmin = true;
+    }
+  }
   return (
     <section className="custom-height" >
       <MDBContainer className="py-5 h-100">
@@ -12,8 +21,8 @@ export default function PersonalProfile() {
               <MDBRow className="g-0">
                 <MDBCol md="4" className="gradient-custom text-center text-white"
                   style={{ borderTopLeftRadius: '.5rem', borderBottomLeftRadius: '.5rem' }}>
-                  <MDBTypography tag="h5" style={{marginTop: '5rem', color: 'black'}}>Ariana</MDBTypography>
-                  <MDBCardText style={{color: 'black'}}>Web Designer</MDBCardText>
+                  <MDBTypography tag="h5" style={{marginTop: '5rem', color: 'black'}}>Role</MDBTypography>
+                  <MDBCardText style={{color: 'black'}}>{!isAdmin ?"User":"Admin"}</MDBCardText>
                   <MDBIcon far icon="edit mb-5" />
                 </MDBCol>
                 <MDBCol md="8">
@@ -23,11 +32,11 @@ export default function PersonalProfile() {
                     <MDBRow className="pt-1">
                     <MDBCol size="6" className="mb-3">
                         <MDBTypography tag="h6">Username</MDBTypography>
-                        <MDBCardText className="text-muted">infog</MDBCardText>
+                        <MDBCardText className="text-muted">{state.user.username}</MDBCardText>
                       </MDBCol>
                       <MDBCol size="6" className="mb-3">
                         <MDBTypography tag="h6">Email</MDBTypography>
-                        <MDBCardText className="text-muted">info@example.com</MDBCardText>
+                        <MDBCardText className="text-muted">{state.user.email}</MDBCardText>
                       </MDBCol>
                       
                     </MDBRow>
@@ -60,3 +69,5 @@ export default function PersonalProfile() {
     </section>
   );
 }
+
+export default PersonalProfile;
