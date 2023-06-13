@@ -263,8 +263,8 @@ function ShoppingCart() {
 
                   <MDBBtn block size="lg">
                     <div className="d-flex justify-content-between">
-                      <span>Checkout</span>
-                      <span>$26.48</span>
+                      Checkout
+                     $26.48
                     </div>
                   </MDBBtn>
                 </MDBCol>
