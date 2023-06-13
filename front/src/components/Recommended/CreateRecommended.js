@@ -1,70 +1,142 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 
-function BestsellerList() {
-  const [books, setBooks] = useState([]);
+function CreateRecommended() {
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const [category, setCategory] = useState("");
+  const [description, setDescription] = useState("");
+  const [rating, setRating] = useState("");
+  const [year, setYear] = useState(new Date());
+  const [image, setImage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    const fetch = async () => {
-      const res = await axios.get('http://localhost:5267/api/bestsellers');
-      setBooks(res.data);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setLoading(true);
+
+    const newBook = {
+      Title: title,
+      Author: author,
+      Category:category,
+      Description: description,
+      Rating: rating,
+      Year: year,
+      Image: image
     };
-    fetch();
-  }, []);
 
-  const handleDelete = async (id) => {
-    const confirmed = window.confirm('Are you sure you want to delete this book?');
-    if (confirmed) {
-      await axios.delete(`http://localhost:5267/api/bestsellers/${id}`).then(()=> {
-        setBooks(books.filter(book => book.id !== id));
-      });
+    try {
+      await axios
+        .post("http://localhost:5267/api/recommended", newBook)
+        .then(() => {
+          setLoading(false);
+          navigate("/recommended");
+        });
+      console.log(newBook);
+    } catch (error) {
+      console.error(error);
     }
   };
 
   return (
-    <><h1>Bestsellers</h1><div className="card shadow mb-4">
-          <div className="card-header py-3">
-              <div className="float-right">
-              <Link to="/createbestseller"><button className='btn btn-primary' >Create new</button></Link>
-              </div>
+    <div className="modal-dialog" style={{ width: 600, marginTop: "50px" }}>
+      <div className="modal-content">
+        <form onSubmit={handleSubmit} className="form">
+          <div className="modal-header">
+            <h4 className="modal-title">Add Recommended Book</h4>
+            <Link to="/recommended">
+              <button
+                type="button"
+                className="close"
+                data-dismiss="modal"
+                aria-hidden="true"
+              >
+                &times;
+              </button>
+            </Link>
           </div>
-
-          <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
-              <thead>
-                  <tr>
-                      <th>ID</th>
-                      <th>Title</th>
-                      <th>Author</th>
-                      <th>Description</th>
-                      <th>Rating</th>
-                      <th>Year</th>
-                      <th>Image</th>
-                      <th>Veprime</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  {books.map(book => (
-                      <tr key={book.id}>
-                          <td>{book.id}</td>
-                          <td>{book.title}</td>
-                          <td>{book.author}</td>
-                          <td>{book.description}</td>
-                          <td>{book.rating}</td>
-                          <td>{book.year}</td>
-                          <td> 
-                            <img src={book.image} alt='' style={{width:"200px", height:"250px", objectFit:"cover"}}/>
-                          </td>
-                          <td>
-                          <Link to={`/editbestseller/${book.id}`}><button className='btn btn-primary'>Edit</button></Link>
-                              <button className='btn btn-danger' onClick={() => handleDelete(book.id)}>Delete</button>
-                          </td>
-                      </tr>
-                  ))}
-              </tbody>
-          </table>
-      </div></>
+          <div className="modal-body">
+            <div className="form-group">
+              <label htmlFor="title">Title:</label>
+              <input
+                type="text"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                className="form-control"
+              />
+            </div>
+            <div className="form-group">
+              <label>Author:</label>
+              <input
+                type="text"
+                value={author}
+                onChange={(e) => setAuthor(e.target.value)}
+                className="form-control"
+              />
+            </div>
+            <div className="form-group">
+              <label>Category:</label>
+              <input
+                type="text"
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+                className="form-control"
+              />
+            </div>
+            <div className="form-group">
+              <label>Description:</label>
+              <input
+                type="text"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                className="form-control"
+              />
+            </div>
+            <div className="form-group">
+              <label>Year:</label>
+              <input
+                type="date"
+                value={year}
+                onChange={(e) => setYear(e.target.value)}
+                className="form-control"
+              />
+            </div>
+            <div className="form-group">
+              <label>Rating:</label>
+              <input
+                type="datetime"
+                value={rating}
+                onChange={(e) => setRating(e.target.value)}
+                className="form-control"
+              />
+            </div>
+            <div className="form-group">
+              <label>Image:</label>
+              <input
+                type="text"
+                value={image}
+                onChange={(e) => setImage(e.target.value)}
+                className="form-control"
+              />
+            </div>
+          </div>
+          <div className="modal-footer">
+            <Link to="/recommended">
+              <input type="button" className="btn btn-danger" value="Dismiss" />
+            </Link>
+            <input
+              type="submit"
+              value="Create"
+              disabled={loading}
+              className="btn btn-primary float-right"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
   );
 }
 
-export default BestsellerList;
+export default CreateRecommended;
