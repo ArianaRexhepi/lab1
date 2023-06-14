@@ -45,7 +45,7 @@ function CreateBestseller() {
             <Link to="/bestsellers">
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 aria-label="Close"
               ></button>
             </Link>

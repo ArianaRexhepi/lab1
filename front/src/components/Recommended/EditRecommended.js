@@ -42,7 +42,7 @@ function EditRecommended() {
           <div className="modal-header">
             <h4 className="modal-title">Edit Book</h4>
             <Link to="/recommended">
-            <button type="button" class="btn-close" aria-label="Close"></button>
+            <button type="button" className="btn-close" aria-label="Close"></button>
             </Link>
           </div>
           <div className="modal-body">

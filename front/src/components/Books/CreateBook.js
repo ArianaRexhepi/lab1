@@ -49,7 +49,7 @@ function CreateBook() {
             <Link to="/books">
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 aria-label="Close"
               ></button>
             </Link>

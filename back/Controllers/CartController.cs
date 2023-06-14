@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using back.Data;
 using back.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace back.Controllers
 {
@@ -10,55 +11,53 @@ namespace back.Controllers
     public class CartController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly IHttpContextAccessor _accessor;
 
-        public CartController(ApplicationDbContext context)
+        public CartController(ApplicationDbContext context, IHttpContextAccessor accessor)
         {
             _context = context;
+            _accessor = accessor;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAsync()
         {
-            var books = await _context.Books.ToListAsync();
-            return Ok(books);
+            var userEmail = _accessor.HttpContext.User.FindFirst(ClaimTypes.Email).Value;
+            var user = await _context.Users.Include(a => a.Carts).FirstOrDefaultAsync(a => a.Email == userEmail);
+            return Ok(user.Carts);
         }
 
-       [HttpGet("{id}")]
-        public async Task<IActionResult> GetBookAsync(int id)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetCart(int id)
         {
-            var existingBook = await _context.Bestsellers.FindAsync(id);
-            if (existingBook == null)
-            {
-                return NotFound();
-            } 
-            return Ok(existingBook);
+            var userEmail = _accessor.HttpContext.User.FindFirst(ClaimTypes.Email).Value;
+            var user = await _context.Users.Include(a => a.Carts).FirstOrDefaultAsync(a => a.Email == userEmail);
+
+            var book = user.Carts.Where(a => a.BookId == id).FirstOrDefault();
+
+            return Ok(book);
         }
 
 
         [HttpPost]
         public async Task<IActionResult> PostAsync(Book book)
         {
-           await  _context.Books.AddAsync(book);
-            await _context.SaveChangesAsync();
-            return Ok();
-        }
+            var userEmail = _accessor.HttpContext.User.FindFirst(ClaimTypes.Email).Value;
+            var user = await _context.Users.Include(a => a.Carts).FirstOrDefaultAsync(a => a.Email == userEmail);
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutAsync(int id, Book book)
-        {
-            var existingBook = await _context.Books.FindAsync(id);
-            if (existingBook == null)
+            var cart = new Cart
             {
-                return NotFound();
-            }
+                Title = book.Title,
+                Author = book.Author,
+                Description = book.Description,
+                Rating = book.Rating,
+                Year = book.Year,
+                Image = book.Image,
+                Price = book.Price,
+                BookId = book.Id
+            };
 
-            existingBook.Title = book.Title;
-            existingBook.Author = book.Author;
-            existingBook.Description = book.Description;
-            existingBook.Rating = book.Rating;
-            existingBook.Year = book.Year;
-            existingBook.Image = book.Image;
-            existingBook.Price = book.Price;
+            user.Carts.Add(cart);
 
             await _context.SaveChangesAsync();
 
@@ -66,16 +65,16 @@ namespace back.Controllers
         }
 
         [HttpDelete("{id}")]
-       public async Task<IActionResult> DeleteAsync(int id)
+        public async Task<IActionResult> DeleteAsync(int id)
         {
-            var existingBook = await _context.Books.FindAsync(id);
-            if (existingBook == null)
-            {
-                return NotFound();
-            }
+            var userEmail = _accessor.HttpContext.User.FindFirst(ClaimTypes.Email).Value;
+            var user = await _context.Users.Include(a => a.Carts).FirstOrDefaultAsync(a => a.Email == userEmail);
 
-            _context.Books.Remove(existingBook);
-           await _context.SaveChangesAsync();
+            var cart = user.Carts.Where(a => a.Id == id).FirstOrDefault();
+
+            user.Carts.Remove(cart);
+
+            await _context.SaveChangesAsync();
 
             return Ok();
         }

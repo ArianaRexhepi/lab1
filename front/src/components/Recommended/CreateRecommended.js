@@ -47,7 +47,7 @@ function CreateRecommended() {
           <div className="modal-header">
             <h4 className="modal-title">Add Recommended Book</h4>
             <Link to="/recommended">
-            <button type="button" class="btn-close" aria-label="Close"></button>
+            <button type="button" className="btn-close" aria-label="Close"></button>
             </Link>
           </div>
           <div className="modal-body">

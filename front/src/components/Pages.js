@@ -23,6 +23,7 @@ import RecommendedList from "./Recommended/RecommendedList";
 import EditRecommended from "./Recommended/EditRecommended";
 import CreateRecommended from "./Recommended/CreateRecommended";
 import FavoriteBooks from "./FavoritesBooks";
+import BookDetails from "./BookDetails";
 
 const Pages = () => {
   return (
@@ -48,6 +49,7 @@ const Pages = () => {
         <Route element={<ProtectedRoute redirectPath="/" />}>
           <Route path="/myprofile" element={<ProfilePage />} />
           <Route path="/bookuserlist" element={<BookUserList />} />
+          <Route path="/bookuserlist/:id" element={<BookDetails />} />
           <Route path="/mycart" element={<ShoppingCart />} />
           <Route path="/recbooks" element={<Recbooks />} />
           <Route path="/myfavorites" element={<FavoriteBooks />} />

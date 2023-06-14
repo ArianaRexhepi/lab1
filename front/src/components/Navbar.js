@@ -38,17 +38,17 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light light-blue-bg">
       <button
-        className="navbar-toggler"
+        class="navbar-toggler"
         type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span className="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse" id="navbarNav">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav">
           <li className="nav-item">
             <Link to="/" className="nav-link">
@@ -82,26 +82,20 @@ const Navbar = () => {
                   Dashboard
                 </a>
                 <ul className="dropdown-menu">
-                  <li>
-                    <a className="dropdown-item">
-                      <Link to="/books" className="nav-link">
-                        BooksList
-                      </Link>
-                    </a>
+                  <li className="nav-link">
+                    <Link to="/books" className="dropdown-item">
+                      BooksList
+                    </Link>
                   </li>
-                  <li>
-                    <a className="dropdown-item">
-                      <Link to="/bestsellers" className="nav-link">
-                        BestsellersList
-                      </Link>
-                    </a>
+                  <li className="nav-link">
+                    <Link to="/bestsellers" className="dropdown-item">
+                      BestsellersList
+                    </Link>
                   </li>
-                  <li>
-                    <a className="dropdown-item">
-                      <Link to="/recommended" className="nav-link">
-                        RecommendedList
-                      </Link>
-                    </a>
+                  <li className="nav-link">
+                    <Link to="/recommended" className="dropdown-item">
+                      RecommendedList
+                    </Link>
                   </li>
                 </ul>
               </li>
@@ -115,8 +109,8 @@ const Navbar = () => {
                   <Link to="/login" className="nav-link">
                     <button className="buttonn">
                       Sign in
-                      <div class="arrow-wrapper">
-                        <div class="arrow"></div>
+                      <div className="arrow-wrapper">
+                        <div className="arrow"></div>
                       </div>
                     </button>
                   </Link>
@@ -124,60 +118,75 @@ const Navbar = () => {
               </ul>
             </>
           )}
-          {!isAdmin && state.user && (
+          {state.user && (
             <>
-              <ul className="navbar-nav">
-                <ul className="nav">
-                  <li className="nav-item">
+              <li className="nav-item dropdown ms-auto">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  {state.user.username}
+                </a>
+                <ul className="dropdown-menu">
+                  <li className="nav-link">
                     <Link to="/myprofile" className="nav-link">
-                    <FontAwesomeIcon icon={faUser} />
+                      <FontAwesomeIcon icon={faUser} />
                       My Profile
                     </Link>
                   </li>
-                  <li className="nav-item">
-                    <Link to="/mycart" className="nav-link">
-                      <FontAwesomeIcon icon={faShoppingCart} />
-                      My Cart
-                    </Link>
-                  </li>
-                  <li className="nav-item">
+                  <li className="nav-link">
                     <Link to="/myfavorites" className="nav-link">
                       <FontAwesomeIcon icon={faHeart} />
                       My Favorites
                     </Link>
                   </li>
-
+                  <li className="nav-link">
+                    <Link to="/mycart" className="nav-link">
+                      <FontAwesomeIcon icon={faShoppingCart} />
+                      My Cart
+                    </Link>
+                  </li>
                   <li
+                    className="nav-link"
                     onClick={handleLogOut}
-                    className="nav-item"
-                    style={{ cursor: "pointer" }}
+                    style={{ cursor: "pointer", backgroundColor: "purple" }}
                   >
                     <button className="buttonn">
                       Log out
-                      <div class="arrow-wrapper">
-                        <div class="arrow"></div>
+                      <div className="arrow-wrapper">
+                        <div className="arrow"></div>
                       </div>
                     </button>
                   </li>
                 </ul>
-              </ul>
-            </>
-          )}
-          {isAdmin && state.user && (
-            <ul className="navbar-nav">
-              <li
-                onClick={handleLogOut}
-                className="nav-item"
-                style={{ cursor: "pointer" }}
-              >
-                <button className="buttonn">
-                  Log out
-                  <div class="arrow-wrapper">
-                    <div class="arrow"></div>
-                  </div>
-                </button>
               </li>
-            </ul>
+            </>
+            // <>
+            //   <ul className="navbar-nav">
+            //     <ul className="nav">
+            //       <li className="nav-item">
+
+            //       </li>
+            //       <li className="nav-item">
+
+            //       </li>
+            //       <li className="nav-item">
+
+            //       </li>
+
+            //       <li
+
+            //         className="nav-item"
+
+            //       >
+
+            //       </li>
+            //     </ul>
+            //   </ul>
+            // </>
           )}
         </ul>
       </div>

@@ -96,6 +96,17 @@ namespace back.Controllers
             return Ok(user.Books);
         }
 
+        [HttpGet("userFavourite/{id}")]
+        public async Task<IActionResult> GetFavorites(int id)
+        {
+            var userEmail = _accessor.HttpContext.User.FindFirst(ClaimTypes.Email).Value;
+            var user = await _context.Users.Include(a => a.Books).FirstOrDefaultAsync(a => a.Email == userEmail);
+
+            var book = user.Books.Where(a => a.Id == id).FirstOrDefault();
+
+            return Ok(book);
+        }
+
         [HttpPost("addFavorite")]
         public async Task<IActionResult> FavoriteAsync(Book book)
         {
