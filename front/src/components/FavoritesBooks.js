@@ -50,6 +50,7 @@ const FavoriteBooks = () => {
     <>
     <br></br>
       <h3>My Favorites</h3>
+      <p>Here is your list of your favorite books</p>
       <div className="book-container">
         {favBooks.map((book, index) => (
           <div
