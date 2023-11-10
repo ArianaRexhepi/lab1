@@ -374,3 +374,5 @@ C:/Users/PC/Desktop/lab1/lab1/back/obj/Debug/net6.0/ref/back.dll
 /Users/els/Desktop/lab1/LAB1ARIANA/back/bin/Debug/net6.0/Microsoft.Extensions.Identity.Core.dll
 /Users/els/Desktop/lab1/LAB1ARIANA/back/bin/Debug/net6.0/Microsoft.Extensions.Identity.Stores.dll
 /Users/els/Desktop/lab1/LAB1ARIANA/back/bin/Debug/net6.0/Microsoft.Extensions.Configuration.dll
+/Users/els/Desktop/lab1/LAB1ARIANA/back/bin/Debug/net6.0/MySqlConnector.dll
+/Users/els/Desktop/lab1/LAB1ARIANA/back/bin/Debug/net6.0/Pomelo.EntityFrameworkCore.MySql.dll

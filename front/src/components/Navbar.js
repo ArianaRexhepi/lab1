@@ -97,6 +97,16 @@ const Navbar = () => {
                       RecommendedList
                     </Link>
                   </li>
+                  <li className="nav-link">
+                    <Link to="/personi" className="dropdown-item">
+                      PersoniList
+                    </Link>
+                  </li>
+                  <li className="nav-link">
+                    <Link to="/banka" className="dropdown-item">
+                      BankaList
+                    </Link>
+                  </li>
                 </ul>
               </li>
             </>
@@ -104,8 +114,8 @@ const Navbar = () => {
 
           {state.user === null && (
             <>
-              <ul className="login">
-                <li className="nav-item">
+             
+                <li className="nav-item ms-auto">
                   <Link to="/login" className="nav-link">
                     <button className="buttonn">
                       Sign in
@@ -115,7 +125,7 @@ const Navbar = () => {
                     </button>
                   </Link>
                 </li>
-              </ul>
+
             </>
           )}
           {state.user && (

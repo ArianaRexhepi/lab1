@@ -14,8 +14,8 @@ namespace Data
             }
             var defaultUser = new AppUser
             {
-                UserName = "Admin123",
-                Email = "admin@gmail.com",
+                UserName = "Ariana",
+                Email = "arianaarexhepi@gmail.com",
                 EmailConfirmed = true
             };
             if (userManager.Users.All(u => u.Id != defaultUser.Id))

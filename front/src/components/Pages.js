@@ -24,6 +24,12 @@ import EditRecommended from "./Recommended/EditRecommended";
 import CreateRecommended from "./Recommended/CreateRecommended";
 import FavoriteBooks from "./FavoritesBooks";
 import BookDetails from "./BookDetails";
+import PersoniList from "./Personi/Personi";
+import EditPersoni from "./Personi/EditPersoni";
+import CreatePersoni from "./Personi/CreatePersoni";
+import BankaList from "./Banka/Banka";
+import EditBanka from "./Banka/EditBanka";
+import CreateBanka from "./Banka/CreateBanka";
 
 const Pages = () => {
   return (
@@ -40,6 +46,12 @@ const Pages = () => {
           <Route path="/recommended" element={<RecommendedList />} />
           <Route path="/editrecommended/:id" element={<EditRecommended/>} />
           <Route path="/createrecommended" element={<CreateRecommended />} />
+          <Route path="/personi" element={<PersoniList />} />
+          <Route path="/editpersoni/:id" element={<EditPersoni/>} />
+          <Route path="/createpersoni" element={<CreatePersoni />} />
+          <Route path="/banka" element={<BankaList />} />
+          <Route path="/editbanka/:id" element={<EditBanka/>} />
+          <Route path="/createbanka" element={<CreateBanka />} />
           <Route path="/borrow" element={<Borrow />} />
           <Route path="/createborrow" element={<CreateBorrow />} />
           <Route path="/editborrow/:id" element={<EditBorrow />} />

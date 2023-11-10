@@ -89,7 +89,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    height: "95vh",
+    marginTop:"120px",
   },
   box: {
     width: "600px",

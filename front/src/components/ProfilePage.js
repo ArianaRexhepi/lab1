@@ -27,7 +27,7 @@ function PersonalProfile() {
     <section className="custom-height">
       <MDBContainer className="py-5 h-100">
         <MDBRow className="justify-content-center align-items-center h-100">
-          <MDBCol lg="6" className="mb-4 mb-lg-0">
+          <MDBCol lg="9" className="mb-4 mb-lg-0 mt-5">
             <MDBCard className="mb-3" style={{ borderRadius: ".5rem" }}>
               <MDBRow className="g-0">
                 <MDBCol
