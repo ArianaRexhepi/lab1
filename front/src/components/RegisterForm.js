@@ -60,7 +60,7 @@ const RegisterForm = () => {
         password: formData.password,
       };
 
-      axios
+       axios
         .post("http://localhost:5267/api/account/register", obj)
         .then((response) => {
           const result = response.data;
