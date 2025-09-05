@@ -1,4 +1,5 @@
 import "./App.css";
+import "./styles/ModernTheme.css";
 import Pages from "./components/Pages";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Z0qUiAXQjJyT5R/+O826HLv2zpyAOfkokoSdM5AaO8695jLYQBxOOqjaNVBORdG+JYHIKdfvPUMMNRLHcC9XEA==",
+  "dgSpecHash": "dN0bQH0cTbw=",
   "success": true,
   "projectFilePath": "/Users/els/Desktop/work/lab1/LAB1ARIANA/back/back.csproj",
   "expectedPackageFiles": [
@@ -209,14 +209,31 @@
     "/Users/els/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512",
     "/Users/els/.nuget/packages/system.xml.xmldocument/4.3.0/system.xml.xmldocument.4.3.0.nupkg.sha512",
     "/Users/els/.nuget/packages/system.xml.xpath/4.3.0/system.xml.xpath.4.3.0.nupkg.sha512",
-    "/Users/els/.nuget/packages/system.xml.xpath.xdocument/4.3.0/system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
+    "/Users/els/.nuget/packages/system.xml.xpath.xdocument/4.3.0/system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
+    "/Users/els/.nuget/packages/microsoft.netcore.app.ref/6.0.36/microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
+    "/Users/els/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.36/microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512",
+    "/Users/els/.nuget/packages/microsoft.netcore.app.host.osx-x64/6.0.36/microsoft.netcore.app.host.osx-x64.6.0.36.nupkg.sha512"
   ],
   "logs": [
     {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Package 'System.IdentityModel.Tokens.Jwt' 6.17.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
+      "projectPath": "/Users/els/Desktop/work/lab1/LAB1ARIANA/back/back.csproj",
+      "warningLevel": 1,
+      "filePath": "/Users/els/Desktop/work/lab1/LAB1ARIANA/back/back.csproj",
+      "libraryId": "System.IdentityModel.Tokens.Jwt",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
       "code": "NU1701",
       "level": "Warning",
-      "warningLevel": 1,
       "message": "Package 'Database 2.5.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "projectPath": "/Users/els/Desktop/work/lab1/LAB1ARIANA/back/back.csproj",
+      "warningLevel": 1,
+      "filePath": "/Users/els/Desktop/work/lab1/LAB1ARIANA/back/back.csproj",
       "libraryId": "Database",
       "targetGraphs": [
         "net6.0"
@@ -225,8 +242,10 @@
     {
       "code": "NU1701",
       "level": "Warning",
-      "warningLevel": 1,
       "message": "Package 'Microsoft.AspNet.WebApi.Core 5.2.8' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "projectPath": "/Users/els/Desktop/work/lab1/LAB1ARIANA/back/back.csproj",
+      "warningLevel": 1,
+      "filePath": "/Users/els/Desktop/work/lab1/LAB1ARIANA/back/back.csproj",
       "libraryId": "Microsoft.AspNet.WebApi.Core",
       "targetGraphs": [
         "net6.0"
@@ -235,8 +254,10 @@
     {
       "code": "NU1701",
       "level": "Warning",
-      "warningLevel": 1,
       "message": "Package 'Microsoft.Bcl 1.1.6' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "projectPath": "/Users/els/Desktop/work/lab1/LAB1ARIANA/back/back.csproj",
+      "warningLevel": 1,
+      "filePath": "/Users/els/Desktop/work/lab1/LAB1ARIANA/back/back.csproj",
       "libraryId": "Microsoft.Bcl",
       "targetGraphs": [
         "net6.0"
@@ -245,8 +266,10 @@
     {
       "code": "NU1701",
       "level": "Warning",
-      "warningLevel": 1,
       "message": "Package 'Microsoft.Bcl.Async 1.0.165' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "projectPath": "/Users/els/Desktop/work/lab1/LAB1ARIANA/back/back.csproj",
+      "warningLevel": 1,
+      "filePath": "/Users/els/Desktop/work/lab1/LAB1ARIANA/back/back.csproj",
       "libraryId": "Microsoft.Bcl.Async",
       "targetGraphs": [
         "net6.0"
@@ -255,8 +278,10 @@
     {
       "code": "NU1701",
       "level": "Warning",
-      "warningLevel": 1,
       "message": "Package 'PCLStorage 1.0.2' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "projectPath": "/Users/els/Desktop/work/lab1/LAB1ARIANA/back/back.csproj",
+      "warningLevel": 1,
+      "filePath": "/Users/els/Desktop/work/lab1/LAB1ARIANA/back/back.csproj",
       "libraryId": "PCLStorage",
       "targetGraphs": [
         "net6.0"

@@ -36,171 +36,215 @@ const Navbar = () => {
   console.log(state.user);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light light-blue-bg">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <Link to="/" className="nav-link">
-              Home
+    <header className="header-modern">
+      <nav className="navbar-modern">
+        <Link to="/" className="navbar-brand-modern">
+          📚 BookHub
+        </Link>
+        
+        <ul className="navbar-nav-modern">
+          <li>
+            <Link to="/" className="nav-link-modern">
+              🏠 Home
             </Link>
           </li>
+          
           {state.user && (
             <>
-              <li className="nav-item">
-                <Link to="/bookuserlist" className="nav-link">
-                  Books
+              <li>
+                <Link to="/bookuserlist" className="nav-link-modern">
+                  📖 Books
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link to="/recbooks" className="nav-link">
-                  Recommended
+              <li>
+                <Link to="/recbooks" className="nav-link-modern">
+                  ⭐ Recommended
                 </Link>
               </li>
             </>
           )}
+          
           {isAdmin && (
-            <>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Dashboard
-                </a>
-                <ul className="dropdown-menu">
-                  <li className="nav-link">
-                    <Link to="/books" className="dropdown-item">
-                      BooksList
-                    </Link>
-                  </li>
-                  <li className="nav-link">
-                    <Link to="/bestsellers" className="dropdown-item">
-                      BestsellersList
-                    </Link>
-                  </li>
-                  <li className="nav-link">
-                    <Link to="/recommended" className="dropdown-item">
-                      RecommendedList
-                    </Link>
-                  </li>
-                  <li className="nav-link">
-                    <Link to="/personi" className="dropdown-item">
-                      PersoniList
-                    </Link>
-                  </li>
-                  <li className="nav-link">
-                    <Link to="/banka" className="dropdown-item">
-                      BankaList
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-            </>
+            <li className="dropdown">
+              <a
+                className="nav-link-modern dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                ⚙️ Dashboard
+              </a>
+              <ul className="dropdown-menu" style={{
+                background: 'white',
+                borderRadius: 'var(--radius-lg)',
+                boxShadow: 'var(--shadow-xl)',
+                border: '1px solid var(--gray-200)',
+                padding: '0.5rem 0',
+                minWidth: '200px'
+              }}>
+                <li>
+                  <Link to="/books" className="dropdown-item" style={{
+                    display: 'block',
+                    padding: '0.75rem 1rem',
+                    color: 'var(--text-primary)',
+                    textDecoration: 'none',
+                    transition: 'all var(--transition-fast)'
+                  }}>
+                    📚 Books List
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/bestsellers" className="dropdown-item" style={{
+                    display: 'block',
+                    padding: '0.75rem 1rem',
+                    color: 'var(--text-primary)',
+                    textDecoration: 'none',
+                    transition: 'all var(--transition-fast)'
+                  }}>
+                    🏆 Bestsellers
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/recommended" className="dropdown-item" style={{
+                    display: 'block',
+                    padding: '0.75rem 1rem',
+                    color: 'var(--text-primary)',
+                    textDecoration: 'none',
+                    transition: 'all var(--transition-fast)'
+                  }}>
+                    ⭐ Recommended
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/admin" className="dropdown-item" style={{
+                    display: 'block',
+                    padding: '0.75rem 1rem',
+                    color: 'var(--primary-color)',
+                    textDecoration: 'none',
+                    fontWeight: '600',
+                    background: 'var(--gray-50)',
+                    transition: 'all var(--transition-fast)'
+                  }}>
+                    🔧 Admin Panel
+                  </Link>
+                </li>
+              </ul>
+            </li>
           )}
 
           {state.user === null && (
-            <>
-             
-                <li className="nav-item ms-auto">
-                  <Link to="/login" className="nav-link">
-                    <button className="buttonn">
-                      Sign in
-                      <div className="arrow-wrapper">
-                        <div className="arrow"></div>
-                      </div>
-                    </button>
+            <li>
+              <Link to="/login" className="btn-modern">
+                🔐 Sign In
+              </Link>
+            </li>
+          )}
+          
+          {state.user && (
+            <li className="dropdown">
+              <a
+                className="nav-link-modern dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}
+              >
+                <div style={{
+                  width: '32px',
+                  height: '32px',
+                  borderRadius: '50%',
+                  background: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'white',
+                  fontWeight: 'bold',
+                  fontSize: '0.875rem'
+                }}>
+                  {state.user.username.charAt(0).toUpperCase()}
+                </div>
+                {state.user.username}
+              </a>
+              <ul className="dropdown-menu" style={{
+                background: 'white',
+                borderRadius: 'var(--radius-lg)',
+                boxShadow: 'var(--shadow-xl)',
+                border: '1px solid var(--gray-200)',
+                padding: '0.5rem 0',
+                minWidth: '220px'
+              }}>
+                <li>
+                  <Link to="/myprofile" className="dropdown-item" style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.75rem',
+                    padding: '0.75rem 1rem',
+                    color: 'var(--text-primary)',
+                    textDecoration: 'none',
+                    transition: 'all var(--transition-fast)'
+                  }}>
+                    <FontAwesomeIcon icon={faUser} />
+                    My Profile
                   </Link>
                 </li>
-
-            </>
-          )}
-          {state.user && (
-            <>
-              <li className="nav-item dropdown ms-auto">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  {state.user.username}
-                </a>
-                <ul className="dropdown-menu">
-                  <li className="nav-link">
-                    <Link to="/myprofile" className="nav-link">
-                      <FontAwesomeIcon icon={faUser} />
-                      My Profile
-                    </Link>
-                  </li>
-                  <li className="nav-link">
-                    <Link to="/myfavorites" className="nav-link">
-                      <FontAwesomeIcon icon={faHeart} />
-                      My Favorites
-                    </Link>
-                  </li>
-                  <li className="nav-link">
-                    <Link to="/mycart" className="nav-link">
-                      <FontAwesomeIcon icon={faShoppingCart} />
-                      My Cart
-                    </Link>
-                  </li>
-                  <li
-                    className="nav-link"
+                <li>
+                  <Link to="/myfavorites" className="dropdown-item" style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.75rem',
+                    padding: '0.75rem 1rem',
+                    color: 'var(--text-primary)',
+                    textDecoration: 'none',
+                    transition: 'all var(--transition-fast)'
+                  }}>
+                    <FontAwesomeIcon icon={faHeart} />
+                    My Favorites
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/mycart" className="dropdown-item" style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.75rem',
+                    padding: '0.75rem 1rem',
+                    color: 'var(--text-primary)',
+                    textDecoration: 'none',
+                    transition: 'all var(--transition-fast)'
+                  }}>
+                    <FontAwesomeIcon icon={faShoppingCart} />
+                    My Cart
+                  </Link>
+                </li>
+                <li style={{ borderTop: '1px solid var(--gray-200)', margin: '0.5rem 0' }}>
+                  <button
                     onClick={handleLogOut}
-                    style={{ cursor: "pointer", backgroundColor: "purple" }}
+                    style={{
+                      width: '100%',
+                      background: 'none',
+                      border: 'none',
+                      padding: '0.75rem 1rem',
+                      color: 'var(--danger-color)',
+                      textAlign: 'left',
+                      cursor: 'pointer',
+                      transition: 'all var(--transition-fast)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.75rem'
+                    }}
+                    onMouseOver={(e) => e.target.style.background = 'var(--gray-50)'}
+                    onMouseOut={(e) => e.target.style.background = 'none'}
                   >
-                    <button className="buttonn">
-                      Log out
-                      <div className="arrow-wrapper">
-                        <div className="arrow"></div>
-                      </div>
-                    </button>
-                  </li>
-                </ul>
-              </li>
-            </>
-            // <>
-            //   <ul className="navbar-nav">
-            //     <ul className="nav">
-            //       <li className="nav-item">
-
-            //       </li>
-            //       <li className="nav-item">
-
-            //       </li>
-            //       <li className="nav-item">
-
-            //       </li>
-
-            //       <li
-
-            //         className="nav-item"
-
-            //       >
-
-            //       </li>
-            //     </ul>
-            //   </ul>
-            // </>
+                    🚪 Log Out
+                  </button>
+                </li>
+              </ul>
+            </li>
           )}
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 };
 

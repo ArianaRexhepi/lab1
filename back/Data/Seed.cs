@@ -14,8 +14,8 @@ namespace Data
             }
             var defaultUser = new AppUser
             {
-                UserName = "Ariana",
-                Email = "arianaarexhepi@gmail.com",
+                UserName = "teacher",
+                Email = "teacher@gmail.com",
                 EmailConfirmed = true
             };
             if (userManager.Users.All(u => u.Id != defaultUser.Id))
@@ -23,7 +23,7 @@ namespace Data
                 var user = await userManager.FindByEmailAsync(defaultUser.Email);
                 if (user == null)
                 {
-                    await userManager.CreateAsync(defaultUser, "Ariana123.");
+                    await userManager.CreateAsync(defaultUser, "Teacher123");
                     await userManager.AddToRoleAsync(defaultUser, Roles.User.ToString());
                     await userManager.AddToRoleAsync(defaultUser, Roles.Admin.ToString());
                 }

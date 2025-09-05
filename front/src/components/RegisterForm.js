@@ -61,7 +61,7 @@ const RegisterForm = () => {
       };
 
        axios
-        .post("http://localhost:5267/api/account/register", obj)
+        .post("http://localhost:5000/api/account/register", obj)
         .then((response) => {
           const result = response.data;
 

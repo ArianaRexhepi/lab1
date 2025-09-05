@@ -24,6 +24,7 @@ import EditRecommended from "./Recommended/EditRecommended";
 import CreateRecommended from "./Recommended/CreateRecommended";
 import FavoriteBooks from "./FavoritesBooks";
 import BookDetails from "./BookDetails";
+import AdminPanel from "./AdminPanel";
 
 
 const Pages = () => {
@@ -44,6 +45,7 @@ const Pages = () => {
           <Route path="/borrow" element={<Borrow />} />
           <Route path="/createborrow" element={<CreateBorrow />} />
           <Route path="/editborrow/:id" element={<EditBorrow />} />
+          <Route path="/admin" element={<AdminPanel />} />
         </Route>
         <Route path="/" element={<HomePage />} />
 

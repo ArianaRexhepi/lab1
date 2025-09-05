@@ -24,7 +24,7 @@ const LoginForm = () => {
       password: password,
     };
 
-    fetch("http://localhost:5267/api/account/login", {
+    fetch("http://localhost:5000/api/account/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -49,36 +49,52 @@ const LoginForm = () => {
   };
 
   return (
-    <div style={styles.container}>
-      <div style={styles.box}>
-        {<h1>Log in</h1>}
-
-        <form onSubmit={login} style={styles.form}>
-          <input
-            type="text"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            style={styles.input}
-          />
-          <br />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            style={styles.input}
-          />
-          <br />
-          <button type="submit" style={styles.button}>
-            Sign In
-          </button>
-          <div style={styles.linksContainer}>
-            <Link to="/register" style={{ textDecoration: "none" }}>
-              Not a member? Create an account
-            </Link>
-          </div>
-        </form>
+    <div className="container-modern" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div className="card-modern fade-in" style={{ maxWidth: '450px', width: '100%' }}>
+        <div className="card-modern-header" style={{ textAlign: 'center' }}>
+          <h1 className="mb-0">🔐 Welcome Back</h1>
+          <p className="text-muted mb-0">Sign in to your BookHub account</p>
+        </div>
+        <div className="card-modern-body">
+          <form onSubmit={login}>
+            <div className="form-group-modern">
+              <label className="form-label-modern">📧 Email Address</label>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="form-control-modern"
+                required
+              />
+            </div>
+            
+            <div className="form-group-modern">
+              <label className="form-label-modern">🔒 Password</label>
+              <input
+                type="password"
+                placeholder="Enter your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="form-control-modern"
+                required
+              />
+            </div>
+            
+            <button type="submit" className="btn-modern w-100" style={{ marginTop: '1rem' }}>
+              🚀 Sign In
+            </button>
+            
+            <div className="text-center mt-4">
+              <p className="text-muted">
+                Don't have an account?{' '}
+                <Link to="/register" className="text-gradient" style={{ textDecoration: 'none', fontWeight: '600' }}>
+                  Create one here
+                </Link>
+              </p>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
