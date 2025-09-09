@@ -25,7 +25,8 @@ import CreateRecommended from "./Recommended/CreateRecommended";
 import FavoriteBooks from "./FavoritesBooks";
 import BookDetails from "./BookDetails";
 import AdminPanel from "./AdminPanel";
-
+import OrderHistory from "./OrderHistory";
+import SuccessPage from "./SuccessPage";
 
 const Pages = () => {
   return (
@@ -40,13 +41,14 @@ const Pages = () => {
           <Route path="/editbestseller/:id" element={<EditBestseller />} />
           <Route path="/editbook/:id" element={<EditBook />} />
           <Route path="/recommended" element={<RecommendedList />} />
-          <Route path="/editrecommended/:id" element={<EditRecommended/>} />
+          <Route path="/editrecommended/:id" element={<EditRecommended />} />
           <Route path="/createrecommended" element={<CreateRecommended />} />
           <Route path="/borrow" element={<Borrow />} />
           <Route path="/createborrow" element={<CreateBorrow />} />
           <Route path="/editborrow/:id" element={<EditBorrow />} />
           <Route path="/admin" element={<AdminPanel />} />
         </Route>
+
         <Route path="/" element={<HomePage />} />
 
         <Route element={<ProtectedRoute redirectPath="/" />}>
@@ -56,6 +58,8 @@ const Pages = () => {
           <Route path="/mycart" element={<ShoppingCart />} />
           <Route path="/recbooks" element={<Recbooks />} />
           <Route path="/myfavorites" element={<FavoriteBooks />} />
+          <Route path="/orderhistory" element={<OrderHistory />} />
+          <Route path="/success" element={<SuccessPage />} /> {/* ✅ fix applied */}
         </Route>
 
         <Route path="/login" element={<LoginForm />} />

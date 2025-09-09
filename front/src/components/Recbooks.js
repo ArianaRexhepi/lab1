@@ -28,22 +28,18 @@ const Recbooks = () => {
         </div>
       </div>
 
-      <div className="fav-container">
-        {books.map((book, index) => (
-          <div
-            key={index}
-            className="fav-card"
-          >
-            <img src={book.image} alt={book.title} className="fav-card-image" />
-            <div className="fav-card-details">
-              <h3 className="fav-card-title">{book.title}</h3>
-              <p className="fav-card-author">By {book.author}</p>
-            </div>
-          </div>
-        ))}
+      <div className="recommended-books-container">
+  {books.map((book, index) => (
+    <div key={index} className="recommended-book-card">
+      <img src={book.image} alt={book.title} className="recommended-book-image" />
+      <div className="recommended-book-details">
+        <h3 className="recommended-book-title">{book.title}</h3>
+        <p className="recommended-book-author">By {book.author}</p>
       </div>
     </div>
-  );
-};
+  ))}
+</div>
+</div>
+)};
 
 export default Recbooks;

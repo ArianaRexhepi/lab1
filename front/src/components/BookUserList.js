@@ -36,7 +36,7 @@ const BookUserList = () => {
 
   useEffect(() => {
     const fetch = async () => {
-      const res = await axios.get("http://localhost:5000/api/book");
+      const res = await axios.get("http://localhost:5267/api/book");
       setBooks(res.data);
       console.log("books", res.data);
     };
@@ -62,7 +62,7 @@ const BookUserList = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/search/categories');
+      const response = await axios.get('http://localhost:5267/api/search/categories');
       setCategories(response.data);
     } catch (error) {
       console.error('Error fetching categories:', error);
@@ -71,7 +71,7 @@ const BookUserList = () => {
 
   const fetchAuthors = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/search/authors');
+      const response = await axios.get('http://localhost:5267/api/search/authors');
       setAuthors(response.data);
     } catch (error) {
       console.error('Error fetching authors:', error);
@@ -86,7 +86,7 @@ const BookUserList = () => {
     }
 
     try {
-      const response = await axios.get(`http://localhost:5000/api/search/search-suggestions?term=${encodeURIComponent(term)}`);
+      const response = await axios.get(`http://localhost:5267/api/search/search-suggestions?term=${encodeURIComponent(term)}`);
       setSuggestions(response.data);
       setShowSuggestions(true);
     } catch (error) {
@@ -130,7 +130,7 @@ const BookUserList = () => {
       params.append('page', page);
       params.append('pageSize', '10');
 
-      const response = await axios.get(`http://localhost:5000/api/search/books?${params.toString()}`);
+      const response = await axios.get(`http://localhost:5267/api/search/books?${params.toString()}`);
       setAdvancedSearchResults(response.data);
     } catch (error) {
       setError('Error performing search. Please try again.');
@@ -166,9 +166,9 @@ const BookUserList = () => {
     <div className="container-modern">
       {/* Page Header */}
       <div className="page-header-modern fade-in">
-        <h1 className="page-title-modern">
-          📚 Discover Amazing Books
-        </h1>
+        <h3 className="page-title-modern">
+          Discover Amazing Books
+        </h3>
         <p className="page-subtitle-modern">
           We believe that books have the power to inspire, educate, and entertain. 
           Find your next favorite read with our advanced search and discovery tools.
@@ -192,7 +192,7 @@ const BookUserList = () => {
       </div>
 
       {/* Advanced Search Toggle */}
-      <div className="text-center mb-4 fade-in">
+      <div className="text-center mb-5 fade-in">
         <button 
           className="btn-secondary-modern"
           onClick={() => setShowAdvancedSearch(!showAdvancedSearch)}
@@ -411,7 +411,7 @@ const BookUserList = () => {
                 className="btn-secondary-modern"
                 onClick={handleClearFilters}
               >
-                🗑️ Clear Filters
+              Clear Filters
               </button>
             </div>
 
@@ -430,7 +430,7 @@ const BookUserList = () => {
       </Collapse>
 
       {/* Books Grid */}
-      <div className="books-grid-modern fade-in">
+      <div className="books-grid-modern fade-in mb-5">
         {(advancedSearchResults ? advancedSearchResults.books : (searchResults.length > 0 ? searchResults : books)).map(
           (book, index) => (
             <div

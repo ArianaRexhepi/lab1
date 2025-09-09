@@ -37,7 +37,6 @@ function RecommendedList() {
                       <th>Title</th>
                       <th>Author</th>
                       <th>Category</th>
-                      <th>Description</th>
                       <th>Rating</th>
                       <th>Year</th>
                       <th>Image</th>

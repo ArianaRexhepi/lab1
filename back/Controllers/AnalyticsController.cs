@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using back.Services;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
-using MongoDB.Driver;
 
 namespace back.Controllers
 {
@@ -11,12 +10,14 @@ namespace back.Controllers
     [Authorize]
     public class AnalyticsController : ControllerBase
     {
-        private readonly MongoDbService _mongoDbService;
+        private readonly RedisService _redisService;
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public AnalyticsController(MongoDbService mongoDbService, IHttpContextAccessor httpContextAccessor)
+        public AnalyticsController(
+            RedisService redisService,
+            IHttpContextAccessor httpContextAccessor)
         {
-            _mongoDbService = mongoDbService;
+            _redisService = redisService;
             _httpContextAccessor = httpContextAccessor;
         }
 
@@ -25,30 +26,11 @@ namespace back.Controllers
         {
             try
             {
-                var userId = _httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-                var userEmail = _httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.Email)?.Value;
+                var userId = _httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "anonymous";
 
-                // Log user activity
-                var userActivity = new UserActivity
-                {
-                    UserId = userId ?? "anonymous",
-                    UserEmail = userEmail ?? "anonymous",
-                    ActivityType = "view",
-                    BookId = request.BookId,
-                    BookTitle = request.BookTitle,
-                    IpAddress = GetClientIpAddress(),
-                    UserAgent = Request.Headers["User-Agent"].ToString()
-                };
-
-                await _mongoDbService.UserActivities.InsertOneAsync(userActivity);
-
-                // Update book analytics
-                var filter = Builders<BookAnalytics>.Filter.Eq(x => x.BookId, request.BookId);
-                var update = Builders<BookAnalytics>.Update
-                    .Inc(x => x.ViewCount, 1)
-                    .Set(x => x.LastViewed, DateTime.UtcNow);
-
-                await _mongoDbService.BookAnalytics.UpdateOneAsync(filter, update, new MongoDB.Driver.UpdateOptions { IsUpsert = true });
+                // ✅ Save to Redis
+                await _redisService.TrackBookViewAsync(request.BookId, request.BookTitle);
+                await _redisService.TrackUserActivityAsync(userId, "view", new { request.BookId, request.BookTitle });
 
                 return Ok(new { Success = true });
             }
@@ -63,33 +45,11 @@ namespace back.Controllers
         {
             try
             {
-                var userId = _httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-                var userEmail = _httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.Email)?.Value;
+                var userId = _httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "anonymous";
 
-                // Log search activity
-                var userActivity = new UserActivity
-                {
-                    UserId = userId ?? "anonymous",
-                    UserEmail = userEmail ?? "anonymous",
-                    ActivityType = "search",
-                    SearchTerm = request.SearchTerm,
-                    IpAddress = GetClientIpAddress(),
-                    UserAgent = Request.Headers["User-Agent"].ToString()
-                };
-
-                await _mongoDbService.UserActivities.InsertOneAsync(userActivity);
-
-                // Log search details
-                var searchLog = new SearchLog
-                {
-                    SearchTerm = request.SearchTerm,
-                    Filters = request.Filters ?? new Dictionary<string, object>(),
-                    ResultCount = request.ResultCount,
-                    UserId = userId,
-                    ExecutionTimeMs = request.ExecutionTimeMs
-                };
-
-                await _mongoDbService.SearchLogs.InsertOneAsync(searchLog);
+                // ✅ Save to Redis
+                await _redisService.TrackSearchQueryAsync(request.SearchTerm, request.ResultCount, request.ExecutionTimeMs);
+                await _redisService.TrackUserActivityAsync(userId, "search", new { request.SearchTerm, request.ResultCount });
 
                 return Ok(new { Success = true });
             }
@@ -104,12 +64,7 @@ namespace back.Controllers
         {
             try
             {
-                var popularBooks = await _mongoDbService.BookAnalytics
-                    .Find(_ => true)
-                    .Sort(Builders<BookAnalytics>.Sort.Descending(x => x.ViewCount))
-                    .Limit(limit)
-                    .ToListAsync();
-
+                var popularBooks = await _redisService.GetPopularBooksAsync(limit);
                 return Ok(popularBooks);
             }
             catch (Exception ex)
@@ -120,36 +75,12 @@ namespace back.Controllers
 
         [HttpGet("search-statistics")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> GetSearchStatistics([FromQuery] int days = 30)
+        public async Task<IActionResult> GetSearchStatistics()
         {
             try
             {
-                var startDate = DateTime.UtcNow.AddDays(-days);
-                
-                var searchStats = await _mongoDbService.SearchLogs
-                    .Find(x => x.Timestamp >= startDate)
-                    .ToListAsync();
-
-                var totalSearches = searchStats.Count;
-                var uniqueUsers = searchStats.Select(x => x.UserId).Distinct().Count();
-                var averageExecutionTime = searchStats.Average(x => x.ExecutionTimeMs);
-                var topSearchTerms = searchStats
-                    .GroupBy(x => x.SearchTerm)
-                    .OrderByDescending(g => g.Count())
-                    .Take(10)
-                    .Select(g => new { Term = g.Key, Count = g.Count() })
-                    .ToList();
-
-                var result = new
-                {
-                    TotalSearches = totalSearches,
-                    UniqueUsers = uniqueUsers,
-                    AverageExecutionTimeMs = Math.Round(averageExecutionTime, 2),
-                    TopSearchTerms = topSearchTerms,
-                    PeriodDays = days
-                };
-
-                return Ok(result);
+                var stats = await _redisService.GetSearchStatsAsync();
+                return Ok(stats);
             }
             catch (Exception ex)
             {
@@ -159,17 +90,21 @@ namespace back.Controllers
 
         [HttpGet("user-activity")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> GetUserActivity([FromQuery] int days = 7)
+        public async Task<IActionResult> GetUserActivity([FromQuery] string userId)
         {
             try
             {
-                var startDate = DateTime.UtcNow.AddDays(-days);
-                
-                var activities = await _mongoDbService.UserActivities
-                    .Find(x => x.Timestamp >= startDate)
-                    .Sort(Builders<UserActivity>.Sort.Descending(x => x.Timestamp))
-                    .Limit(100)
-                    .ToListAsync();
+                // This is a placeholder — you could extend RedisService to pull back
+                // recent activities by scanning "user_activity:{userId}:*" keys.
+                var keys = await _redisService.GetKeysAsync($"user_activity:{userId}:*");
+
+                var activities = new List<object>();
+                foreach (var key in keys.OrderByDescending(k => k))
+                {
+                    var activity = await _redisService.GetAsync<object>(key);
+                    if (activity != null)
+                        activities.Add(activity);
+                }
 
                 return Ok(activities);
             }

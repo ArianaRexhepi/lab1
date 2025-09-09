@@ -15,13 +15,13 @@ function BookDetails() {
 
   useEffect(() => {
     const fetch = async () => {
-      const res = await axios.get(`http://localhost:5000/api/book/${id}`);
+      const res = await axios.get(`http://localhost:5267/api/book/${id}`);
       setSelectedBook(res.data);
       console.log("selectedBook", res.data);
     };
     const fetchFavorites = async () => {
       await axios
-        .get(`http://localhost:5000/api/book/userFavourite/${id}`)
+        .get(`http://localhost:5267/api/book/userFavourite/${id}`)
         .then((res) => {
           if (res.data) {
             setFound(true);
@@ -29,7 +29,7 @@ function BookDetails() {
         });
     };
     const fetchCart = async () => {
-      await axios.get(`http://localhost:5000/api/cart/${id}`).then((res) => {
+      await axios.get(`http://localhost:5267/api/cart/${id}`).then((res) => {
         if (res.data) {
           setCart(true);
           console.log("cart", res.data);
@@ -45,7 +45,7 @@ function BookDetails() {
   const handleFavoritesClick = async () => {
     try {
       await axios
-        .post("http://localhost:5000/api/book/addFavorite", selectedBook)
+        .post("http://localhost:5267/api/book/addFavorite", selectedBook)
         .then((res) => {
           setFound(true);
         });
@@ -59,7 +59,7 @@ function BookDetails() {
       try {
         await axios
           .delete(
-            `http://localhost:5000/api/book/removeFavorite/${selectedBook.id}`
+            `http://localhost:5267/api/book/removeFavorite/${selectedBook.id}`
           )
           .then(() => {
             setFound(false);
@@ -77,7 +77,7 @@ function BookDetails() {
   const handleCartClick = async (e) => {
     try {
       await axios
-        .post("http://localhost:5000/api/cart", selectedBook)
+        .post("http://localhost:5267/api/cart", selectedBook)
         .then((res) => {
           setCart(true);
         });
@@ -90,9 +90,10 @@ function BookDetails() {
     if (selectedBook) {
       try {
         await axios
-          .delete(`http://localhost:5000/api/cart/${selectedBook.id}`)
+          .delete(`http://localhost:5267/api/cart/${selectedBook.id}`)
           .then(() => {
             setCart(false);
+            navigate("/mycart");
           });
       } catch (error) {
         console.error(error);
@@ -112,7 +113,7 @@ function BookDetails() {
   }
 
   return (
-    <div className="container-modern">
+    <div className="container-modern mt-4">
       {/* Back Button */}
       <div className="mb-4 fade-in">
         <button 
@@ -133,7 +134,7 @@ function BookDetails() {
               <div className="text-center">
                 <img
                   src={selectedBook.image || 'https://via.placeholder.com/400x600/6366f1/ffffff?text=Book+Cover'}
-                  alt={selectedBook.title}
+            alt={selectedBook.title}
                   className="book-card-image-modern"
                   style={{ 
                     maxWidth: '100%', 
@@ -169,7 +170,7 @@ function BookDetails() {
                       ⭐ {selectedBook.rating}/5
                     </span>
                     <span className="book-card-tag-modern" style={{ fontSize: '1rem', padding: '0.5rem 1rem' }}>
-                      💰 ${selectedBook.price}
+                      💵 ${selectedBook.price}
                     </span>
                     <span className="book-card-tag-modern" style={{ fontSize: '1rem', padding: '0.5rem 1rem' }}>
                       📅 {new Date(selectedBook.year).getFullYear()}
@@ -178,7 +179,7 @@ function BookDetails() {
                 </div>
 
                 <div className="book-description-modern mb-5">
-                  <h4 className="text-gradient mb-3">📖 Description</h4>
+                  <h4 className="text-gradient mb-3">Description</h4>
                   <p style={{ 
                     fontSize: '1.1rem', 
                     lineHeight: '1.7', 
@@ -192,10 +193,10 @@ function BookDetails() {
                 {/* Action Buttons */}
                 <div className="book-actions-modern">
                   <div className="d-flex gap-3 flex-wrap">
-                    {!found ? (
-                      <button
+              {!found ? (
+                <button
                         className="btn-modern"
-                        onClick={() => handleFavoritesClick(selectedBook)}
+                  onClick={() => handleFavoritesClick(selectedBook)}
                         style={{ 
                           background: 'linear-gradient(135deg, #ef4444, #dc2626)',
                           display: 'flex',
@@ -204,14 +205,14 @@ function BookDetails() {
                           minWidth: '180px',
                           justifyContent: 'center'
                         }}
-                      >
-                        <FontAwesomeIcon icon={faHeart} />
-                        ❤️ Add to Favorites
-                      </button>
-                    ) : (
-                      <button
+                >
+                  <FontAwesomeIcon icon={faHeart} />
+                        Add to Favorites
+                </button>
+              ) : (
+                <button
                         className="btn-modern"
-                        onClick={() => handleFavoritesRemove()}
+                  onClick={() => handleFavoritesRemove()}
                         style={{ 
                           background: 'linear-gradient(135deg, #6b7280, #4b5563)',
                           display: 'flex',
@@ -220,13 +221,13 @@ function BookDetails() {
                           minWidth: '180px',
                           justifyContent: 'center'
                         }}
-                      >
-                        <FontAwesomeIcon icon={faHeart} />
-                        💔 Remove from Favorites
-                      </button>
-                    )}
+                >
+                  <FontAwesomeIcon icon={faHeart} />
+                      Remove from Favorites
+                </button>
+              )}
                     
-                    {!cart ? (
+              {!cart ? (
                       <button 
                         className="btn-modern" 
                         onClick={handleCartClick}
@@ -239,10 +240,10 @@ function BookDetails() {
                           justifyContent: 'center'
                         }}
                       >
-                        <FontAwesomeIcon icon={faCartPlus} />
-                        🛒 Add to Cart
-                      </button>
-                    ) : (
+                  <FontAwesomeIcon icon={faCartPlus} />
+                      Add to Cart
+                </button>
+              ) : (
                       <button 
                         className="btn-modern" 
                         onClick={handleCartRemove}
@@ -255,10 +256,10 @@ function BookDetails() {
                           justifyContent: 'center'
                         }}
                       >
-                        <FontAwesomeIcon icon={faCartPlus} />
-                        🗑️ Remove from Cart
-                      </button>
-                    )}
+                  <FontAwesomeIcon icon={faCartPlus} />
+                      Remove from Cart
+                </button>
+              )}
                   </div>
                 </div>
               </div>
@@ -272,7 +273,7 @@ function BookDetails() {
         <div className="col-md-6">
           <div className="card-modern">
             <div className="card-modern-header" style={{ background: 'linear-gradient(135deg, #8b5cf6, #7c3aed)' }}>
-              <h5 className="mb-0">📊 Book Statistics</h5>
+              <h5 className="mb-0">Book Statistics</h5>
             </div>
             <div className="card-modern-body">
               <div className="row text-center">
@@ -285,7 +286,7 @@ function BookDetails() {
                 </div>
                 <div className="col-6">
                   <div className="stat-item">
-                    <div style={{ fontSize: '2rem', color: 'var(--secondary-color)' }}>💰</div>
+                    <div style={{ fontSize: '2rem', color: 'var(--secondary-color)' }}>💵</div>
                     <h4 className="text-gradient">${selectedBook.price}</h4>
                     <small className="text-muted">Price</small>
                   </div>
@@ -295,24 +296,21 @@ function BookDetails() {
           </div>
         </div>
         
-        <div className="col-md-6">
+        <div className="col-md-6 mb-5">
           <div className="card-modern">
             <div className="card-modern-header" style={{ background: 'linear-gradient(135deg, #06b6d4, #0891b2)' }}>
-              <h5 className="mb-0">📝 Book Details</h5>
+              <h5 className="mb-0">Book Details</h5>
             </div>
             <div className="card-modern-body">
               <div className="book-details-list">
                 <div className="detail-item">
-                  <strong>📚 Category:</strong> {selectedBook.category}
+                  <strong>Category:</strong> {selectedBook.category}
                 </div>
                 <div className="detail-item">
-                  <strong>📅 Published:</strong> {new Date(selectedBook.year).getFullYear()}
+                  <strong>Published:</strong> {new Date(selectedBook.year).getFullYear()}
                 </div>
                 <div className="detail-item">
-                  <strong>✍️ Author:</strong> {selectedBook.author}
-                </div>
-                <div className="detail-item">
-                  <strong>🆔 Book ID:</strong> #{selectedBook.id}
+                  <strong>Author:</strong> {selectedBook.author}
                 </div>
               </div>
             </div>

@@ -45,9 +45,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[33.1.0, )"
+            },
             "Database": {
               "target": "Package",
               "version": "[2.5.0, )"
+            },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[6.2.3, )"
             },
             "Microsoft.AspNet.WebApi.Core": {
               "target": "Package",
@@ -91,7 +99,11 @@
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             },
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
@@ -100,6 +112,14 @@
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[6.0.2, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.9.11, )"
+            },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[48.5.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

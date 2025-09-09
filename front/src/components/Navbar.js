@@ -9,6 +9,7 @@ import {
   faShoppingCart,
   faHeart,
   faUser,
+  faReceipt,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
@@ -39,13 +40,13 @@ const Navbar = () => {
     <header className="header-modern">
       <nav className="navbar-modern">
         <Link to="/" className="navbar-brand-modern">
-          📚 BookHub
+          BookStore
         </Link>
         
         <ul className="navbar-nav-modern">
           <li>
             <Link to="/" className="nav-link-modern">
-              🏠 Home
+              Home
             </Link>
           </li>
           
@@ -53,12 +54,12 @@ const Navbar = () => {
             <>
               <li>
                 <Link to="/bookuserlist" className="nav-link-modern">
-                  📖 Books
+                  Books
                 </Link>
               </li>
               <li>
                 <Link to="/recbooks" className="nav-link-modern">
-                  ⭐ Recommended
+                  Recommended
                 </Link>
               </li>
             </>
@@ -73,7 +74,7 @@ const Navbar = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                ⚙️ Dashboard
+               Dashboard
               </a>
               <ul className="dropdown-menu" style={{
                 background: 'white',
@@ -91,7 +92,7 @@ const Navbar = () => {
                     textDecoration: 'none',
                     transition: 'all var(--transition-fast)'
                   }}>
-                    📚 Books List
+                  Books List
                   </Link>
                 </li>
                 <li>
@@ -102,7 +103,7 @@ const Navbar = () => {
                     textDecoration: 'none',
                     transition: 'all var(--transition-fast)'
                   }}>
-                    🏆 Bestsellers
+                  Bestsellers
                   </Link>
                 </li>
                 <li>
@@ -113,7 +114,7 @@ const Navbar = () => {
                     textDecoration: 'none',
                     transition: 'all var(--transition-fast)'
                   }}>
-                    ⭐ Recommended
+                  Recommended
                   </Link>
                 </li>
                 <li>
@@ -126,7 +127,7 @@ const Navbar = () => {
                     background: 'var(--gray-50)',
                     transition: 'all var(--transition-fast)'
                   }}>
-                    🔧 Admin Panel
+                  Admin Panel
                   </Link>
                 </li>
               </ul>
@@ -136,7 +137,7 @@ const Navbar = () => {
           {state.user === null && (
             <li>
               <Link to="/login" className="btn-modern">
-                🔐 Sign In
+              Sign In
               </Link>
             </li>
           )}
@@ -217,6 +218,20 @@ const Navbar = () => {
                     My Cart
                   </Link>
                 </li>
+                <li>
+                  <Link to="/orderhistory" className="dropdown-item" style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.75rem',
+                    padding: '0.75rem 1rem',
+                    color: 'var(--text-primary)',
+                    textDecoration: 'none',
+                    transition: 'all var(--transition-fast)'
+                  }}>
+                    <FontAwesomeIcon icon={faReceipt} />
+                    Order History
+                  </Link>
+                </li>
                 <li style={{ borderTop: '1px solid var(--gray-200)', margin: '0.5rem 0' }}>
                   <button
                     onClick={handleLogOut}
@@ -236,7 +251,7 @@ const Navbar = () => {
                     onMouseOver={(e) => e.target.style.background = 'var(--gray-50)'}
                     onMouseOut={(e) => e.target.style.background = 'none'}
                   >
-                    🚪 Log Out
+                  Log Out
                   </button>
                 </li>
               </ul>

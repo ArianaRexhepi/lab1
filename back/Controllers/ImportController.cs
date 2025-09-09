@@ -236,14 +236,15 @@ namespace back.Controllers
         }
 
         [HttpGet("template/csv")]
-        public IActionResult DownloadCsvTemplate()
-        {
-            var template = "Id,Title,Author,Description,Category,Rating,Year,Price,Image\n" +
-                          "1,Sample Book,Sample Author,Sample Description,Fiction,5,2023-01-01,25,https://example.com/image.jpg";
-            
-            var bytes = Encoding.UTF8.GetBytes(template);
-            return File(bytes, "text/csv", "books_import_template.csv");
-        }
+public IActionResult DownloadCsvTemplate()
+{
+    var template = "Id,Title,Author,Description,Category,Rating,Year,Image,Price\n" +
+                  "1,Sample Book,Sample Author,Sample Description,Fiction,5,2023-01-01,https://example.com/image.jpg,25";
+    
+    var bytes = Encoding.UTF8.GetBytes(template);
+    return File(bytes, "text/csv", "books_import_template.csv");
+}
+
 
         [HttpGet("template/excel")]
         public IActionResult DownloadExcelTemplate()

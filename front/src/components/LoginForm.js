@@ -24,7 +24,7 @@ const LoginForm = () => {
       password: password,
     };
 
-    fetch("http://localhost:5000/api/account/login", {
+    fetch("http://localhost:5267/api/account/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -52,13 +52,13 @@ const LoginForm = () => {
     <div className="container-modern" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <div className="card-modern fade-in" style={{ maxWidth: '450px', width: '100%' }}>
         <div className="card-modern-header" style={{ textAlign: 'center' }}>
-          <h1 className="mb-0">🔐 Welcome Back</h1>
-          <p className="text-muted mb-0">Sign in to your BookHub account</p>
+          <h3 className="mb-0">Log in</h3>
+          {/* <p className="text-muted mb-0">Sign in to your BookHub account</p> */}
         </div>
         <div className="card-modern-body">
           <form onSubmit={login}>
             <div className="form-group-modern">
-              <label className="form-label-modern">📧 Email Address</label>
+              <label className="form-label-modern">Email Address</label>
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -70,7 +70,7 @@ const LoginForm = () => {
             </div>
             
             <div className="form-group-modern">
-              <label className="form-label-modern">🔒 Password</label>
+              <label className="form-label-modern">Password</label>
               <input
                 type="password"
                 placeholder="Enter your password"
@@ -82,7 +82,7 @@ const LoginForm = () => {
             </div>
             
             <button type="submit" className="btn-modern w-100" style={{ marginTop: '1rem' }}>
-              🚀 Sign In
+              Sign In
             </button>
             
             <div className="text-center mt-4">

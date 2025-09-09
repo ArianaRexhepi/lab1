@@ -6,33 +6,50 @@ function CreateBestseller() {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [rating, setRating] = useState("");
-  const [year, setYear] = useState(new Date());
+  const [year, setYear] = useState(new Date().toISOString().split('T')[0]);
   const [image, setImage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
+    setError("");
+
+    // Validation
+    if (!title.trim()) {
+      setError("Title is required");
+      setLoading(false);
+      return;
+    }
+    if (!author.trim()) {
+      setError("Author is required");
+      setLoading(false);
+      return;
+    }
+    if (!rating || rating < 1 || rating > 5) {
+      setError("Rating must be between 1 and 5");
+      setLoading(false);
+      return;
+    }
 
     const newBook = {
-      Title: title,
-      Author: author,
-      Rating: rating,
-      Year: year,
-      Image: image,
+      Title: title.trim(),
+      Author: author.trim(),
+      Rating: rating.toString(),
+      Year: new Date(year),
+      Image: image.trim() || "https://via.placeholder.com/300x400/6366f1/ffffff?text=Book+Cover",
     };
 
     try {
-      await axios
-        .post("http://localhost:5267/api/bestsellers", newBook)
-        .then(() => {
-          setLoading(false);
-          navigate("/");
-        });
-      console.log(newBook);
+      await axios.post("http://localhost:5267/api/bestsellers", newBook);
+      setLoading(false);
+      navigate("/bestsellers");
     } catch (error) {
       console.error(error);
+      setError("Failed to create bestseller. Please try again.");
+      setLoading(false);
     }
   };
 
@@ -51,6 +68,11 @@ function CreateBestseller() {
             </Link>
           </div>
           <div className="modal-body">
+            {error && (
+              <div className="alert alert-danger" role="alert">
+                {error}
+              </div>
+            )}
             <div className="form-group">
               <label htmlFor="title">Title:</label>
               <input
@@ -81,10 +103,14 @@ function CreateBestseller() {
             <div className="form-group">
               <label>Rating:</label>
               <input
-                type="datetime"
+                type="number"
+                min="1"
+                max="5"
+                step="0.1"
                 value={rating}
                 onChange={(e) => setRating(e.target.value)}
                 className="form-control"
+                placeholder="Enter rating (1-5)"
               />
             </div>
             <div className="form-group">

@@ -13,12 +13,12 @@ namespace back.Controllers
     public class SearchController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        private readonly MongoDbService _mongoDbService;
+        private readonly RedisService _redisService;
 
-        public SearchController(ApplicationDbContext context, MongoDbService mongoDbService)
+        public SearchController(ApplicationDbContext context, RedisService redisService)
         {
             _context = context;
-            _mongoDbService = mongoDbService;
+            _redisService = redisService;
         }
 
         [HttpGet("books")]
@@ -115,28 +115,14 @@ namespace back.Controllers
 
             stopwatch.Stop();
 
-            // Track search in MongoDB
+            // Track search in Redis
             try
             {
-                var filters = new Dictionary<string, object>();
-                if (!string.IsNullOrEmpty(category)) filters["category"] = category;
-                if (!string.IsNullOrEmpty(author)) filters["author"] = author;
-                if (minRating.HasValue) filters["minRating"] = minRating.Value;
-                if (maxRating.HasValue) filters["maxRating"] = maxRating.Value;
-                if (minPrice.HasValue) filters["minPrice"] = minPrice.Value;
-                if (maxPrice.HasValue) filters["maxPrice"] = maxPrice.Value;
-                if (minYear.HasValue) filters["minYear"] = minYear.Value;
-                if (maxYear.HasValue) filters["maxYear"] = maxYear.Value;
-
-                var searchLog = new SearchLog
-                {
-                    SearchTerm = searchTerm ?? "",
-                    Filters = filters,
-                    ResultCount = totalCount,
-                    ExecutionTimeMs = stopwatch.ElapsedMilliseconds
-                };
-
-                await _mongoDbService.SearchLogs.InsertOneAsync(searchLog);
+                await _redisService.TrackSearchQueryAsync(
+                    searchTerm ?? "", 
+                    totalCount, 
+                    stopwatch.ElapsedMilliseconds
+                );
             }
             catch (Exception ex)
             {

@@ -69,17 +69,6 @@ function EditBestseller() {
               />
             </div>
             <div className="form-group">
-              <label> Description:</label>
-              <input
-                type="text"
-                className="form-control"
-                value={bestseller.description}
-                onChange={(e) =>
-                  setBestseller({ ...bestseller, description: e.target.value })
-                }
-              />
-            </div>
-            <div className="form-group">
               <label>Year:</label>
               <input
                 type="datetime-local"

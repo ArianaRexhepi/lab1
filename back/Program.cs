@@ -6,16 +6,22 @@ using Data;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using back.Services;
+using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add services to the container
 builder.Services.AddControllers();
 
-var connectionString = builder.Configuration.GetConnectionString("MySqlConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+// MySQL connection
+var connectionString = builder.Configuration.GetConnectionString("MySqlConnection") 
+    ?? throw new InvalidOperationException("Connection string 'MySqlConnection' not found.");
 
-builder.Services.AddDbContext<ApplicationDbContext>(options => 
-options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+
+// Identity
 builder.Services.AddIdentityCore<AppUser>(o =>
 {
     o.Password.RequireNonAlphanumeric = false;
@@ -24,6 +30,7 @@ builder.Services.AddIdentityCore<AppUser>(o =>
 .AddEntityFrameworkStores<ApplicationDbContext>()
 .AddSignInManager<SignInManager<AppUser>>();
 
+// JWT Authentication
 var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt"]));
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -36,49 +43,53 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateIssuer = false,
             ValidateAudience = false
         };
-    }
-);
+    });
+
 builder.Services.AddHttpContextAccessor();
 
+// ✅ Redis setup
+builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
+{
+    var configuration = builder.Configuration.GetConnectionString("Redis") ?? "localhost:6379";
+    return ConnectionMultiplexer.Connect(configuration);
+});
+builder.Services.AddScoped<RedisService>();
+
+// CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy", builder => builder
-    .AllowAnyMethod()
-    .AllowAnyHeader()
-    .AllowCredentials()
-    .WithExposedHeaders("WWW-Authenticate")
-    .WithOrigins("http://localhost:3000"));
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+        .AllowCredentials()
+        .WithExposedHeaders("WWW-Authenticate")
+        .WithOrigins("http://localhost:3000"));
 });
 
-// Configure the HTTP request pipeline.
 var app = builder.Build();
 
+// Pipeline
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
 
 app.UseHttpsRedirection();
-
 app.UseRouting();
-
 app.UseCors("CorsPolicy");
-
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
 
+// Seed admin user/roles
 using var scope = app.Services.CreateScope();
 var services = scope.ServiceProvider;
 try
 {
     var userManager = services.GetRequiredService<UserManager<AppUser>>();
     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-
     await Seed.SeedAdminAsync(userManager, roleManager);
-
-    Console.WriteLine("-------->Data seeded successfully.");
+    Console.WriteLine("--------> Data seeded successfully.");
 }
 catch (Exception ex)
 {

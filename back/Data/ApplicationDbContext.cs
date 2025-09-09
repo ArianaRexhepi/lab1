@@ -16,6 +16,9 @@ namespace back.Data
         public DbSet<Borrow> Borrow { get; set; }
         public DbSet<Recommended> Recommended { get; set; }
         public DbSet<Cart> Carts { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+
 
     }
 }
